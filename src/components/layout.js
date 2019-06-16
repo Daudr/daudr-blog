@@ -63,6 +63,21 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.iubenda.com/privacy-policy/49067529"
+            title="Privacy Policy"
+            style={{
+              boxShadow: `none`,
+              color: `currentColor`
+            }}
+          >
+            Privacy Policy
+          </a>
+
+          <br/>
+
           © {new Date().getFullYear()}, Michele Da Rin Fioretto - Dauðr
         </footer>
       </div>

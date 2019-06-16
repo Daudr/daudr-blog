@@ -18,7 +18,6 @@ class BlogIndex extends React.Component {
           title="Tutti i post"
           keywords={[`blog`, `gatsby`, `javascript`, `react`, `angular`, `michele da rin fioretto`]}
         />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -41,6 +40,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <Bio />
       </Layout>
     )
   }

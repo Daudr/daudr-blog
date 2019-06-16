@@ -4,14 +4,31 @@ module.exports = {
     author: `Michele Da Rin Fioretto`,
     description: `Dauðr Blog: tecnologia alla portata di tutti`,
     siteUrl: `https://blog.daudr.me`,
-    social: {
-      twitter: `MicheleDaRin`,
-      facebook: `micheledarin`,
-      instagra: `micheleedarin`,
-      github: `Daudr`
-    },
+    social: [
+      {
+        social: `Facebook`,
+        link: `https://www.facebook.com/micheleedarin`,
+      },
+      {
+        social: `LinkedIn`,
+        link: `https://www.linkedin.com/in/micheleedarin`,
+      },
+      {
+        social: `Github`,
+        link: `https://www.github.com/Daudr`,
+      },
+      {
+        social: `Instagram`,
+        link: `https://www.instagram.com/micheleedarin`,
+      },
+      {
+        social: `Twitter`,
+        link: `https://www.twitter.com/MicheleDaRin`,
+      },
+    ],
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -81,24 +98,24 @@ module.exports = {
       resolve: `gatsby-plugin-amp`,
       options: {
         analytics: {
-          type: 'gtag',
-          dataCredentials: 'include',
+          type: "gtag",
+          dataCredentials: "include",
           config: {
             vars: {
               gtag_id: `UA-45433517-6`,
               config: {
-                'UA-45433517-6': {
-                  page_location: '{{pathname}}'
+                "UA-45433517-6": {
+                  page_location: "{{pathname}}",
                 },
               },
             },
           },
         },
-        canonicalBaseUrl: 'https://blog.daudr.me/',
-        components: ['amp-form'],
-        excludedPaths: ['/404*', '/'],
-        pathIdentifier: 'amp/',
-        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+        canonicalBaseUrl: "https://blog.daudr.me/",
+        components: ["amp-form"],
+        excludedPaths: ["/404*", "/"],
+        pathIdentifier: "amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         relCanonicalPattern: `{{canonicalBaseUrl}}{{pathname}}`,
         useAmpClientIdApi: true,
       },

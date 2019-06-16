@@ -71,6 +71,5 @@ yarn-error.log
 # Firebase files
 .firebase/
 **.cache
-
-#Dotenv
+# Environment files
 .env.**

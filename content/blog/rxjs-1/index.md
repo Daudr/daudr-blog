@@ -1,8 +1,8 @@
 ---
 title: "[RxJS Series] The first() of many observables"
 description: In this series of posts I'll explain the basic functionalities of some RxJS' features
-tags: ['angular', 'performance', 'rxjs']
-keywords: ['angular', 'performance', 'rxjs']
+tags: ['angular', 'performance', 'rxjs', 'combineLatest', 'forkJoin', 'takeUntil']
+keywords: ['angular', 'performance', 'rxjs', 'combineLatest', 'forkJoin', 'takeUntil']
 image: 'performance.jpg'
 date: "2019-05-18T09:27:10.759Z"
 ---
@@ -18,6 +18,10 @@ Let's find what rxjs is, from the [docs](https://rxjs-dev.firebaseapp.com):
 
 ## combineLatest
 
+The `combineLatest` operator is used to merge multiple observable streams into only one
+
 ## forkJoin
 
 ## takeUntil
+
+`takeUntil` is a lot popular in Angular when we are dealing with subscription and performance issues. takeUntil is used where we generate a `Subscription` (maybe an Http call) and we need to unsubscribe when we don't use it anymore, to avoid memory leaks.

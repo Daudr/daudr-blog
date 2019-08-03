@@ -1,6 +1,7 @@
 {
   "projects": {
-    "master": "daudr-blog"
+    "master": "daudr-blog",
+    "default": "daudr-blog"
   },
   "targets": {
     "daudr-blog": {

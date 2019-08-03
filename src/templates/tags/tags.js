@@ -30,7 +30,6 @@ export const Tags = ({ pageContext, data }) => {
       </h2>
 
       {edges.map(({ node }) => {
-        console.log(node.frontmatter.tags)
         return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
       })}
 

@@ -18,6 +18,9 @@ export const Tag = ({ tag, count }) => {
         boxShadow: `none`,
         textDecoration: `none`,
         color: `inherit`,
+        fontFamily: `'Anton', sans-serif`,
+        textTransform: `uppercase`,
+        fontWeight: `bold`
       }}
       to={`/tags/${kebabCase(tag)}`}
     >
@@ -27,12 +30,12 @@ export const Tag = ({ tag, count }) => {
           padding: `5px 10px`,
           border: hover ? `1px solid black` : `1px dashed black`,
           margin: `5px`,
+          backgroundColor: `#FFFFFF`
         }}
-        className={hover ? `tag-hovered` : ``}
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}
       >
-        {tag} {count ? `(${count})` : ``}
+        #{tag} {count ? `(${count})` : ``}
       </div>
     </Link>
   )

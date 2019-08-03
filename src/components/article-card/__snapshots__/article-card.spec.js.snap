@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleCard renders correctly 1`] = `
+<a
+  href="/ngfor-done-right/"
+  style={
+    Object {
+      "boxShadow": "none",
+    }
+  }
+>
+  <div
+    className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
+  >
+    <div
+      className="MuiCardMedia-root makeStyles-media-5"
+      style={
+        Object {
+          "backgroundImage": "url(\\"https://images.unsplash.com/photo-1489976908522-aabacf277f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80\\")",
+        }
+      }
+      title="ngFor Done Right"
+    />
+    <div
+      className="MuiCardContent-root"
+    >
+      <p
+        className="MuiTypography-root makeStyles-title-2 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+      >
+        <a
+          href="/tags/angular"
+          style={
+            Object {
+              "boxShadow": "none",
+            }
+          }
+        >
+          <div
+            className="MuiChip-root makeStyles-chip-4 MuiChip-sizeSmall MuiChip-clickable"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            role="button"
+            style={
+              Object {
+                "fontFamily": "'Anton', sans-serif",
+                "fontWeight": "bold",
+                "textTransform": "uppercase",
+              }
+            }
+            tabIndex={0}
+          >
+            <span
+              className="MuiChip-label MuiChip-labelSmall"
+            >
+              #angular
+            </span>
+          </div>
+        </a>
+        <a
+          href="/tags/code"
+          style={
+            Object {
+              "boxShadow": "none",
+            }
+          }
+        >
+          <div
+            className="MuiChip-root makeStyles-chip-4 MuiChip-sizeSmall MuiChip-clickable"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            role="button"
+            style={
+              Object {
+                "fontFamily": "'Anton', sans-serif",
+                "fontWeight": "bold",
+                "textTransform": "uppercase",
+              }
+            }
+            tabIndex={0}
+          >
+            <span
+              className="MuiChip-label MuiChip-labelSmall"
+            >
+              #code
+            </span>
+          </div>
+        </a>
+        <a
+          href="/tags/guide"
+          style={
+            Object {
+              "boxShadow": "none",
+            }
+          }
+        >
+          <div
+            className="MuiChip-root makeStyles-chip-4 MuiChip-sizeSmall MuiChip-clickable"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            role="button"
+            style={
+              Object {
+                "fontFamily": "'Anton', sans-serif",
+                "fontWeight": "bold",
+                "textTransform": "uppercase",
+              }
+            }
+            tabIndex={0}
+          >
+            <span
+              className="MuiChip-label MuiChip-labelSmall"
+            >
+              #guide
+            </span>
+          </div>
+        </a>
+      </p>
+      <h2
+        className="MuiTypography-root MuiTypography-h5"
+        data-cy="post-title"
+      >
+        ngFor Done Right
+      </h2>
+      <p
+        className="MuiTypography-root makeStyles-pos-3 MuiTypography-subtitle2 MuiTypography-colorTextSecondary"
+      >
+        July 04, 2019
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body2"
+      >
+        When dealing with lists in templates, ngFor saves us a lot of time, but it could be a real pain if used wrong, read this article to know hot use it right
+      </p>
+    </div>
+  </div>
+</a>
+`;

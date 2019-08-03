@@ -6,39 +6,31 @@ import { rhythm } from "../../utils/typography"
 
 import Bio from "../../components/bio/bio"
 import Layout from "../../components/layout/layout"
+import ArticleCard from "../../components/article-card/article-card"
 
 export const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const siteTitle = data.site.siteMetadata.title
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+
+  const tagHeader = `#${tag} post${totalCount === 1 ? "" : "s"}`
 
   return (
     <Layout title={siteTitle} location={`/tags/${tag}`}>
-      <h2>{tagHeader}</h2>
+      <h2
+        style={{
+          fontFamily: `'Anton', sans-serif`,
+          fontWeight: `bold`,
+          textTransform: `uppercase`,
+          letterSpacing: '3px',
+          color: `#ffffff`
+        }}
+      >
+        {tagHeader}
+      </h2>
+
       {edges.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div key={node.fields.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                {title}
-              </Link>
-            </h3>
-            <small>{node.frontmatter.date}</small>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
-              }}
-            />
-          </div>
-        )
+        return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
       })}
 
       <div style={{ marginBottom: rhythm(2.5) }}>
@@ -66,7 +58,11 @@ Tags.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
+              date: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
+              description: PropTypes.string.isRequired,
+              tags: PropTypes.array,
+              cover_image: PropTypes.string,
             }),
             fields: PropTypes.shape({
               slug: PropTypes.string.isRequired,
@@ -103,6 +99,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
+            cover_image
           }
         }
       }

@@ -1,8 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import Img from "gatsby-image"
 
 import { rhythm } from "../../utils/typography"
+import Paper from "@material-ui/core/Paper"
 
 export const Bio = () => {
   return (
@@ -12,14 +13,15 @@ export const Bio = () => {
         const { author, social } = data.site.siteMetadata
 
         return (
-          <div
+          <Paper
             style={{
               display: `flex`,
               marginTop: rhythm(1.25),
               marginBottom: rhythm(1 / 2),
+              padding: rhythm(1 / 2),
             }}
           >
-            <Image
+            <Img
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
@@ -35,7 +37,7 @@ export const Bio = () => {
             <div>
               Written by <strong>{author}</strong> a freelance web developer
               that works in Italy and in the world.
-              <br />
+              <div style={{ marginTop: rhythm(1 / 2) }}></div>
               You can also find him on
               <br />
               {social.map((social, i) => {
@@ -78,20 +80,22 @@ export const Bio = () => {
                       color: `currentColor`,
                     }}
                   >
-                    <Image
+                    <Img
                       fixed={fixed}
                       alt={`${author} ${social.social} link`}
                       style={{
                         marginRight: rhythm(1 / 2),
                         marginBottom: 0,
                         minWidth: 30,
+                        maxWidth: `50px`,
+                        maxHeigth: `50px`
                       }}
                     />
                   </a>
                 )
               })}
             </div>
-          </div>
+          </Paper>
         )
       }}
     />

@@ -7,16 +7,19 @@ exports[`Tag renders correctly 1`] = `
     Object {
       "boxShadow": "none",
       "color": "inherit",
+      "fontFamily": "'Anton', sans-serif",
+      "fontWeight": "bold",
       "textDecoration": "none",
+      "textTransform": "uppercase",
     }
   }
 >
   <div
-    className=""
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
     style={
       Object {
+        "backgroundColor": "#FFFFFF",
         "border": "1px dashed black",
         "cursor": "pointer",
         "margin": "5px",
@@ -24,6 +27,7 @@ exports[`Tag renders correctly 1`] = `
       }
     }
   >
+    #
      
     
   </div>

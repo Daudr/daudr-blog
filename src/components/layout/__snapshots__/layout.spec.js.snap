@@ -11,8 +11,18 @@ exports[`Layout renders correctly 1`] = `
     }
   }
 >
-  <header>
+  <header
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    <div
+      className="background-sky hero"
+    />
     <h1
+      className="header-title"
       style={
         Object {
           "fontSize": "3.95285rem",

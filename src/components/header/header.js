@@ -3,54 +3,41 @@ import { Link } from "gatsby"
 
 import { scale, rhythm } from "../../utils/typography"
 
-export const Header = ({ location, title }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+import "./header.css"
 
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
+export const Header = ({ title }) => {
+  const header = (
+    <h1
+      style={{
+        ...scale(1.5),
+        marginBottom: rhythm(1.5),
+        marginTop: 0,
+      }}
+      className="header-title"
+    >
+      <Link
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
+          boxShadow: `none`,
+          textDecoration: `none`,
+          color: `inherit`,
         }}
+        to={`/`}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
+        {title}
+      </Link>
+    </h1>
+  )
 
-  return <header>{header}</header>
+  return (
+    <header
+      style={{
+        color: `white`,
+      }}
+    >
+      <div className="background-sky hero"></div>
+      {header}
+    </header>
+  )
 }
 
 export default Header

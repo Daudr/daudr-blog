@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio/bio"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
-import { rhythm } from "../utils/typography"
+import ArticleCard from "../components/article-card/article-card"
 
 export const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -24,27 +24,7 @@ export const BlogIndex = ({ data, location }) => {
         ]}
       />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div key={node.fields.slug}>
-            <h2
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-              data-cy="post-title"
-            >
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                {title}
-              </Link>
-            </h2>
-            <small>{node.frontmatter.date}</small>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
-              }}
-            />
-          </div>
-        )
+        return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
       })}
       <Bio />
     </Layout>
@@ -71,6 +51,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
+            cover_image
           }
         }
       }

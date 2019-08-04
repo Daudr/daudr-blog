@@ -12,6 +12,7 @@ export const SEO = ({
   postSEO = false,
   post = null,
   slug = null,
+  coverImage = null,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -30,7 +31,7 @@ export const SEO = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
-  let image = `https://blog.daudr.me/daudr-icon.png`
+  let image = coverImage || `https://blog.daudr.me/daudr-icon.png`
 
   const mainUrl = `https://www.daudr.me`
 
@@ -100,7 +101,7 @@ export const SEO = ({
       meta={[
         {
           name: `description`,
-          content: `${metaDescription} by Dauðr`,
+          content: `${metaDescription}`,
         },
         {
           property: `og:title`,
@@ -134,6 +135,10 @@ export const SEO = ({
           name: `og:image`,
           content: image,
         },
+        {
+          name: `image`,
+          content: image
+        }
       ]
         .concat(
           keywords.length > 0
@@ -165,6 +170,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  coverImage: PropTypes.string
 }
 
 export default SEO

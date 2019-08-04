@@ -1,6 +1,6 @@
 {
   "name": "daudr-blog",
-  "private": true,
+  "private": false,
   "description": "Front end code for Daudr's blog",
   "version": "1.0.0",
   "author": "Michele Da Rin Fioretto <michele@daudr.me>",

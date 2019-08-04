@@ -173,6 +173,7 @@ workflows:
             - cypress/install
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'npm run develop' # start server before running tests
+          wait-on: 'http://localhost:8000'
 
       - build
 

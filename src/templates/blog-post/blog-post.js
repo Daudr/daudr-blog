@@ -40,6 +40,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         post={post}
         postSEO
         slug={slug}
+        coverImage={post.frontmatter.cover_image}
       />
       <Paper className={classes.root}>
         <h1 style={{ marginTop: 0 }}>{post.frontmatter.title}</h1>
@@ -144,6 +145,7 @@ export const pageQuery = graphql`
         description
         keywords
         tags
+        cover_image
       }
     }
   }

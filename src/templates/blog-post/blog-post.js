@@ -42,7 +42,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         slug={slug}
       />
       <Paper className={classes.root}>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ marginTop: 0 }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),

@@ -6,6 +6,7 @@ keywords: ["ci-cd", "gatsbyjs", "circleci", "firebase", "webdev"]
 cover_image: https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
 date: "2019-08-04T14:30:10.759Z"
 id: "ci-cd-from-zero-to-hero--0"
+series: "CI/CD From Zero to Hero"
 ---
 
 This article is the start of a series called **CI/CD From Zero to Hero** that'll explain how to start gaining confidence in the `Devops` field.

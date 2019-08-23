@@ -13,7 +13,7 @@ So you're building a new, phantasmagorical web site (let's say a brand new e-com
 ![Serve your Angular app right](https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Photo by [Alev Takil](https://unsplash.com/@alevtakil) on [Unsplash](https://unsplash.com)
 
-After a lot of research, you decided to use Angular as FE framework because you think it's the best fit for that e-commerce, but when you finally deploy it on production and you search it you don't find even if it's some time that's been published, what's going on?
+After a lot of research, you decided to use Angular as FE framework because you think it's the best fit for that e-commerce, but when you finally deploy it on production and you search it, you don't find even if it's some time that's been published, what's going on?
 
 Google recently updated its crawler to pre-render javascript Single Page Applications like Angular ones, but this technology doesn't always work well (and you need to know that not everybody uses Google to surf the Internet).
 
@@ -23,7 +23,7 @@ Fortunately, the Angular Team built a nice (after some initial troubles) tool th
 
 ### Setting things up
 
-Setting Angular Universal up is relatively easy, you just to type a single command in your terminal
+Setting Angular Universal up is relatively easy, you just have to type a single command in your terminal
 
 `ng add @nguniversal/express-engine --clientProject "your project that neeeds SSR"`
 
@@ -37,7 +37,7 @@ This little command generates some files in your `src/` folder:
 
 ### Verify if the SSR app works
 
-To verify if your brand new Server-Side rendered app will work type in your terminal
+To verify if your brand new Server-Side rendered app will work, type in your terminal
 
 ```bash
 npm run build:ssr
@@ -239,7 +239,7 @@ And that's all, you should see your app running on Google Cloud! 👌
 
 ### Using Firebase Cloud Functions
 
-In order to deploy our app using Firebase Cloud Functions we to need to init it and modify some files:
+In order to deploy our app using Firebase Cloud Functions we need to init it and modify some files:
 
 To init Firebase run
 

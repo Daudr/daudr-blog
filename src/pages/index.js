@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio/bio"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import ArticleCard from "../components/article-card/article-card"
@@ -26,7 +25,6 @@ export const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
       })}
-      <Bio />
     </Layout>
   )
 }

@@ -249,14 +249,14 @@ firebase init
 
 and select `hosting` and `functions`
 
-Then modify your `funtions/package.json` file:
+Then modify your `functions/package.json` file:
 
 ```json
 {
   "hosting": {
     // ...
     "rewrites": [
-      { "source": "**", "funtion": "ssr" }
+      { "source": "**", "function": "ssr" }
     ]
   },
     // ...

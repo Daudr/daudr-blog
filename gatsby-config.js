@@ -180,7 +180,6 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Daudr Blog's RSS",
-            match: "^/blog/",
           },
         ],
       },
@@ -191,5 +190,6 @@ module.exports = {
         shortname: process.env.DISQUS_SHORTNAME,
       },
     },
+    'gatsby-plugin-material-ui'
   ],
 }

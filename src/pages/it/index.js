@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
-import ArticleCard from "../components/article-card/article-card"
+import Layout from "../../components/layout/layout"
+import SEO from "../../components/seo/seo"
+import ArticleCard from "../../components/article-card/article-card"
 
-export const BlogIndex = ({ data, location }) => {
+export const ItalianBlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
@@ -29,7 +29,7 @@ export const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default ItalianBlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -38,7 +38,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { lang: { eq: null } } }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { lang: { eq: "it" } } }) {
       edges {
         node {
           excerpt

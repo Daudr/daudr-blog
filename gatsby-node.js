@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next,
+          next
         },
       })
 
@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next,
+          next
         },
       })
 

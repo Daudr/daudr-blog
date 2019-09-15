@@ -35,6 +35,8 @@ The result should be your `index.html`'s body looking like this:
 
 On the snippet above, you can see that Angular CLI has added the `nomodule` attribute to the es2015 polyfills tag. This attribute let the browsers download and execute the script only if it doesn't recognize the [module script web api](https://html.spec.whatwg.org/multipage/webappapis.html#module-script), this means that the browser is old 👌
 
+## What if my users don't use such old browsers?
+
 You might be wondering: all my users are with modern browsers, why would I have to wait for the CLI to produce es2015-polyfills.js that will never be in use? If you’re really thinking this, then you’re a happy developer. If you want to ignore ES2015 polyfills completely, then build your application running:
 
 `ng build --es5BrowserSupport=false`

@@ -5,7 +5,7 @@ import { rhythm } from "../../utils/typography"
 
 import { Header } from "../header/header"
 
-export const Layout = ({ location, title, children }) => {
+export const Layout = ({ location, title, children, setSelectedLanguage, defaultLang }) => {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ export const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <Header location={location} title={title} />
+      <Header location={location} title={title} setSelectedLanguage={setSelectedLanguage} defaultLang={defaultLang} />
       <main>{children}</main>
       <footer>
         <a

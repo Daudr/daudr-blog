@@ -28,6 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 tags
                 id
+                lang
               }
             }
           }
@@ -42,9 +43,12 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    const englishPosts = posts.filter(post => post.node.frontmatter.lang === null);
+    const italianPosts = posts.filter(post => post.node.frontmatter.lang === 'it');
+
+    englishPosts.forEach((post, index) => {
+      const previous = index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
+      const next = index === 0 ? null : englishPosts[index - 1].node
 
       createPage({
         path: post.node.fields.slug,
@@ -69,7 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Tag pages:
       let tags = []
       // Iterate through each post, putting all found tags into `tags`
-      each(posts, edge => {
+      each(englishPosts, edge => {
         if (get(edge, "node.frontmatter.tags")) {
           tags = tags.concat(edge.node.frontmatter.tags)
         }
@@ -87,6 +91,42 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+    })
+
+    italianPosts.forEach((post, index) => {
+      const previous = index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
+      const next = index === 0 ? null : italianPosts[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: blogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+
+      createPage({
+        path: `${post.node.fields.slug}amp/`,
+        component: ampBlogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+
+      // Tag pages:
+      let tags = []
+      // Iterate through each post, putting all found tags into `tags`
+      each(italianPosts, edge => {
+        if (get(edge, "node.frontmatter.tags")) {
+          tags = tags.concat(edge.node.frontmatter.tags)
+        }
+      })
+      // Eliminate duplicate tags
+      tags = uniq(tags)
 
       // Make italian tag pages
       tags.forEach(tag => {
@@ -98,6 +138,7 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+
     })
 
     return null

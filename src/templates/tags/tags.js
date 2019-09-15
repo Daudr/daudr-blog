@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 
 import { rhythm } from "../../utils/typography"
 
@@ -15,15 +15,28 @@ export const Tags = ({ pageContext, data }) => {
 
   const tagHeader = `#${tag} post${totalCount === 1 ? "" : "s"}`
 
+  const [selectedLanguage, setSelectedLanguage] = useState("en")
+
+  useEffect(() => {
+    if (selectedLanguage === "it") {
+      navigate(`/it/tags/${tag}`)
+    }
+  }, [selectedLanguage])
+
   return (
-    <Layout title={siteTitle} location={`/tags/${tag}`}>
+    <Layout
+      title={siteTitle}
+      location={`/tags/${tag}`}
+      defaultLang="US"
+      setSelectedLanguage={setSelectedLanguage}
+    >
       <h2
         style={{
           fontFamily: `'Anton', sans-serif`,
           fontWeight: `bold`,
           textTransform: `uppercase`,
-          letterSpacing: '3px',
-          color: `#ffffff`
+          letterSpacing: "3px",
+          color: `#ffffff`,
         }}
       >
         {tagHeader}
@@ -86,7 +99,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] }, lang: { eq: null }  } }
+      filter: { frontmatter: { tags: { in: [$tag] }, lang: { eq: null } } }
     ) {
       totalCount
       edges {

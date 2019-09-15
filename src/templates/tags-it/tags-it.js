@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, navigate } from "gatsby"
 
 import { rhythm } from "../../utils/typography"
 
@@ -15,15 +15,28 @@ export const ItalianTags = ({ pageContext, data }) => {
 
   const tagHeader = `Artiicoli su #${tag}`
 
+  const [selectedLanguage, setSelectedLanguage] = useState("it")
+
+  useEffect(() => {
+    if (selectedLanguage === "en") {
+      navigate(`/tags/${tag}`)
+    }
+  }, [selectedLanguage])
+
   return (
-    <Layout title={siteTitle} location={`/it/tags/${tag}`}>
+    <Layout
+      title={siteTitle}
+      location={`/it/tags/${tag}`}
+      defaultLang="IT"
+      setSelectedLanguage={setSelectedLanguage}
+    >
       <h2
         style={{
           fontFamily: `'Anton', sans-serif`,
           fontWeight: `bold`,
           textTransform: `uppercase`,
-          letterSpacing: '3px',
-          color: `#ffffff`
+          letterSpacing: "3px",
+          color: `#ffffff`,
         }}
       >
         {tagHeader}

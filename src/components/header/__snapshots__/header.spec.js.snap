@@ -11,6 +11,42 @@ exports[`Header renders correctly 1`] = `
   <div
     className="background-sky hero"
   />
+  <div
+    className="flag-select"
+    style={
+      Object {
+        "position": "absolute",
+        "right": "10px",
+      }
+    }
+  >
+    <div
+      className="flag-select "
+    >
+      <div
+        className="selected--flag--option "
+        onClick={[Function]}
+        onKeyUp={[Function]}
+        style={
+          Object {
+            "fontSize": "16px",
+          }
+        }
+        tabIndex="0"
+      >
+        <span
+          className="country-label"
+        >
+          
+        </span>
+        <span
+          className="arrow-down "
+        >
+          ▾
+        </span>
+      </div>
+    </div>
+  </div>
   <h1
     className="header-title"
     style={
@@ -23,7 +59,7 @@ exports[`Header renders correctly 1`] = `
     }
   >
     <a
-      href="/"
+      href="/it"
       style={
         Object {
           "boxShadow": "none",

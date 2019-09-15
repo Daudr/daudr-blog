@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tags renders correctly 1`] = `
+exports[`ItalianTags renders correctly 1`] = `
 <div
   style={
     Object {
@@ -54,7 +54,7 @@ exports[`Tags renders correctly 1`] = `
             }
           >
             <img
-              alt="US"
+              alt="IT"
               src="test-file-stub"
             />
           </span>
@@ -78,7 +78,7 @@ exports[`Tags renders correctly 1`] = `
       }
     >
       <a
-        href="/"
+        href="/it"
         style={
           Object {
             "boxShadow": "none",
@@ -103,7 +103,7 @@ exports[`Tags renders correctly 1`] = `
         }
       }
     >
-      #angular posts
+      Artiicoli su #angular
     </h2>
     <a
       href="/ngfor-done-right/"
@@ -193,9 +193,9 @@ exports[`Tags renders correctly 1`] = `
       }
     >
       <a
-        href="/tags"
+        href="/it/tags"
       >
-        All tags
+        Tutti i Tag
       </a>
     </div>
     <div
@@ -287,13 +287,25 @@ exports[`Tags renders correctly 1`] = `
       </div>
       <div>
         <div>
-          Written by 
+          Scritto da 
           <strong>
             Michele Da Rin Fioretto
           </strong>
-           a freelance web developer that works in Italy and in the world. 
+           uno sviluppatore 
+          <strong>
+            Web
+          </strong>
+           che lavora in 
+          <strong>
+            Italia
+          </strong>
+           e nel 
+          <strong>
+            Mondo
+          </strong>
+           
           <br />
-          His main area of expertise are 
+          I suoi punti di forza sono 
           <strong>
             Angular
           </strong>
@@ -311,6 +323,7 @@ exports[`Tags renders correctly 1`] = `
           <strong>
             Serverless Architectures
           </strong>
+           e non solo.
           <div
             style={
               Object {
@@ -318,7 +331,7 @@ exports[`Tags renders correctly 1`] = `
               }
             }
           />
-          You can also find him on
+          Puoi trovarlo anche su
         </div>
         <a
           href="https://www.facebook.com/micheleedarin"

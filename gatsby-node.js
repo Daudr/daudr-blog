@@ -10,6 +10,8 @@ exports.createPages = ({ graphql, actions }) => {
     `./src/templates/blog-post-amp/blog-post.amp.js`
   )
   const tagTemplate = path.resolve(`./src/templates/tags/tags.js`)
+  const italianTagTemplate = path.resolve(`./src/templates/tags-it/tags-it.js`)
+
   return graphql(
     `
       {
@@ -50,7 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next
+          next,
         },
       })
 
@@ -60,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next
+          next,
         },
       })
 
@@ -85,6 +87,17 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+
+      // Make italian tag pages
+      tags.forEach(tag => {
+        createPage({
+          path: `/it/tags/${kebabCase(tag)}/`,
+          component: italianTagTemplate,
+          context: {
+            tag,
+          },
+        })
+      })
     })
 
     return null
@@ -104,16 +117,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        "@components": path.resolve(__dirname, "src/components"),
-        "@pages": path.resolve(__dirname, "src/pages"),
-        "@templates": path.resolve(__dirname, "src/templates"),
-        "@utils": path.resolve(__dirname, "src/utils"),
-        "@mocks": path.resolve(__dirname, "__mocks__"),
-      },
-    },
-  })
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  // Check if the page is a localized 404
+  if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
+    const oldPage = { ...page }
+    // Get the language code from the path, and match all paths
+    // starting with this code (apart from other valid paths)
+    const langCode = page.path.split(`/`)[1]
+    page.matchPath = `/${langCode}/*`
+    // Recreate the modified page
+    deletePage(oldPage)
+    createPage(page)
+  }
 }

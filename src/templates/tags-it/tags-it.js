@@ -8,15 +8,15 @@ import Bio from "../../components/bio/bio"
 import Layout from "../../components/layout/layout"
 import ArticleCard from "../../components/article-card/article-card"
 
-export const Tags = ({ pageContext, data }) => {
+export const ItalianTags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark
   const siteTitle = data.site.siteMetadata.title
 
-  const tagHeader = `#${tag} post${totalCount === 1 ? "" : "s"}`
+  const tagHeader = `Artiicoli su #${tag}`
 
   return (
-    <Layout title={siteTitle} location={`/tags/${tag}`}>
+    <Layout title={siteTitle} location={`/it/tags/${tag}`}>
       <h2
         style={{
           fontFamily: `'Anton', sans-serif`,
@@ -34,7 +34,7 @@ export const Tags = ({ pageContext, data }) => {
       })}
 
       <div style={{ marginBottom: rhythm(2.5) }}>
-        <Link to="/tags">All tags</Link>
+        <Link to="/it/tags">Tutti i Tag</Link>
       </div>
 
       <Bio />
@@ -42,7 +42,7 @@ export const Tags = ({ pageContext, data }) => {
   )
 }
 
-Tags.propTypes = {
+ItalianTags.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -53,7 +53,6 @@ Tags.propTypes = {
       }).isRequired,
     }).isRequired,
     allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -74,10 +73,10 @@ Tags.propTypes = {
   }),
 }
 
-export default Tags
+export default ItalianTags
 
 export const pageQuery = graphql`
-  query BlogPostsByTag($tag: String) {
+  query ItalianBlogPostsByTag($tag: String) {
     site {
       siteMetadata {
         title
@@ -86,7 +85,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] }, lang: { eq: null }  } }
+      filter: { frontmatter: { tags: { in: [$tag] }, lang: { eq: "it" } } }
     ) {
       totalCount
       edges {

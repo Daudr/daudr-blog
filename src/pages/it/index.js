@@ -6,19 +6,24 @@ import SEO from "../../components/seo/seo"
 import ArticleCard from "../../components/article-card/article-card"
 
 export const ItalianBlogIndex = ({ data, location }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState('it');
+  const [selectedLanguage, setSelectedLanguage] = useState("it")
 
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   useEffect(() => {
-    if (selectedLanguage === 'en') {
-      navigate('/');
+    if (selectedLanguage === "en") {
+      navigate("/")
     }
   }, [selectedLanguage])
 
   return (
-    <Layout location={location} title={siteTitle} defaultLang="IT" setSelectedLanguage={setSelectedLanguage}>
+    <Layout
+      location={location}
+      title={siteTitle}
+      defaultLang="IT"
+      setSelectedLanguage={setSelectedLanguage}
+    >
       <SEO
         title="Tutti i post"
         keywords={[
@@ -46,7 +51,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { lang: { eq: "it" } } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { lang: { eq: "it" } } }
+    ) {
       edges {
         node {
           excerpt

@@ -50,7 +50,7 @@ export const ItalianTags = ({ pageContext, data }) => {
         <Link to="/it/tags">Tutti i Tag</Link>
       </div>
 
-      <Bio />
+      <Bio isIT={true} />
     </Layout>
   )
 }

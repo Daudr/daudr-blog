@@ -103,7 +103,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         <EmailSignup />
       </Paper>
 
-      <Bio />
+      <Bio isIT={defaultCountry === `IT`} />
 
       <ul
         style={{

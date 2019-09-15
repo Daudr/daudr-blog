@@ -20,9 +20,9 @@ export const Tag = ({ tag, count, isIT = false }) => {
         color: `inherit`,
         fontFamily: `'Anton', sans-serif`,
         textTransform: `uppercase`,
-        fontWeight: `bold`
+        fontWeight: `bold`,
       }}
-      to={`${isIT ? '/it' : '' }/tags/${kebabCase(tag)}`}
+      to={`${isIT ? "/it" : ""}/tags/${kebabCase(tag)}`}
     >
       <div
         style={{
@@ -30,7 +30,7 @@ export const Tag = ({ tag, count, isIT = false }) => {
           padding: `5px 10px`,
           border: hover ? `1px solid black` : `1px dashed black`,
           margin: `5px`,
-          backgroundColor: `#FFFFFF`
+          backgroundColor: `#FFFFFF`,
         }}
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}

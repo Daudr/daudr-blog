@@ -90,7 +90,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000, filter: { frontmatter: { lang: { eq: null } } }) {
+    allMarkdownRemark(
+      limit: 2000
+      filter: { frontmatter: { lang: { eq: null } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

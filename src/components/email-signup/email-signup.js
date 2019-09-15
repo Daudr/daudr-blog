@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from "@material-ui/core/FormControl"
+import FormHelperText from "@material-ui/core/FormHelperText"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import addToMailchimp from "gatsby-plugin-mailchimp"
@@ -10,8 +10,8 @@ import { rhythm } from "../../utils/typography"
 export const EmailSignup = () => {
   const [email, setEmail] = useState("")
   const [data, setData] = useState({})
-  const [invalidEmail, setInvalidEmail] = useState(false);
-  const [emailText, setEmailText] = useState('');
+  const [invalidEmail, setInvalidEmail] = useState(false)
+  const [emailText, setEmailText] = useState("")
   const [errorText, setErrorText] = useState(``)
 
   const handleClick = event => {
@@ -25,19 +25,19 @@ export const EmailSignup = () => {
         setErrorText(``)
         setInvalidEmail(false)
       } else {
-        setInvalidEmail(true);
+        setInvalidEmail(true)
         setErrorText(`Some error occurred whilst signing you up, please retry`)
       }
     })
   }
 
   const checkMail = email => {
-    const regexp = /\S+@\S+\.\S+/;
-    const test = regexp.test(email);
-    setInvalidEmail(!test);
-    setEmail(email);
+    const regexp = /\S+@\S+\.\S+/
+    const test = regexp.test(email)
+    setInvalidEmail(!test)
+    setEmail(email)
 
-    setErrorText(test ? ``: `Invalid email`);
+    setErrorText(test ? `` : `Invalid email`)
 
     if (data) {
       setEmailText(``)
@@ -75,7 +75,9 @@ export const EmailSignup = () => {
             onChange={event => checkMail(event.target.value)}
             data-cy="email-input"
           />
-          <FormHelperText data-cy="error-text" hidden={!invalidEmail}>{errorText}</FormHelperText>
+          <FormHelperText data-cy="error-text" hidden={!invalidEmail}>
+            {errorText}
+          </FormHelperText>
         </FormControl>
         <Button
           onClick={handleClick}

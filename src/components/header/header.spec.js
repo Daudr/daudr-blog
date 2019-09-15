@@ -3,7 +3,7 @@ import renderer from "react-test-renderer"
 
 import { Header } from "./header"
 
-import { location } from '../../../__mocks__/location.mock'
+import { location } from "../../../__mocks__/location.mock"
 
 describe("Header", () => {
   it("renders correctly", () => {

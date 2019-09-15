@@ -31,11 +31,12 @@ export default function HTML(props) {
             `,
           }}
         />
-        <script type="text/javascript"
+        <script
+          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="0e198b33-5bc6-4389-a18d-8cb4f013b52d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
-          }}>
-        </script>
+          }}
+        ></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

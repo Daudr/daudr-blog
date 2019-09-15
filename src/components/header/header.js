@@ -8,11 +8,11 @@ import "react-flags-select/css/react-flags-select.css"
 import "./header.css"
 
 export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
-  const flagsRef = useRef(null);
+  const flagsRef = useRef(null)
 
   useEffect(() => {
-    flagsRef.current.updateSelected(defaultLang);
-  }, [defaultLang]);
+    flagsRef.current.updateSelected(defaultLang)
+  }, [defaultLang])
 
   const header = (
     <h1
@@ -29,16 +29,16 @@ export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
           textDecoration: `none`,
           color: `inherit`,
         }}
-        to={defaultLang === 'US' ? `/` : `/it`}
+        to={defaultLang === "US" ? `/` : `/it`}
       >
         {title}
       </Link>
     </h1>
   )
 
-  const selectLanguage = (country) => {
-    const language = country === 'IT' ? 'it' : 'en';
-    setSelectedLanguage(language);
+  const selectLanguage = country => {
+    const language = country === "IT" ? "it" : "en"
+    setSelectedLanguage(language)
   }
 
   return (

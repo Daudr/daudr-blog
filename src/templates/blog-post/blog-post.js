@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const [defaultCountry, setDefaultCountry] = useState();
+  const [selectedLanguage, setSelectedLanguage] = useState()
+  const [defaultCountry, setDefaultCountry] = useState()
 
   const post = data.markdownRemark
   const siteUrl = data.site.siteMetadata.siteUrl
@@ -35,22 +35,27 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
   const classes = useStyles()
 
   useEffect(() => {
-    const isIT = window.location.pathname.match(/\/it\//) !== null;
+    const isIT = window.location.pathname.match(/\/it\//) !== null
 
-    setDefaultCountry(isIT ? 'IT' : 'US');
-    setSelectedLanguage(isIT ? 'it' : 'en');
+    setDefaultCountry(isIT ? "IT" : "US")
+    setSelectedLanguage(isIT ? "it" : "en")
   }, [defaultCountry])
 
   useEffect(() => {
-    if (selectedLanguage === 'it' && !slug.match(/it\//)) {
-      navigate(`/it${slug}`);
-    } else if (selectedLanguage === 'en') {
-      navigate(slug.replace('/it', ''));
+    if (selectedLanguage === "it" && !slug.match(/it\//)) {
+      navigate(`/it${slug}`)
+    } else if (selectedLanguage === "en") {
+      navigate(slug.replace("/it", ""))
     }
   }, [selectedLanguage])
 
   return (
-    <Layout location={location} title={siteTitle} setSelectedLanguage={setSelectedLanguage} defaultLang={defaultCountry}>
+    <Layout
+      location={location}
+      title={siteTitle}
+      setSelectedLanguage={setSelectedLanguage}
+      defaultLang={defaultCountry}
+    >
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

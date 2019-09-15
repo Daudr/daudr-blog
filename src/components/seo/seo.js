@@ -137,8 +137,8 @@ export const SEO = ({
         },
         {
           name: `image`,
-          content: image
-        }
+          content: image,
+        },
       ]
         .concat(
           keywords.length > 0
@@ -170,7 +170,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-  coverImage: PropTypes.string
+  coverImage: PropTypes.string,
 }
 
 export default SEO

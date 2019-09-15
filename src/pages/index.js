@@ -6,19 +6,24 @@ import SEO from "../components/seo/seo"
 import ArticleCard from "../components/article-card/article-card"
 
 export const BlogIndex = ({ data, location }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [selectedLanguage, setSelectedLanguage] = useState("en")
 
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   useEffect(() => {
-    if (selectedLanguage === 'it') {
-      navigate('/it');
+    if (selectedLanguage === "it") {
+      navigate("/it")
     }
   }, [selectedLanguage])
 
   return (
-    <Layout location={location} title={siteTitle} setSelectedLanguage={setSelectedLanguage} defaultLang="US">
+    <Layout
+      location={location}
+      title={siteTitle}
+      setSelectedLanguage={setSelectedLanguage}
+      defaultLang="US"
+    >
       <SEO
         title="All Articles"
         keywords={[

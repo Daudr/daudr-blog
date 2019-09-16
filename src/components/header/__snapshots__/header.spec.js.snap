@@ -15,7 +15,7 @@ exports[`Header renders correctly 1`] = `
     className="flag-select"
     style={
       Object {
-        "position": "absolute",
+        "position": "fixed",
         "right": "10px",
       }
     }

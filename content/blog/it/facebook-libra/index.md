@@ -22,12 +22,12 @@ La missione di Libra è semplice e chiara:
 Libra è una **stablecoin**, questo significa, a differenza del **Bitcoin**, non ha volatilità ma il suo valore è mantenuto stabile mediante una riserva di asset reali.
 Con Libra, Facebook creerà anche una nuova associazione, la **Libra Association**, con lo scopo di regolare la crescita della stessa Libra. Questi sono i 27 membri fondatori:
 
-> Pagamenti: **Mastercard**, **PayPal**, **PayU (Naspers' fintech arm)**, **Stripe**, **Visa**
-> Tecnologia e negozi: **Booking Holdings**, **eBay**, **Facebook/Calibra**, **Farfetch**, **Lyft**, **MercadoPago**, **Spotify AB**, **Uber Technologies, Inc.**
-> Telecomunicazioni: **Iliad**, **Vodafone Group**
-> Blockchain: **Anchorage**, **Bison Trails**, **Coinbase, Inc.**, **Xapo Holdings Limited**
-> Capitale di rischio: **Andreessen Horowitz**, **Breakthrough Initiatives**, **Ribbit Capital**, **Thrive Capital**, **Union Square Ventures**
-> Organizzazione senza scopo di lucro e istituzioni accademiche: **Creative Destruction Lab**, **Kiva**, **Mercy Corps**, **Women's World Banking**
+> Pagamenti: **Mastercard**, **PayPal**, **PayU (Naspers' fintech arm)**, **Stripe**, **Visa**  
+> Tecnologia e negozi: **Booking Holdings**, **eBay**, **Facebook/Calibra**, **Farfetch**, **Lyft**, **MercadoPago**, **Spotify AB**, **Uber Technologies, Inc.**  
+> Telecomunicazioni: **Iliad**, **Vodafone Group**  
+> Blockchain: **Anchorage**, **Bison Trails**, **Coinbase, Inc.**, **Xapo Holdings Limited**  
+> Capitale di rischio: **Andreessen Horowitz**, **Breakthrough Initiatives**, **Ribbit Capital**, **Thrive Capital**, **Union Square Ventures**  
+> Organizzazione senza scopo di lucro e istituzioni accademiche: **Creative Destruction Lab**, **Kiva**, **Mercy Corps**, **Women's World Banking**  
 
 Facebook proverà a estendere questa lista fino ad un totale di 100 membri prima del rilascio ufficiale, pianificato per la prima metà del 2020.
 

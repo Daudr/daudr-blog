@@ -50,7 +50,7 @@ export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
       <div className="background-sky hero"></div>
       <div
         className="flag-select"
-        style={{ position: `absolute`, right: `10px` }}
+        style={{ position: `fixed`, right: `10px` }}
       >
         <ReactFlagsSelect
           defaultCountry={defaultLang}

@@ -67,8 +67,8 @@ This command builds and runs the client utilizing `cargo` (`Rust`'s package mana
 Once the client connects to a node on the `testnet`, you will see the following output. To quit the client at any time, use the `quit` command.
 
 ```bash
-usage: <command> <args> 
-Use the following commands: 
+usage: <command> <args>
+Use the following commands:
 account | a   Account operations
 query | q   Query operations
 transfer | transferb | t | tb
@@ -83,7 +83,7 @@ Please, input commands:
 libra%
 ```
 
-## Troubleshoot
+## Troubleshoot Build
 
 If you are experiencing build failures, try to remove the `cargo lock` file from the libra directory:
 
@@ -253,6 +253,6 @@ libra% query balance 1
 Balance is: 60
 ```
 
-## Congratulations!
+## Congratulations! 🎉🎉🎉
 
 You have successfully executed your transaction on the Libra `testnet` and transferred 10 **Libra Coins**!

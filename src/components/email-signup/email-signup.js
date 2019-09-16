@@ -7,7 +7,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 
 import { rhythm } from "../../utils/typography"
 
-export const EmailSignup = () => {
+export const EmailSignup = ({isIT}) => {
   const [email, setEmail] = useState("")
   const [data, setData] = useState({})
   const [invalidEmail, setInvalidEmail] = useState(false)
@@ -21,12 +21,12 @@ export const EmailSignup = () => {
       setData(data)
 
       if (data.result === `success`) {
-        setEmailText(`Signed in succefully!`)
+        setEmailText(isIT ? `Registrato correttamente!` : `Signed in succefully!`)
         setErrorText(``)
         setInvalidEmail(false)
       } else {
         setInvalidEmail(true)
-        setErrorText(`Some error occurred whilst signing you up, please retry`)
+        setErrorText(isIT ? `C'è stato un errore nella registrazione, riprova` : `Some error occurred whilst signing you up, please retry`)
       }
     })
   }
@@ -37,7 +37,7 @@ export const EmailSignup = () => {
     setInvalidEmail(!test)
     setEmail(email)
 
-    setErrorText(test ? `` : `Invalid email`)
+    setErrorText(test ? `` : (isIT ? `Email non valida` : `Invalid email`))
 
     if (data) {
       setEmailText(``)
@@ -47,10 +47,10 @@ export const EmailSignup = () => {
   return (
     <div style={{ margin: rhythm(1), textAlign: `center` }}>
       <p style={{ marginBottom: 0 }}>
-        Do you want to be updated when new articles are being published?
+        { isIT ? `Vuoi rimanere sempre aggiornato sulla pubblicazione di nuovi articoli?` : `Do you want to be updated when new articles are being published?` }
       </p>
       <p style={{ marginBottom: rhythm(1 / 2) }}>
-        Join the newsletter!{" "}
+        {isIT ? `Registrati alla newsletter!` : `Join the newsletter!`}{" "}
         <span role="img" aria-label="sunglasses smile">
           😎
         </span>
@@ -87,7 +87,7 @@ export const EmailSignup = () => {
           style={{ marginLeft: rhythm(1 / 2), height: `56px` }}
           data-cy="email-button"
         >
-          Add me!
+          {isIT ? `Aggiungimi!` : `Add me!`}
         </Button>
       </form>
     </div>

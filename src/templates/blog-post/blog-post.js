@@ -100,7 +100,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 
         <ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
-        <EmailSignup />
+        <EmailSignup isIT={defaultCountry === `IT`} />
       </Paper>
 
       <Bio isIT={defaultCountry === `IT`} />

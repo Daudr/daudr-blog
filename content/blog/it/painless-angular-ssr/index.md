@@ -11,7 +11,7 @@ lang: "it"
 
 Quindi stai sviluppando un nuovo, fantastico sito (magari un e-commerce per quei libri sconosciuti ma che a te piacciono tanto) e hai bisogno che i tuoi futuri clienti trovino questo sito nella prima pagina di ricerca dei motori di ricerca.
 
-[Servi bene la tua app Angular](https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
+![Servi bene la tua app Angular](https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Foto di [Alev Takil](https://unsplash.com/@alevtakil) su [Unsplash](https://unsplash.com)
 
 Dopo una ricerca estenuante, hai finalmente deciso di usare Angular per il frontend della tua nuova applicazione perché sia la scelta migliore per il nuovo e-commerce che vuoi sviluppare. Ma quando, finalmente, arrivi a rilasciare in produzione l'App e provi a cercalo nei vari motori di ricerca non riesci a trovarlo anche se è già passato un po' di tempo dalla pubblicazione, cosa sta succedendo?

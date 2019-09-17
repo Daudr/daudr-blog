@@ -1,5 +1,5 @@
 ---
-title: "Write your first transaction on the Libra Network"
+title: "Scrivi la tua prima transazione nel Network di Libra"
 description: Dopo il rilascio della testnet del network di Libra, andiamo a capire meglio come scrivere una transazione su di esso
 tags: ['facebook', 'libra', 'blockchain', 'cryptomoneta', 'codice', 'guida']
 keywords: ['facebook', 'libra', 'blockchain', 'cryptomoneta', 'codice', 'guida']

@@ -1,5 +1,5 @@
 ---
-title: "ngFor Done Right"
+title: "ngFor Fatto Bene"
 description: Quando stiamo sviluppando dei template che usano liste, ngFor ci salva un sacco di tempo, ma potrebbe aver effetti disastrosi se usato male. Leggi questo articolo per avere delle dritte su come usarlo al meglio 🤩
 tags: ["angular", "codice", "guida", "frontend", "performance"]
 keywords: ["angular", "codice", "guida", "frontend", "performance", "ngFor", "trackBy"]

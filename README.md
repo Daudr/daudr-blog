@@ -3,6 +3,8 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/Daudr/daudr-blog/master.svg?label=CircleCI%20PROD)
 ![CircleCI](https://img.shields.io/circleci/build/github/Daudr/daudr-blog/develop.svg?label=CircleCI%20TEST)
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FDaudr%2Fdaudr-blog.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FDaudr%2Fdaudr-blog?ref=badge_large)
+
 ## 🚀 Quick start
 
 1. **Clone this repo**
@@ -85,6 +87,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
+
+## 🎓 Learning Gatsby
 
 13. **`.env.example`**: Contains the example tokens used by `gatsby-config.js`
 

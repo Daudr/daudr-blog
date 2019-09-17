@@ -11,7 +11,7 @@ lang: "it"
 
 L'altro giorno ho pubblicato [un articolo](https://blog.daudr.me/it/facebook-libra) che parlava del network di **Libra**, oggi vediamo come sviluppare una transazione.
 
-![Logo Libra](libra-logo.png)
+![Logo Libra](../../libra-simple-smart-contract/libra-logo.png)
 > Logo Libra
 
 ## Installare la testnet in locale

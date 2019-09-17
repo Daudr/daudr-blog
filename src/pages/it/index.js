@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react"
 import { graphql, navigate } from "gatsby"
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
-import ArticleCard from "../components/article-card/article-card"
+import Layout from "../../components/layout/layout"
+import SEO from "../../components/seo/seo"
+import ArticleCard from "../../components/article-card/article-card"
 
-export const BlogIndex = ({ data, location }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en")
+export const ItalianBlogIndex = ({ data, location }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState("it")
 
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   useEffect(() => {
-    if (selectedLanguage === "it") {
-      navigate("/it")
+    if (selectedLanguage === "en") {
+      navigate("/")
     }
   }, [selectedLanguage])
 
@@ -21,11 +21,11 @@ export const BlogIndex = ({ data, location }) => {
     <Layout
       location={location}
       title={siteTitle}
+      defaultLang="IT"
       setSelectedLanguage={setSelectedLanguage}
-      defaultLang="US"
     >
       <SEO
-        title="All Articles"
+        title="Tutti i post"
         keywords={[
           `blog`,
           `gatsby`,
@@ -42,7 +42,7 @@ export const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default ItalianBlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { lang: { eq: null } } }
+      filter: { frontmatter: { lang: { eq: "it" } } }
     ) {
       edges {
         node {

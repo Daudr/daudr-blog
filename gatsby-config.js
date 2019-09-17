@@ -180,7 +180,6 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "Daudr Blog's RSS",
-            match: "^/blog/",
           },
         ],
       },
@@ -191,5 +190,19 @@ module.exports = {
         shortname: process.env.DISQUS_SHORTNAME,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
+    'gatsby-plugin-material-ui'
   ],
 }

@@ -25,7 +25,9 @@ Fortunately, the Angular Team built a nice (after some initial troubles) tool th
 
 Setting Angular Universal up is relatively easy, you just have to type a single command in your terminal
 
-`ng add @nguniversal/express-engine --clientProject "your project that neeeds SSR"`
+```bash
+ng add @nguniversal/express-engine --clientProject "your project that neeeds SSR"`
+```
 
 This little command generates some files in your `src/` folder:
 
@@ -202,7 +204,7 @@ Firebase uses Websockets and XHR not included in Angular that we need to polyfil
 npm install ws xhr2 bufferutil utf-8-validate -D
 ```
 
-and we add these two new lines to our `server.ts` files:
+and we add these two new lines to our `server.ts` file:
 
 ```typescript
 (global as any).WebSocket = require('ws');
@@ -249,23 +251,25 @@ firebase init
 
 and select `hosting` and `functions`
 
-Then modify your `funtions/package.json` file:
+Then modify your `functions/package.json` file:
 
 ```json
 {
   "hosting": {
     // ...
     "rewrites": [
-      { "source": "**", "funtion": "ssr" }
+      { "source": "**", "function": "ssr" }
     ]
   },
     // ...
 }
 ```
 
-Remove your express listener in `server.ts`:
+Export your const `app` and remove your express listener in `server.ts`:
 
 ```typescript
+export const app = express();
+
 // Start up the Node server
 // app.listen(PORT, () => {
 //   console.log(`Node Express server listening on http://localhost:${PORT}`);
@@ -293,7 +297,7 @@ cd functions
 npm install fs-extra --save
 ```
 
-The Firebase function needs to access our built app, so let's create a simple node script called `cp-angular,js` that copies our app in the `functions` folder:
+The Firebase function needs to access our built app, so let's create a simple node script called `cp-angular.js` that copies our app in the `functions` folder:
 
 ```javascript
 const fs = require('fs-extra');

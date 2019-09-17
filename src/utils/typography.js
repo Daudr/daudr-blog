@@ -10,11 +10,11 @@ Wordpress2016.overrideThemeStyles = () => {
       marginLeft: `-1rem`,
     },
     ul: {
-      marginLeft: `1.75rem !important`
+      marginLeft: `1.75rem !important`,
     },
     ol: {
-      marginLeft: `1.75rem !important`
-    }
+      marginLeft: `1.75rem !important`,
+    },
   }
 }
 

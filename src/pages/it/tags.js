@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 
 // Components
 import { graphql, navigate } from "gatsby"
-import SEO from "../components/seo/seo"
-import Layout from "../components/layout/layout"
-import Tag from "../components/tag/tag"
+import SEO from "../../components/seo/seo"
+import Layout from "../../components/layout/layout"
+import Tag from "../../components/tag/tag"
 
 export const TagsPage = ({
   data: {
@@ -15,19 +15,19 @@ export const TagsPage = ({
     },
   },
 }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en")
+  const [selectedLanguage, setSelectedLanguage] = useState("it")
 
   useEffect(() => {
-    if (selectedLanguage === "it") {
-      navigate("/it/tags/")
+    if (selectedLanguage === "en") {
+      navigate("/tags/")
     }
   }, [selectedLanguage])
 
   return (
     <Layout
-      location="/tags"
+      location="/it/tags"
       title={title}
-      defaultLang="US"
+      defaultLang="IT"
       setSelectedLanguage={setSelectedLanguage}
     >
       <SEO
@@ -54,7 +54,11 @@ export const TagsPage = ({
               key={tag.fieldValue}
               style={{ listStyle: "none", maxWidth: "50%" }}
             >
-              <Tag tag={tag.fieldValue} count={tag.totalCount}></Tag>
+              <Tag
+                tag={tag.fieldValue}
+                count={tag.totalCount}
+                isIT={true}
+              ></Tag>
             </li>
           ))}
         </ul>
@@ -92,7 +96,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 2000
-      filter: { frontmatter: { lang: { eq: null } } }
+      filter: { frontmatter: { lang: { eq: "it" } } }
     ) {
       group(field: frontmatter___tags) {
         fieldValue

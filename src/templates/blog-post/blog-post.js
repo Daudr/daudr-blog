@@ -1,5 +1,5 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { Link, graphql, navigate } from "gatsby"
 
 import Disqus from "gatsby-plugin-disqus"
 
@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState()
+  const [defaultCountry, setDefaultCountry] = useState()
+
   const post = data.markdownRemark
   const siteUrl = data.site.siteMetadata.siteUrl
   const siteTitle = data.site.siteMetadata.title
@@ -31,8 +34,28 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   const classes = useStyles()
 
+  useEffect(() => {
+    const isIT = window.location.pathname.match(/\/it\//) !== null
+
+    setDefaultCountry(isIT ? "IT" : "US")
+    setSelectedLanguage(isIT ? "it" : "en")
+  }, [defaultCountry])
+
+  useEffect(() => {
+    if (selectedLanguage === "it" && !slug.match(/it\//)) {
+      navigate(`/it${slug}`)
+    } else if (selectedLanguage === "en") {
+      navigate(slug.replace("/it", ""))
+    }
+  }, [selectedLanguage])
+
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout
+      location={location}
+      title={siteTitle}
+      setSelectedLanguage={setSelectedLanguage}
+      defaultLang={defaultCountry}
+    >
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -77,10 +100,10 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 
         <ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
-        <EmailSignup />
+        <EmailSignup isIT={defaultCountry === `IT`} />
       </Paper>
 
-      <Bio />
+      <Bio isIT={defaultCountry === `IT`} />
 
       <ul
         style={{

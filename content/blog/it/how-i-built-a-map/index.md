@@ -1,40 +1,39 @@
 ---
-title: "How I Built an Interactive Map from Scratch"
-description: The other day I needed to complete a task for a client, this task consisted in creating an interactive map based on a static SVG. In this article I'll explain how I accomplished the job 👌
-tags: ["angular", "code", "guide", "frontend", "lib"]
-keywords: ["angular", "code", "guide", "frontend", "lib"]
+title: "Come ho sviluppato una mappa interattiva da zero"
+description: L'altro giorno dovevo completare un task per un cliente, questo task consisteca nel creare una mappa interattiva partendo da un SVG statico. In questo artivolo spiegherò come riuscito a fare il lavoro 👌
+tags: ["angular", "codice", "guida", "frontend", "libreria"]
+keywords: ["angular", "codice", "guida", "frontend", "libreria"]
 cover_image: https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80
 date: "2019-07-29T09:27:10.759Z"
-id: "how-i-built-a-map"
+id: "it/how-i-built-a-map"
+lang: "it"
 ---
 
-The other day I needed to complete a task for a client, this task consisted of creating an interactive map based on a static SVG. In this article, I'll explain how I accomplished the job 👌
+L'altro giorno dovevo completare un task per un cliente, questo task consisteca nel creare una mappa interattiva partendo da un SVG statico. In questo artivolo spiegherò come riuscito a fare il lavoro 👌
 
-![Build your map](https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80)
-> Photo by [Andrew Stutesman](https://unsplash.com/@drewmark) on [Unsplash](https://unsplash.com/)
+![Costruisci la tua mappa](https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80)
+> Foto di [Andrew Stutesman](https://unsplash.com/@drewmark) su [Unsplash](https://unsplash.com/)
 
-## First things first
+## Prima di tutto
 
-The problem was that the map used wasn't interactive at all, to show the selected regions you needed to add CSS classes, and there could be only one selected region at one time.
-So I searched the Internet for maybe one **angular** library that could fit my needs, but, unfortunately, without results 😢
+Il problema era che la mappa usata fino a questo momento non era per niente interattiva, per mostrare le regioni selezionate dovevi aggiungere delle classi CSS che modificavano l'immagine visualizzata, e non c'era la possibilità di avere più regioni selezionate allo stesso tempo.
+Così ho cercato sul web se già esistesse una libreria **Angular** che servisse al mio scopo ma, ahimè, con nessun risulato 😥
 
-## Let's create a new Angular lib
+## Creaiamo una nuova libreria Angular
 
-So I said to myself: *Why not create a new library yourself?* and that was it, I opened up my terminal and I typed
+Così mi sono detto: *Perché non ti crei una nuova libreria da solo?* e così fu: ho aperto il mio terminale e ho scritto
 
-`ng new lib @daudr/interactive-italy`
+`ng new lib @daudr/interactive-map`
 
-(**Yes, I started this project with only Italy in mind, but interchangeable maps are coming, stay tuned!** 😉)
+### Creiamo il componente principale
 
-### Create the main component
+Ho iniziato creando il componente principale della libreria, `interactive-map.component.ts`, ma cosa fa davvero questo componente?
+La risposta è più semplice di quanto credi, per prima cosa ho dovuto trovare la giusta immagine SVG, e non essendo particolarmente portato per il disegno ho deciso di cercare su internet se ci fosse qualcosa facente al caso mio e ho trovato giusto quello che cercavo:
 
-So I started creating the main component of the library, `interactive-italy.component.ts`, but what's really is this component?
-The answer is simpler than you think, firstly I had to find the right SVG image, and being a noob in all of that I decided to look upon the Internet and I found just what I needed:
+![Mappa dell'Italia con le regioni](https://upload.wikimedia.org/wikipedia/commons/9/9b/Italy_map_with_regions.svg)
+> Grazie Wikimedia ❤
 
-![Italy map with regions](https://upload.wikimedia.org/wikipedia/commons/9/9b/Italy_map_with_regions.svg)
-> Thanks Wikimedia ❤
-
-The only problem was the map wasn't interactive.
+L'unico problema è che la mappa non era ancora interattiva.
 
 ```html
 <svg
@@ -51,12 +50,12 @@ The only problem was the map wasn't interactive.
 </svg>
 ```
 
-It's all here, just that.
+è tutto qui, davvero.
 
-### Create the data
+### Creiamo i dati
 
-But let's find out what powers it:
-The `regions` object represents an array that contains all the regions of the map as SVG's paths
+Capiamo cosa compone il nostro componente:
+La variabile `regions` rappresente l'array delle regioni formattate in path SVG
 
 ```typescript
 export const REGIONS: Region[] = [
@@ -74,12 +73,12 @@ export const REGIONS: Region[] = [
 ]
 ```
 
-### And then comes the logic behind all
+### E dopo venne la logica dietro tutto
 
-If we add some logic we have our full component
+Se aggiungiamo la logica, ci troviamo con il nostro componente finito:
 
 ```typescript
-export class InteractiveItalyComponent {
+export class InteractiveMapComponent {
   public regions = REGIONS;
   public selectedRegions: string[] = [];
 
@@ -94,24 +93,26 @@ export class InteractiveItalyComponent {
 }
 ```
 
-### But don't forget the utilities
+### Ma non dimentichiamoci delle utilities
 
-I just added a pipe to know if a region has been selected:
+Ho semplicemente aggiunto una **Pipe** per sapere se una regione è stata selezionata:
 
 ```typescript
-export class SelectedPipe implements PipeTransform {
+export class RegionSelectedPipe implements PipeTransform {
   transform(value: string, regions: string[]): boolean {
     return regions.indexOf(value) !== -1;
   }
 }
 ```
 
-And that's it! We built a fully interactive map of Italy just from an SVG image, isn't that cool? 😎
+> Q-q-q-q-questo è tutto gente!
 
-![The final result](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/interactive-map.gif?alt=media&token=330cb736-44a0-49a0-8c26-b13594471ff5)
+Abbiamo sviluppato una mappa totalmente interattiva partendo da un semplice SVG, non è figo? 😎
 
-As a reminder I published this Angular library on NPM as Open Source, so check it out if you want!
+![Il risultato finale](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/interactive-map.gif?alt=media&token=330cb736-44a0-49a0-8c26-b13594471ff5)
 
-[@daudr/interactive-italy on NPM](https://www.npmjs.com/package/@daudr/interactive-italy)
+P.S. Ho pubblicato questa libreria su NPM con licenza Open Source, quindi guardatevela per bene se volete!
 
-Also, let me know if you'd like to read how to publish an Angular library on NPM
+[@daudr/interactive-map su NPM](https://www.npmjs.com/package/@daudr/interactive-map)
+
+P.P.S. Fatemi sapere se un eventuale articolo su come pubblicare una libreria Angular su *NPM** potrebbe essere interessante 😉

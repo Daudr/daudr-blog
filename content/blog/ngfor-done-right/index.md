@@ -2,7 +2,7 @@
 title: "ngFor Done Right"
 description: When dealing with lists in templates, ngFor saves us a lot of time, but it could be a real pain if used wrong, read this article to know hot use it right
 tags: ["angular", "code", "guide", "frontend", "performance"]
-keywords: ["angular", "code", "guide", "frontend", "performance"]
+keywords: ["angular", "code", "guide", "frontend", "performance", "ngFor", "trackBy"]
 cover_image: https://images.unsplash.com/photo-1489976908522-aabacf277f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80
 date: "2019-07-04T09:27:10.759Z"
 id: "ngfor-done-right"

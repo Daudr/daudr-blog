@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "gatsby"
+import ReactFlagsSelect from "react-flags-select"
 
 import { scale, rhythm } from "../../utils/typography"
 
+import "react-flags-select/css/react-flags-select.css"
 import "./header.css"
 
-export const Header = ({ title }) => {
+export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
+  const flagsRef = useRef(null)
+
+  useEffect(() => {
+    flagsRef.current.updateSelected(defaultLang)
+  }, [defaultLang])
+
   const header = (
     <h1
       style={{
@@ -21,12 +29,17 @@ export const Header = ({ title }) => {
           textDecoration: `none`,
           color: `inherit`,
         }}
-        to={`/`}
+        to={defaultLang === "US" ? `/` : `/it`}
       >
         {title}
       </Link>
     </h1>
   )
+
+  const selectLanguage = country => {
+    const language = country === "IT" ? "it" : "en"
+    setSelectedLanguage(language)
+  }
 
   return (
     <header
@@ -35,6 +48,20 @@ export const Header = ({ title }) => {
       }}
     >
       <div className="background-sky hero"></div>
+      <div
+        className="flag-select"
+        style={{ position: `fixed`, right: `10px` }}
+      >
+        <ReactFlagsSelect
+          defaultCountry={defaultLang}
+          countries={["US", "IT"]}
+          showOptionLabel={false}
+          showSelectedLabel={false}
+          onSelect={selectLanguage}
+          placeholder=""
+          ref={flagsRef}
+        />
+      </div>
       {header}
     </header>
   )

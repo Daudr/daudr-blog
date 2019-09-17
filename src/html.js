@@ -11,6 +11,10 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
         />
+        <meta
+          name="monetization"
+          content="$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw"
+        />
         {props.headComponents}
 
         <script
@@ -27,6 +31,12 @@ export default function HTML(props) {
             `,
           }}
         />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="0e198b33-5bc6-4389-a18d-8cb4f013b52d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
+          }}
+        ></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

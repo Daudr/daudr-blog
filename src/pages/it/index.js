@@ -23,6 +23,7 @@ export const ItalianBlogIndex = ({ data, location }) => {
       title={siteTitle}
       defaultLang="IT"
       setSelectedLanguage={setSelectedLanguage}
+      isIndex={true}
     >
       <SEO
         title="Tutti i post"
@@ -36,7 +37,7 @@ export const ItalianBlogIndex = ({ data, location }) => {
         ]}
       />
       {posts.map(({ node }) => {
-        return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
+        return <ArticleCard node={node} key={node.fields.slug} isIndex={true}></ArticleCard>
       })}
     </Layout>
   )

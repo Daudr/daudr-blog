@@ -11,13 +11,14 @@ export const Layout = ({
   children,
   setSelectedLanguage,
   defaultLang,
+  isIndex = false
 }) => {
   return (
     <div
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(48),
+        maxWidth: isIndex ? rhythm(48) : rhythm(24),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
@@ -32,7 +33,7 @@ export const Layout = ({
           display: `flex`,
           flexDirection: `row`,
           flexWrap: `wrap`,
-          justifyContent: `space-between`,
+          justifyContent: isIndex ? `space-between` : `center`,
         }}
       >
         {children}

@@ -6,6 +6,7 @@ import { graphql, navigate } from "gatsby"
 import SEO from "../components/seo/seo"
 import Layout from "../components/layout/layout"
 import Tag from "../components/tag/tag"
+import ArticleCard from "../components/article-card/article-card"
 
 export const TagsPage = ({
   data: {
@@ -29,6 +30,7 @@ export const TagsPage = ({
       title={title}
       defaultLang="US"
       setSelectedLanguage={setSelectedLanguage}
+      isIndex={true}
     >
       <SEO
         title={title}
@@ -52,9 +54,23 @@ export const TagsPage = ({
           {group.map(tag => (
             <li
               key={tag.fieldValue}
-              style={{ listStyle: "none", maxWidth: "50%" }}
+              style={{
+                listStyle: "none",
+                display: `flex`,
+                flexWrap: `wrap`,
+                flexDirection: `row`,
+                justifyContent: `space-between`,
+              }}
             >
               <Tag tag={tag.fieldValue} count={tag.totalCount}></Tag>
+
+              {tag.edges.splice(0, 2).map(post => (
+                <ArticleCard
+                  node={post.node}
+                  key={post.node.fields.slug}
+                  isIndex={true}
+                ></ArticleCard>
+              ))}
             </li>
           ))}
         </ul>
@@ -93,10 +109,25 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       filter: { frontmatter: { lang: { eq: null } } }
+      sort: { fields: frontmatter___date, order: DESC }
     ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
+        edges {
+          node {
+            frontmatter {
+              cover_image
+              description
+              title
+              tags
+              date(formatString: "MMMM DD, YYYY")
+            }
+            fields {
+              slug
+            }
+          }
+        }
       }
     }
   }

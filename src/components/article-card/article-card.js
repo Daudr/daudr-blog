@@ -29,13 +29,14 @@ const useStyles = makeStyles({
   },
 })
 
-export const ArticleCard = ({ node }) => {
+export const ArticleCard = ({ node, isIndex = false }) => {
   const title = node.frontmatter.title || node.fields.slug
   const tags = node.frontmatter.tags || []
+  let isMobile = window.innerWidth < 768;
   const classes = useStyles()
 
   return (
-    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+    <Link style={{ boxShadow: `none`, width: (isIndex && !isMobile) ? `49%` : `100%` }} to={node.fields.slug}>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}

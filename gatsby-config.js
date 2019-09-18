@@ -118,7 +118,7 @@ module.exports = {
         },
         canonicalBaseUrl: process.env.BASE_URL,
         components: ["amp-form", "amp-ad", "amp-auto-ads"],
-        excludedPaths: ["/404*", "/"],
+        excludedPaths: ["/404*", "/", "/tag*"],
         pathIdentifier: "amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         relCanonicalPattern: `{{canonicalBaseUrl}}{{pathname}}`,

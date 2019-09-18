@@ -11,7 +11,7 @@ lang: "it"
 
 Recentemente, **Mark Zuckerberg** ha annunciato la nuova cryptomoneta di **Facebook**, chiamata **Libra**. Vediamo insieme cos'è.
 
-![A cosa stai pensando?](../../facebook-libra/facebook-libra.jpg)
+![A cosa stai pensando?](https://images.unsplash.com/photo-1555020368-9e1b4cf78a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1136&q=80)
 > Foto di [Joshua Hoehne](https://unsplash.com/photos/Uo2ZXh4XOLY) su [Unsplash](https://unsplash.com)
 
 ## Libra, la nuova cryptomoneta di Facebook
@@ -40,7 +40,7 @@ Ho scritto anche un [articolo](https://blog.daudr.me/it/libra-simple-smart-contr
 
 Insieme a Libra, Facebook rilascerà anche un nuovo linguaggio di programmazione: **Move**.
 > Questo linguaggio di programmazione permetterà agli sviluppatori di implementare smart contracts personalizzati per questo nuovo ecosistema.
-> Ci sono due importanti parti fondamentali che appariranno in quasi tutti gli script transazionali: i tipi di risorsa **LibraAccount.T** e **LibraCoin.T**. **LibraAccount** è il nome del modulo, mentre **T** è il nome della risorsa dichiarata da quel modulo. Questà è una classica naming convention in Move; la risorsa principale dichiarata da un modulo è tipicamente chiamata **T**.
+> Ci sono due importanti parti fondamentali che appariranno in quasi tutti gli script transazionali: i tipi di risorsa **LibraAccount.T** e **LibraCoin.T**. **LibraAccount** è il nome del modulo, mentre **T** è il nome della risorsa dichiarata da quel modulo. Questa è una classica naming convention in Move; la risorsa principale dichiarata da un modulo è tipicamente chiamata **T**.
 
 Riporto un esempio preso dal [sito di Move](https://developers.libra.org/docs/move-overview#writing-transaction-scripts):
 
@@ -98,10 +98,10 @@ La Libra Association avrà la sua sede a Ginevra, in Svizzera (considerata dai m
 
 Facebook creerà anche un portafoglio per Libra, chiamato **Calibra**.
 
-![Calibra](../../facebook-libra/calibra.png)
+![Calibra](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/calibra.png?alt=media&token=80651125-e8f8-4d22-95d7-c36e99f5d986)
 
 Calibra è
 > una sussidiaria di Facebook che ha lo scopo di offrire servizi finanziari che aiuteranno le persone ad accedere e a partecipare al network di Libra.
 
-Calibra è ancora alle prime fasi di sviluppo, il suo rilascio è pianificato per il 2020, per quest l'esperienza d'uso potrebbe cambiare significativamente da qui al rilascio, ma come possiamo leggere dal [comunicato ufficiale](https://newsroom.fb.com/news/2019/06/coming-in-2020-calibra/):
+Calibra è ancora alle prime fasi di sviluppo, il suo rilascio è pianificato per il 2020, per questo l'esperienza d'uso potrebbe cambiare significativamente da qui al rilascio, ma come possiamo leggere dal [comunicato ufficiale](https://newsroom.fb.com/news/2019/06/coming-in-2020-calibra/):
 > Fin dall'inizio, Calibra permetterà ai propri utenti di inviare Libra a qualsiasi persona che sia dotata di uno smartphone, semplice e veloce come inviare un SMS ad un prezzo che si avvicina a zero. E, nel tempo, speriamo di offrire servizi addizionali per le persone e le aziende, come pagare bollette premendo un tasto, comprare un caffè fotografando un codice o prendere un mezzo pubblico senza il bisogno di portarti dietro contanti o abbonamento.

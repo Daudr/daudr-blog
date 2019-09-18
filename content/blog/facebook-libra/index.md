@@ -10,7 +10,7 @@ id: "facebook-libra"
 
 Recently Mark Zuckerberg has announced Facebook's new cryptocurrency called Libra, let's see what it is.
 
-![What's on your mind?](facebook-libra.jpg)
+![What's on your mind?](https://images.unsplash.com/photo-1555020368-9e1b4cf78a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1136&q=80)
 > Photo by [Joshua Hoehne](https://unsplash.com/photos/Uo2ZXh4XOLY) on [Unsplash](https://unsplash.com)
 
 ## Libra, the new Facebook cryptocurrency
@@ -87,7 +87,7 @@ The Libra Association will be based in Geneva, Switzerland (considered by Libra 
 
 Facebook is also creating a wallet for Libra, called Calibra.
 
-![Calibra early stage](calibra.png)
+![Calibra early stage](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/calibra.png?alt=media&token=80651125-e8f8-4d22-95d7-c36e99f5d986)
 
 Calibra is a
 >Facebook subsidiary whose goal is to provide financial services that will let people access and participate in the Libra Network

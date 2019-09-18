@@ -17,7 +17,7 @@ export const Layout = ({
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(48),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
@@ -27,7 +27,16 @@ export const Layout = ({
         setSelectedLanguage={setSelectedLanguage}
         defaultLang={defaultLang}
       />
-      <main>{children}</main>
+      <main
+        style={{
+          display: `flex`,
+          flexDirection: `row`,
+          flexWrap: `wrap`,
+          justifyContent: `space-between`,
+        }}
+      >
+        {children}
+      </main>
       <footer>
         <a
           rel="noopener noreferrer"
@@ -44,8 +53,8 @@ export const Layout = ({
         <br />© {new Date().getFullYear()}, Michele Da Rin Fioretto - Dauðr
       </footer>
 
-      <CookieConsent>
-        This website uses cookies to enhance the user experience.
+      <CookieConsent buttonText={ defaultLang === `IT` ? `Ho capito` : `I undestand` }>
+        { defaultLang === `IT` ? `Questo sito utilizza cookie per migliorare l'esperienza utente` : `This website uses cookies to enhance the user experience.`}
       </CookieConsent>
     </div>
   )

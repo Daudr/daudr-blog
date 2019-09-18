@@ -11,7 +11,7 @@ lang: "it"
 
 Quando stiamo sviluppando dei template che usano liste, ngFor ci salva un sacco di tempo, ma potrebbe aver effetti disastrosi se usato male. Leggi questo articolo per avere delle dritte su come usarlo al meglio 🤩
 
-![Arriva primo usando ngFor](../../ngfor-done-right/ngfor.png)
+![Arriva primo usando ngFor](https://images.unsplash.com/photo-1489976908522-aabacf277f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Foto di [Kolleen Gladden](https://unsplash.com/photos/ij5_qCBpIVY) su [Unsplash](https://unsplash.com)
 
 Tutte le informazioni contenute in questo articolo si possono trovare anche nella [documentazione ufficiale](https://angular.io/api/common/NgForOf)
@@ -123,7 +123,7 @@ E nel vostro file `css`/`scss`:
 ```
 
 Il risultato sarà qualcosa del genere
-![Esempio even e odd](../../ngfor-done-right/even-odd.png)
+![Esempio even e odd](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/even-odd.png?alt=media&token=bd193e7b-6424-4e71-b9ae-e82b736198b6)
 
 ## Parlami di first e last
 
@@ -161,7 +161,7 @@ Usiamo la tabella di prima e settiamo le classi solo per le righe `first` e `las
 ```
 
 Ecco cosa ne uscirà
-![Esempio first e last](../../ngfor-done-right/first-last.png)
+![Esempio first e last](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/first-last.png?alt=media&token=921a3562-4b6a-4124-ac94-37aa0a502b9f)
 
 ## Non dimentichiamo di index
 
@@ -174,7 +174,7 @@ Forse è la variabile che più viene usata quando usiamo le liste, pensa solo se
 </mat-list>
 ```
 
-![Esempio index](../../ngfor-done-right/index.png)
+![Esempio index](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/index.png?alt=media&token=1456c0fc-48b9-4064-8403-ed706c178151)
 
 ## Questo è tutto 😍
 

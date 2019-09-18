@@ -10,7 +10,7 @@ id: "ngfor-done-right"
 
 When dealing with lists in templates, ngFor saves us a lot of time, but it could be a real pain if used wrong, read this article to know how to use it right.
 
-![Arrive first with ngFor](ngfor.png)
+![Arrive first with ngFor](https://images.unsplash.com/photo-1489976908522-aabacf277f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Photo by [Kolleen Gladden](https://unsplash.com/photos/ij5_qCBpIVY) on [Unsplash](https://unsplash.com)
 
 All the information on this article can also be found in the official [docs](https://angular.io/api/common/NgForOf)
@@ -124,7 +124,7 @@ And in your `css`/`scss` file
 ```
 
 The result will be something like
-![Even and odd example](even-odd.png)
+![Even and odd example](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/even-odd.png?alt=media&token=bd193e7b-6424-4e71-b9ae-e82b736198b6)
 
 ## Tell me about first and last
 
@@ -162,7 +162,7 @@ Let's use the already created table and set the classes only for the first and l
 ```
 
 That'll look like this
-![First and last example](first-last.png)
+![First and last example](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/first-last.png?alt=media&token=921a3562-4b6a-4124-ac94-37aa0a502b9f)
 
 ## Don't forget the index
 
@@ -175,6 +175,6 @@ Maybe it's the property that's being used the most when we are dealing with list
 </mat-list>
 ```
 
-![Index example](index.png)
+![Index example](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/index.png?alt=media&token=1456c0fc-48b9-4064-8403-ed706c178151)
 
 All the code used in this guide can be found on [Stackblitz](https://stackblitz.com/edit/ngfor-done-right) and [GitHub](https://github.com/Daudr/ngfor-done-right)

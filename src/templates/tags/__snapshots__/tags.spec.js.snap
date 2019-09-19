@@ -6,7 +6,7 @@ exports[`Tags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "42rem",
+      "maxWidth": "84rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -91,7 +91,16 @@ exports[`Tags renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main>
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
     <h2
       style={
         Object {
@@ -825,7 +834,7 @@ exports[`Tags renders correctly 1`] = `
         }
       }
     >
-      I understand
+      I undestand
     </button>
   </div>
 </div>

@@ -6,7 +6,7 @@ exports[`Layout renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "42rem",
+      "maxWidth": "84rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -82,7 +82,16 @@ exports[`Layout renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main />
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  />
   <footer>
     <a
       href="https://www.iubenda.com/privacy-policy/49067529"
@@ -150,7 +159,7 @@ exports[`Layout renders correctly 1`] = `
         }
       }
     >
-      I understand
+      I undestand
     </button>
   </div>
 </div>

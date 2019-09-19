@@ -6,7 +6,7 @@ exports[`ItalianTags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "84rem",
+      "maxWidth": "42rem",
       "padding": "2.625rem 1.3125rem",
     }
   }

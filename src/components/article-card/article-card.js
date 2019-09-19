@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 export const ArticleCard = ({ node, isIndex = false }) => {
   const title = node.frontmatter.title || node.fields.slug
   const tags = node.frontmatter.tags || []
-  let isMobile = window.innerWidth < 768;
+  let isMobile = typeof window !== `undefined` ? window.innerWidth < 768 : false;
   const classes = useStyles()
 
   return (

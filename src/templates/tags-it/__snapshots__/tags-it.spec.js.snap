@@ -6,7 +6,7 @@ exports[`ItalianTags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "42rem",
+      "maxWidth": "84rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -91,7 +91,16 @@ exports[`ItalianTags renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main>
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
+      }
+    }
+  >
     <h2
       style={
         Object {
@@ -818,7 +827,7 @@ exports[`ItalianTags renders correctly 1`] = `
         }
       }
     >
-      This website uses cookies to enhance the user experience.
+      Questo sito utilizza cookie per migliorare l'esperienza utente
     </div>
     <button
       className=""
@@ -838,7 +847,7 @@ exports[`ItalianTags renders correctly 1`] = `
         }
       }
     >
-      I understand
+      Ho capito
     </button>
   </div>
 </div>

@@ -27,14 +27,7 @@ export const Layout = ({
         setSelectedLanguage={setSelectedLanguage}
         defaultLang={defaultLang}
       />
-      <main
-        style={{
-          display: `flex`,
-          flexDirection: `row`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-        }}
-      >
+      <main>
         {children}
       </main>
       <footer>

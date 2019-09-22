@@ -43,7 +43,7 @@ export const ItalianTags = ({ pageContext, data }) => {
       </h2>
 
       {edges.map(({ node }) => {
-        return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
+        return <ArticleCard node={node} key={node.fields.slug} isIndex={true}></ArticleCard>
       })}
 
       <div style={{ marginBottom: rhythm(2.5) }}>

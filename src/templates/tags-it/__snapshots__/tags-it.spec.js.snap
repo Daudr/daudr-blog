@@ -6,7 +6,7 @@ exports[`ItalianTags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "84rem",
+      "maxWidth": "42rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -97,7 +97,7 @@ exports[`ItalianTags renders correctly 1`] = `
         "display": "flex",
         "flexDirection": "row",
         "flexWrap": "wrap",
-        "justifyContent": "space-between",
+        "justifyContent": "center",
       }
     }
   >
@@ -119,6 +119,7 @@ exports[`ItalianTags renders correctly 1`] = `
       style={
         Object {
           "boxShadow": "none",
+          "width": "100%",
         }
       }
     >
@@ -159,6 +160,7 @@ exports[`ItalianTags renders correctly 1`] = `
       style={
         Object {
           "boxShadow": "none",
+          "width": "100%",
         }
       }
     >

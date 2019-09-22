@@ -6,6 +6,7 @@ exports[`ArticleCard renders correctly 1`] = `
   style={
     Object {
       "boxShadow": "none",
+      "width": "100%",
     }
   }
 >

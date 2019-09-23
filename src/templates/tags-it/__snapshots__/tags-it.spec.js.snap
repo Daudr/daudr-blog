@@ -112,14 +112,14 @@ exports[`ItalianTags renders correctly 1`] = `
         }
       }
     >
-      Artiicoli su #angular
+      Articoli su #angular
     </h2>
     <a
       href="/ngfor-done-right/"
       style={
         Object {
           "boxShadow": "none",
-          "width": "100%",
+          "width": "49%",
         }
       }
     >
@@ -160,7 +160,7 @@ exports[`ItalianTags renders correctly 1`] = `
       style={
         Object {
           "boxShadow": "none",
-          "width": "100%",
+          "width": "49%",
         }
       }
     >

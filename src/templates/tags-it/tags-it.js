@@ -13,7 +13,7 @@ export const ItalianTags = ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark
   const siteTitle = data.site.siteMetadata.title
 
-  const tagHeader = `Artiicoli su #${tag}`
+  const tagHeader = `Articoli su #${tag}`
 
   const [selectedLanguage, setSelectedLanguage] = useState("it")
 

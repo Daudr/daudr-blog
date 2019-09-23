@@ -29,10 +29,10 @@ const useStyles = makeStyles({
   },
 })
 
-export const ArticleCard = ({ node, isIndex = false }) => {
+export const ArticleCard = ({ node, isIndex = false, isIT = false }) => {
   const title = node.frontmatter.title || node.fields.slug
   const tags = node.frontmatter.tags || []
-  let isMobile = typeof window !== `undefined` ? window.innerWidth < 768 : false;
+  const isMobile = typeof window !== `undefined` ? window.innerWidth < 768 : false;
   const classes = useStyles()
 
   return (
@@ -53,7 +53,7 @@ export const ArticleCard = ({ node, isIndex = false }) => {
               return (
                 <Link
                   key={tag}
-                  to={`/tags/${kebabCase(tag)}`}
+                  to={`/tags/${isIT ? `it/` : ``}${kebabCase(tag)}`}
                   style={{ boxShadow: `none` }}
                 >
                   <Chip

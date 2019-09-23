@@ -37,7 +37,7 @@ export const ItalianBlogIndex = ({ data, location }) => {
         ]}
       />
       {posts.map(({ node }) => {
-        return <ArticleCard node={node} key={node.fields.slug} isIndex={true}></ArticleCard>
+        return <ArticleCard node={node} key={node.fields.slug} isIndex={true} isIT={true}></ArticleCard>
       })}
     </Layout>
   )

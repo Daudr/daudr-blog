@@ -101,6 +101,10 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
         <ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
         <EmailSignup />
+
+        <amp-auto-ads type="adsense"
+                      data-ad-client="ca-pub-3926299101061647">
+        </amp-auto-ads>
       </Paper>
 
       <Bio isIT={defaultCountry === `IT`} />

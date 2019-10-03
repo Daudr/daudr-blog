@@ -2,6 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function HTML(props) {
+  const isAMP =
+    typeof window !== `undefined`
+      ? window.location.href.match(/\/amp\//)
+      : false
+
   return (
     <html lang="en" {...props.htmlAttributes}>
       <head>
@@ -17,29 +22,43 @@ export default function HTML(props) {
         />
         {props.headComponents}
 
-        <script
-          async
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {!isAMP ? (
+          <script
+            async
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+        ) : (
+          ``
+        )}
+        {!isAMP ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               (adsbygoogle = window.adsbygoogle || []).push({
                 google_ad_client: 'ca-pub-3926299101061647',
                 enable_page_level_ads: true
               });
             `,
-          }}
-        />
-        <script async custom-element="amp-auto-ads"
-                src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-        </script>
+            }}
+          />
+        ) : (
+          ``
+        )}
         <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="0e198b33-5bc6-4389-a18d-8cb4f013b52d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
-          }}
+          async
+          custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
         ></script>
+        {!isAMP ? (
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="0e198b33-5bc6-4389-a18d-8cb4f013b52d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
+            }}
+          ></script>
+        ) : (
+          ``
+        )}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -52,6 +71,27 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-performance.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const firebaseConfig = {
+                apiKey: "AIzaSyCGVQCTUPtpCEkAa1cSqNfXcMUEsxIZYL4",
+                authDomain: "daudr-blog.firebaseapp.com",
+                databaseURL: "https://daudr-blog.firebaseio.com",
+                projectId: "daudr-blog",
+                storageBucket: "daudr-blog.appspot.com",
+                messagingSenderId: "943024764592",
+                appId: "1:943024764592:web:585d290f96dfe6bf",
+                measurementId: "G-HVZTBCWDG5"
+              };
+              firebase.initializeApp(firebaseConfig);
+              firebase.performance();
+            `,
+          }}
+        ></script>
       </body>
     </html>
   )

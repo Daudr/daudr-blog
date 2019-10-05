@@ -72,11 +72,25 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
 
-        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-performance.js"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {!isAMP ? (
+          <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+        ) : (
+          ``
+        )}
+        {!isAMP ? (
+          <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-performance.js"></script>
+        ) : (
+          ``
+        )}
+        {!isAMP ? (
+          <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+        ) : (
+          ``
+        )}
+        {!isAMP ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               const firebaseConfig = {
                 apiKey: "AIzaSyCGVQCTUPtpCEkAa1cSqNfXcMUEsxIZYL4",
                 authDomain: "daudr-blog.firebaseapp.com",
@@ -88,10 +102,14 @@ export default function HTML(props) {
                 measurementId: "G-HVZTBCWDG5"
               };
               firebase.initializeApp(firebaseConfig);
-              firebase.performance();
+              const firebasePerformance = firebase.performance();
+              const firebaseAnalytics = firebase.analytics();
             `,
-          }}
-        ></script>
+            }}
+          ></script>
+        ) : (
+          ``
+        )}
       </body>
     </html>
   )

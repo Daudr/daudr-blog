@@ -47,7 +47,7 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
     } else if (selectedLanguage === "en") {
       navigate(slug.replace("/it", ""))
     }
-  }, [selectedLanguage])
+  }, [selectedLanguage, slug])
 
   return (
     <Layout

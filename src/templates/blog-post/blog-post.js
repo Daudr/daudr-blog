@@ -47,7 +47,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
     } else if (selectedLanguage === "en") {
       navigate(slug.replace("/it", ""))
     }
-  }, [selectedLanguage])
+  }, [selectedLanguage, slug])
 
   return (
     <Layout
@@ -66,7 +66,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         coverImage={post.frontmatter.cover_image}
       />
       <Paper className={classes.root}>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ marginTop: 0 }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),

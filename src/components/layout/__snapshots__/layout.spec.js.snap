@@ -82,16 +82,7 @@ exports[`Layout renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main
-    style={
-      Object {
-        "display": "flex",
-        "flexDirection": "row",
-        "flexWrap": "wrap",
-        "justifyContent": "center",
-      }
-    }
-  />
+  <main />
   <footer>
     <a
       href="https://www.iubenda.com/privacy-policy/49067529"

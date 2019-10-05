@@ -1,6 +1,6 @@
 ---
 title: "Come ho sviluppato una mappa interattiva da zero"
-description: L'altro giorno dovevo completare un task per un cliente, questo task consisteca nel creare una mappa interattiva partendo da un SVG statico. In questo artivolo spiegherò come riuscito a fare il lavoro 👌
+description: L'altro giorno dovevo completare un task per un cliente, questo task consisteva nel creare una mappa interattiva partendo da un SVG statico. In questo articolo spiegherò come sono riuscito ad eseguire il lavoro 👌
 tags: ["angular", "codice", "guida", "frontend", "libreria"]
 keywords: ["angular", "codice", "guida", "frontend", "libreria"]
 cover_image: https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80
@@ -9,7 +9,7 @@ id: "it/how-i-built-a-map"
 lang: "it"
 ---
 
-L'altro giorno dovevo completare un task per un cliente, questo task consisteca nel creare una mappa interattiva partendo da un SVG statico. In questo artivolo spiegherò come riuscito a fare il lavoro 👌
+L'altro giorno dovevo completare un task per un cliente, questo task consisteva nel creare una mappa interattiva partendo da un SVG statico. In questo articolo spiegherò come sono riuscito ad eseguire il lavoro 👌
 
 ![Costruisci la tua mappa](https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80)
 > Foto di [Andrew Stutesman](https://unsplash.com/@drewmark) su [Unsplash](https://unsplash.com/)
@@ -55,7 +55,7 @@ L'unico problema è che la mappa non era ancora interattiva.
 ### Creiamo i dati
 
 Capiamo cosa compone il nostro componente:
-La variabile `regions` rappresente l'array delle regioni formattate in path SVG
+La variabile `regions` rappresenta l'array delle regioni formattate in path SVG
 
 ```typescript
 export const REGIONS: Region[] = [

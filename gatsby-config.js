@@ -77,12 +77,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.ANALYTICS_ID,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Dauðr Blog`,
@@ -112,7 +106,7 @@ module.exports = {
             vars: {
               gtag_id: process.env.ANALYTICS_ID,
               config: {
-                "UA-45433517-6": {
+                [process.env.ANALYTICS_ID]: {
                   page_location: "{{pathname}}",
                 },
               },
@@ -120,7 +114,7 @@ module.exports = {
           },
         },
         canonicalBaseUrl: process.env.BASE_URL,
-        components: ["amp-form", "amp-ad", "amp-auto-ads"],
+        components: ["amp-ad",],
         excludedPaths: ["/404*", "/", "/tag*"],
         pathIdentifier: "amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",

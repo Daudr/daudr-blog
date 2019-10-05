@@ -66,7 +66,7 @@ export const getItems = (length): Item[] => {
 
 ## Prima di tutto: trackBy
 
-`trackBy` è una funzione che definisce come verificare i cambiamenti degli oggetti presenti nelle liste che andremo ad iterare. Questo significa che che possiamo usarla per sapere esattamente quali oggetti in una lista sono cambiati, dopo una chiamata di rete o per altri motivi, ad esempio.
+`trackBy` è una funzione che definisce come verificare i cambiamenti degli oggetti presenti nelle liste che andremo ad iterare. Questo significa che possiamo usarla per sapere esattamente quali oggetti in una lista sono cambiati, dopo una chiamata di rete o per altri motivi, ad esempio.
 Implementiamo questa funzione nel nostro file `.ts`:
 
 ```typescript
@@ -83,7 +83,7 @@ Poi nel nostro `.html` aggiungiamo la nuova funzione:
 
 Facendo questo la nostra app sarà molto più performante perché non dovrà ricaricare tutta la lista ogni volta, ma ricaricherà solo gli elementi cambiati
 
-## even e odd vengono poi
+## even e odd vengono dopo
 
 Le variabili `even` e `odd` sono usate principalmente per aggiungere lo stile ai componenti.
 Per esempio, quando abbiamo una tabella e vogliamo renderla più leggibile possiamo usare queste variabili per cambiare i colori di sfondo delle righe.
@@ -178,6 +178,6 @@ Forse è la variabile che più viene usata quando usiamo le liste, pensa solo se
 
 ## Questo è tutto 😍
 
-In questa piccola semplice guida abbiamo visto com'è possibile ottenere il meglio da **ngFor** con il minimo sforzo.
+In questa piccola e semplice guida abbiamo visto com'è possibile ottenere il meglio da **ngFor** con il minimo sforzo.
 
 Tutto il codice utilizzato nella guida è disponibile su [Stackblitz](https://stackblitz.com/edit/ngfor-done-right) e su [GitHub](https://github.com/Daudr/ngfor-done-right), vai pure a giocarci ✌

@@ -21,7 +21,7 @@ export const ItalianTags = ({ pageContext, data }) => {
     if (selectedLanguage === "en") {
       navigate(`/tags/${tag}`)
     }
-  }, [selectedLanguage])
+  }, [selectedLanguage, tag])
 
   return (
     <Layout

@@ -9,18 +9,18 @@ id: "it/painless-angular-ssr"
 lang: "it"
 ---
 
-Quindi stai sviluppando un nuovo, fantastico sito (magari un e-commerce per quei libri sconosciuti ma che a te piacciono tanto) e hai bisogno che i tuoi futuri clienti trovino questo sito nella prima pagina di ricerca dei motori di ricerca.
+Quindi stai sviluppando un nuovo, fantastico sito (magari un e-commerce per quei libri sconosciuti ma che a te piacciono tanto) e hai bisogno che i tuoi futuri clienti trovino questo sito nella prima pagina dei motori di ricerca.
 
 ![Servi bene la tua app Angular](https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Foto di [Alev Takil](https://unsplash.com/@alevtakil) su [Unsplash](https://unsplash.com)
 
-Dopo una ricerca estenuante, hai finalmente deciso di usare Angular per il frontend della tua nuova applicazione perché sia la scelta migliore per il nuovo e-commerce che vuoi sviluppare. Ma quando, finalmente, arrivi a rilasciare in produzione l'App e provi a cercalo nei vari motori di ricerca non riesci a trovarlo anche se è già passato un po' di tempo dalla pubblicazione, cosa sta succedendo?
+Dopo una ricerca estenuante, hai finalmente deciso di usare Angular per il frontend della tua nuova applicazione perché credi sia la scelta migliore per il nuovo e-commerce che vuoi sviluppare. Ma quando, finalmente, arrivi a rilasciare in produzione l'App e provi a cercalo nei vari motori di ricerca non riesci a trovarlo anche se è già passato un po' di tempo dalla pubblicazione, cosa sta succedendo?
 
 Google ha recentemente aggiornato il suo crawler per eseguire il pre-rendering delle **Applicazioni Single Page** scritte in **javascript**, proprio come la tua nuova App Angular, ma questa tecnologia non funziona sempre bene (e devi tener conto che non tutti usano Google per effettuare le proprie ricerche nel web).
 
 ## Angular Universal al salvataggio
 
-Fortunamente, il team di Angular ha sviluppato un bel (dopo qualche problema tecnico) strumento che ci può aiutare, uno strumento chiamato [**Angular Universal**](https://angular.io/guide/universal).
+Fortunamente, il team di Angular ha sviluppato un utile (dopo qualche problema tecnico) strumento che ci può aiutare, uno strumento chiamato [**Angular Universal**](https://angular.io/guide/universal).
 
 ### Settiamo alcune cose
 
@@ -38,16 +38,16 @@ Questo piccolo comando crea dei file nella tua cartella `src`:
 - `ts.config.server.json` - Configurazione Typescript per l'App server
 - `webpack.server.config.js` - Configurazione webpack del server
 
-### Verifica che l'App server funziona
+### Verifica che l'App server funzioni
 
-Per cerificare che l'App Server funzioni correttamente, esegui i comandi
+Per verificare che l'App Server funzioni correttamente, esegui i comandi
 
 ```bash
 npm run build:ssr
 npm run serve:ssr
 ```
 
-Se tutto è andato a buon fine (sarebbe una vera fortuna) dovresti vedere l'applicazione funzionante alla URL `localhost:4000`, altrimenti nel prossimo paragrafo ci saranno delle dritte per correggere degli errori.
+Se tutto è andato a buon fine (sarebbe una vera fortuna) dovresti vedere l'applicazione funzionante all'URL `localhost:4000`, altrimenti nel prossimo paragrafo ci saranno delle dritte per correggere degli errori.
 
 ## Risolvere errori del Server
 
@@ -199,7 +199,7 @@ Se stai usando **Firebase Hosting** ci sono alcune cose che devi prima modificar
 
 ### Aggiungi i polyfills al progetto Firebase
 
-Firebase usa i WebSocket e XHR, che non inclusi con Angular e che dobbiamo inserire come polyfill. Per questo eseguiamo nel terminale:
+Firebase usa i WebSocket e XHR, che non sono inclusi con Angular e che dobbiamo inserire come polyfill. Per questo eseguiamo nel terminale:
 
 ```bash
 npm install ws xhr2 bufferutil utf-8-vakudate -D

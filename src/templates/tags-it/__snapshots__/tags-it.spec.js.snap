@@ -91,7 +91,16 @@ exports[`ItalianTags renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main>
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
     <h2
       style={
         Object {

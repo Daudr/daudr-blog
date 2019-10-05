@@ -12,6 +12,9 @@ exports.createPages = ({ graphql, actions }) => {
   const tagTemplate = path.resolve(`./src/templates/tags/tags.js`)
   const italianTagTemplate = path.resolve(`./src/templates/tags-it/tags-it.js`)
 
+  const indexTemplate = path.resolve(`./src/pages/index.js`)
+  const italianIndexTemplate = path.resolve(`./src/pages/it/index.js`)
+
   return graphql(
     `
       {
@@ -43,12 +46,45 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
+    const postsPerPage = 6
+
     const englishPosts = posts.filter(
       post => post.node.frontmatter.lang === null
     )
+
+    const englishNumPages = Math.ceil(englishPosts.length / postsPerPage);
+  
+    Array.from({ length: englishNumPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog` : `/page/${i + 1}`,
+        component: indexTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages: englishNumPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+
     const italianPosts = posts.filter(
       post => post.node.frontmatter.lang === "it"
     )
+
+    const italianNumPages = Math.ceil(italianPosts.length / postsPerPage);
+  
+    Array.from({ length: italianNumPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/it/blog` : `/it/pagina/${i + 1}`,
+        component: italianIndexTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages: italianNumPages,
+          currentPage: i + 1,
+        },
+      })
+    })
 
     englishPosts.forEach((post, index) => {
       const previous =

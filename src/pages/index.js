@@ -4,9 +4,12 @@ import { graphql, navigate } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import ArticleCard from "../components/article-card/article-card"
+import { Pagination } from "../components/pagination/pagination"
 
-export const BlogIndex = ({ data, location }) => {
+export const BlogIndex = ({ data, location, pageContext }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("en")
+
+  const { currentPage = 0, numPages = 0 } = pageContext;
 
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
@@ -37,8 +40,18 @@ export const BlogIndex = ({ data, location }) => {
         ]}
       />
       {posts.map(({ node }) => {
-        return <ArticleCard node={node} key={node.fields.slug} isIndex={true}></ArticleCard>
+        return (
+          <ArticleCard
+            node={node}
+            key={node.fields.slug}
+            isIndex={true}
+          ></ArticleCard>
+        )
       })}
+
+      <div style={{ textAlign: `center`, width: `100%` }}>
+        <Pagination isIT={false} currentPage={currentPage} numPages={numPages}></Pagination>
+      </div>
     </Layout>
   )
 }
@@ -46,7 +59,7 @@ export const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query blogListQuery($skip: Int, $limit: Int) {
     site {
       siteMetadata {
         title
@@ -55,6 +68,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { lang: { eq: null } } }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {

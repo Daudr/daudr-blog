@@ -43,11 +43,16 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
-    const englishPosts = posts.filter(post => post.node.frontmatter.lang === null);
-    const italianPosts = posts.filter(post => post.node.frontmatter.lang === 'it');
+    const englishPosts = posts.filter(
+      post => post.node.frontmatter.lang === null
+    )
+    const italianPosts = posts.filter(
+      post => post.node.frontmatter.lang === "it"
+    )
 
     englishPosts.forEach((post, index) => {
-      const previous = index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
+      const previous =
+        index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
       const next = index === 0 ? null : englishPosts[index - 1].node
 
       createPage({
@@ -94,7 +99,8 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     italianPosts.forEach((post, index) => {
-      const previous = index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
+      const previous =
+        index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
       const next = index === 0 ? null : italianPosts[index - 1].node
 
       createPage({
@@ -138,7 +144,6 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
-
     })
 
     return null

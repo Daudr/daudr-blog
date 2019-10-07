@@ -38,7 +38,7 @@ Another cool update are the **Firebase Extensions**, these will let you add some
 
 [**Introduction to Google Analytics for Firebase**](https://www.youtube.com/watch?v=q4Y4PgwlW-Q)
 
-Another great addition is the possibility to add **Google Analytics** to your web and native applications. It's a great addition because it'll let you create custom audiences based on your users' usage (and we'll see why this it's important next).
+Another great addition is the possibility to add **Google Analytics** to your web and native applications. It's a great addition because it'll let you create custom audiences based on your users' usage (and we'll see why this is important next).
 
 ## Remote Config
 

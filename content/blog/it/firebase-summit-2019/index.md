@@ -9,7 +9,7 @@ id: "it/firebase-summit-2019"
 lang: "it"
 ---
 
-Il Firebase Summit ha avuto luogo il 26 Settembe a Madrid ed ho avuto l'onore di partecipare. In questo articolo andremo a vedere le molte (e sorprendenti) nuove funzionalità che sono state annunciate.
+Il Firebase Summit ha avuto luogo il 26 Settembre a Madrid ed ho avuto l'onore di partecipare. In questo articolo andremo a vedere le molte (e sorprendenti) nuove funzionalità che sono state annunciate.
 
 ![Michele Da Rin Fioretto Attendee Badge](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/attending-firebase-2019%2Ffirebase-attendee-badge.jpg?alt=media&token=32b09174-7ffe-404d-90b1-626c1f1f99b2)
 
@@ -33,7 +33,7 @@ Troverai una serie di video sull'argomento nel nuovo spazio dedicato a Firebase 
 
 Un'altra novità davvero interessante sono le **Firebase Extensions**, queste vi permetterano di aggiungere alla vostra app delle funzionalità (come traduzioni, resize di immagini, ecc.) senza scrivere una singola riga di codice. Firebase ha rilasciato queste estensioni con licenza **open source** e sta pianificando di aggiungere la possibilità di creare le proprie estensioni personalizzate!
 
-## Google Analytics for Firebase
+## Google Analytics per Firebase
 
 ![Google Analytics per Firebase](https://firebase.google.com/images/products/analytics/analytics-1.png)
 

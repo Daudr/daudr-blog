@@ -47,7 +47,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
     } else if (selectedLanguage === "en") {
       navigate(slug.replace("/it", ""))
     }
-  }, [selectedLanguage])
+  }, [selectedLanguage, slug])
 
   return (
     <Layout

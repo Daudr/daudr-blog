@@ -9,11 +9,8 @@ Wordpress2016.overrideThemeStyles = () => {
     blockquote: {
       marginLeft: `-1rem`,
     },
-    ul: {
-      marginLeft: `1.75rem !important`,
-    },
-    ol: {
-      marginLeft: `1.75rem !important`,
+    'ul, ol': {
+      marginLeft: `1.75rem`,
     },
   }
 }

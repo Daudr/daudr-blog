@@ -6,6 +6,7 @@ keywords: ["web monetization", "xrp", "crypto", "ilp", "futuro"]
 cover_image: https://images.unsplash.com/photo-1560152214-4e76ac668a11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80
 date: "2019-10-12T10:00:00.000Z"
 id: "it/future-of-web-monetization"
+lang: "it"
 ---
 
 C'è un nuovo standard (proposto) per quanto riguarda **la pubblicità nel web e la monetizzazione in generale**. Si chiama **Web Monetization**, capiamo insieme di cosa si tratta.

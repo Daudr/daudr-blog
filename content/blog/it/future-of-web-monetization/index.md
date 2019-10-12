@@ -85,7 +85,6 @@ Il **Meta Tag** che andremo ad aggiungere al nostro codice HTML dovrà essere co
 
 Per aggiungere la Web Monetization alle tue pagine web, copia il codice nella sezione `<head>` del tuo codice HTML. Il risultato finale dovrebbe essere:
 
-
 ```html
 <!doctype html>
 <html>

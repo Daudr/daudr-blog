@@ -24,9 +24,9 @@ There's a new (proposed) web standard about **advertising on the web**. It's cal
 
 ## How Web Monetization can improve users satisfaction
 
-Web Monetizatoin can improve the user overall satisfaction with your web content because he won't be perseguitated by your ads, and you still will make money from him.
+Web Monetization can improve the user overall satisfaction with your web content because he won't be persecuted by your ads, and you still will make money from him.
 
-In fact, Web Monetization, offers the user to chose where its web monetization funds should go when navigating the web.
+In fact, Web Monetization offers the user to choose where its web monetization funds should go when navigating the web.
 
 ## Web Monetization Wallets
 
@@ -82,7 +82,7 @@ The Meta tag is the tag we're going to add to our web monetized web pages. This 
 
 ### Add your new Meta Tag to your pages
 
-Copy your Meta Tag and add it to your websites `<head>` section. It should look like the example below:
+Copy your Meta Tag and add it to your websites' `<head>` section. It should look like the example below:
 
 ```html
 <!doctype html>
@@ -97,4 +97,4 @@ Copy your Meta Tag and add it to your websites `<head>` section. It should look 
 </html>
 ```
 
-**Congragulations! Your website is now Web Monetized.** 😎😎😎
+**Congratulations! Your website is now Web Monetized.** 😎😎😎

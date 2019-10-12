@@ -96,7 +96,7 @@ export class InteractiveItalyComponent {
 
 ### But don't forget the utilities
 
-I just added a pipe know if a region has been selected:
+I just added a pipe to know if a region has been selected:
 
 ```typescript
 export class SelectedPipe implements PipeTransform {

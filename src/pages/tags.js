@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 // Components
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import SEO from "../components/seo/seo"
 import Layout from "../components/layout/layout"
 import Tag from "../components/tag/tag"
@@ -14,39 +14,54 @@ export const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
-  <Layout location="/tags" title={title}>
-    <SEO
+}) => {
+  const [selectedLanguage, setSelectedLanguage] = useState("en")
+
+  useEffect(() => {
+    if (selectedLanguage === "it") {
+      navigate("/it/tags/")
+    }
+  }, [selectedLanguage])
+
+  return (
+    <Layout
+      location="/tags"
       title={title}
-      keywords={["blog", "tags", "page", "technology"].concat(
-        group.map(g => g.fieldValue)
-      )}
-    />
-    <div>
-      <h1
-        style={{
-          fontFamily: `'Anton', sans-serif`,
-          fontWeight: `bold`,
-          color: `#FFFFFF`,
-          letterSpacing: `3px`,
-          textTransform: `uppercase`
-        }}
-      >
-        Tags
-      </h1>
-      <ul style={{ display: "flex", flexDirection: "column" }}>
-        {group.map(tag => (
-          <li
-            key={tag.fieldValue}
-            style={{ listStyle: "none", maxWidth: "50%" }}
-          >
-            <Tag tag={tag.fieldValue} count={tag.totalCount}></Tag>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
-)
+      defaultLang="US"
+      setSelectedLanguage={setSelectedLanguage}
+    >
+      <SEO
+        title={title}
+        keywords={["blog", "tags", "page", "technology"].concat(
+          group.map(g => g.fieldValue)
+        )}
+      />
+      <div>
+        <h1
+          style={{
+            fontFamily: `'Anton', sans-serif`,
+            fontWeight: `bold`,
+            color: `#FFFFFF`,
+            letterSpacing: `3px`,
+            textTransform: `uppercase`,
+          }}
+        >
+          Tags
+        </h1>
+        <ul style={{ display: "flex", flexDirection: "column" }}>
+          {group.map(tag => (
+            <li
+              key={tag.fieldValue}
+              style={{ listStyle: "none", maxWidth: "50%" }}
+            >
+              <Tag tag={tag.fieldValue} count={tag.totalCount}></Tag>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -75,7 +90,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(
+      limit: 2000
+      filter: { frontmatter: { lang: { eq: null } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

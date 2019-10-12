@@ -10,7 +10,7 @@ id: "conditional-polyfills"
 
 If you have a project that's based on Angular v7 and don't have the chance to upgrade to the upcoming v8 or you want to test one of the most useful small features of the future version here you will find how to do it.
 
-![Dance of souls](performance.jpg)
+![Dance of souls](https://images.unsplash.com/photo-1511715282680-fbf93a50e721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Photo by [Ahmad Odeh](https://unsplash.com/photos/JhqhGfX_Wd8) on [Unsplash](https://unsplash.com)
 
 ## The trick
@@ -34,6 +34,8 @@ The result should be your `index.html`'s body looking like this:
 ```
 
 On the snippet above, you can see that Angular CLI has added the `nomodule` attribute to the es2015 polyfills tag. This attribute let the browsers download and execute the script only if it doesn't recognize the [module script web api](https://html.spec.whatwg.org/multipage/webappapis.html#module-script), this means that the browser is old 👌
+
+## What if my users don't use such old browsers?
 
 You might be wondering: all my users are with modern browsers, why would I have to wait for the CLI to produce es2015-polyfills.js that will never be in use? If you’re really thinking this, then you’re a happy developer. If you want to ignore ES2015 polyfills completely, then build your application running:
 

@@ -6,12 +6,15 @@ Wordpress2016.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    a: {
+      boxShadow: `none`
+    },
     blockquote: {
       marginLeft: `-1rem`,
     },
-    ul: {
-      marginLeft: `1.75rem !important`
-    }
+    'ul, ol': {
+      marginLeft: `1.75rem`,
+    },
   }
 }
 

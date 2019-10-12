@@ -1,9 +1,9 @@
 ---
-title: "Write your first transaction on the Libra Network"
+title: "Scrivi la tua prima transazione nel Network di Libra"
 description: Dopo il rilascio della testnet del network di Libra, andiamo a capire meglio come scrivere una transazione su di esso
 tags: ['facebook', 'libra', 'blockchain', 'cryptomoneta', 'codice', 'guida']
 keywords: ['facebook', 'libra', 'blockchain', 'cryptomoneta', 'codice', 'guida']
-cover_image: 'https://www.countypress.co.uk/resources/images/10005590/'
+cover_image: https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/libra_logo.jpg?alt=media&token=5939a2fc-ccbd-4adb-a06f-54e6af6419d0
 date: "2019-06-24T09:27:10.759Z"
 id: "it/libra-simple-smart-contract"
 lang: "it"
@@ -11,7 +11,7 @@ lang: "it"
 
 L'altro giorno ho pubblicato [un articolo](https://blog.daudr.me/it/facebook-libra) che parlava del network di **Libra**, oggi vediamo come sviluppare una transazione.
 
-![Logo Libra](../../libra-simple-smart-contract/libra-logo.png)
+![Logo Libra](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/libra_logo.jpg?alt=media&token=5939a2fc-ccbd-4adb-a06f-54e6af6419d0)
 > Logo Libra
 
 ## Installare la testnet in locale
@@ -47,7 +47,7 @@ Lo script farà le seguenti operazioni:
 
 ## Troubleshoot
 
-Se il setup fallisce, prova ad eseguire i sequenti comandi:
+Se il setup fallisce, prova ad eseguire i seguenti comandi:
 
 - Aggiorna `Rust`:
   Esegui `rustup update` dalla cartella `libra`.
@@ -92,7 +92,7 @@ Se in questo passaggio la build fallisce, prova ad elimare il file di lock di ca
 Se il tuo client non si è  connesso alla testnet:
 
 - Verifica la tua connessione ad Internet;
-- Assicurati che stai usando l'ultima versione disponibile del client. Esegui un pull dalla repository di git e riesegui il client:
+- Assicurati di usare l'ultima versione disponibile del client. Esegui un pull dalla repository di git e riesegui il client:
   `./scripts/cli/start_cli_testnet.sh`
 
 ## Creiamo nuovi account
@@ -101,7 +101,7 @@ Una volta che il tuo client si è connesso alla `testnet` puoi usare i comandi d
 
 ### Step 1: Verifica che il client stia andando
 
-Un prompt sulla linea di comanda `libra%` indica che il client è in funzione sul terminale. Per vedere le informazioni di aiuto per i comandi degli utenti esegui il comando `user` come sotto:
+Un prompt sulla linea di comando `libra%` indica che il client è in funzione sul terminale. Per vedere le informazioni di aiuto per i comandi degli utenti esegui il comando `user` come sotto:
 
 ```bash
 libra% account
@@ -128,7 +128,8 @@ Questo comando creerà un output del genere:
 Created/retrieved account #0 address 1h3n34fafae4147b2a105a0be2f91238adcfaaadf93fc0868e7a0253c4a8
 ```
 
-\#0 è l'indice dell'account, e la stringa esadecimale è l'indirizzo dell'account. L'indice è solo un modo per riferirsi all'account. L'indice dell'account è un indice locale della CLI che può essere usato in altri comandi della CLI con cui gli sviluppatori possono riferirsi agli account creati. Alla blockchain l'indice non serve a nulla. L'account verrà creato anche nella blockchain solo quando verrano aggiunti dei soldi al'account tramite un'operazione chiamata `minting`, o se dei soldi vengono trasferiti sull'account da una transazione da un altro account. Nota: puoi anche usare l'indirizzo esadecimale per riferirti agli account nei comandi della CLI.
+\#0 è l'indice dell'account, e la stringa esadecimale è l'indirizzo dell'account. L'indice è solo un modo per riferirsi all'account. L'indice dell'account è un indice locale della CLI che può essere usato in altri comandi della CLI con cui gli sviluppatori possono riferirsi agli account creati. Alla blockchain l'indice non serve a nulla. L'account verrà creato anche nella blockchain solo quando verrano aggiunti dei soldi all'account tramite un'operazione chiamata `minting`, o se dei soldi vengono trasferiti sull'account da una transazione da un altro account.
+Nota: puoi anche usare l'indirizzo esadecimale per riferirti agli account nei comandi della CLI.
 
 ### Step 3: Creiamo il secondo account
 
@@ -185,7 +186,7 @@ Per eseguire il mint per il secondo account, esegui il comando:
 
 ### Verificare l'importo disponibile sugli account
 
-Per verificare il saldo del primo account, esegui il sequente comando:
+Per verificare il saldo del primo account, esegui il seguente comando:
 
 `libra% query balance 0`
 

@@ -122,6 +122,102 @@ jobs:
             - node_modules
             - public
 
+  build-test:
+    docker: 
+      - image: circleci/node:8
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout:
+          path: ~/repo/
+
+      - attach_workspace:
+          at: ~/repo/
+      
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package-lock.json checksum
+            # when this file is changed, this key will fail
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            # Find the most recently generated cache used from any branch
+            - v1-npm-deps-
+      
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      - save_cache: 
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+            
+          paths:
+            - ./node_modules
+            - ~/.npm
+            - ~/.cache
+      
+      - run:
+          name: Cleaning up Gatsby
+          command: npx gatsby clean
+
+      - run:
+          name: Gatsby Build
+          command: npm run build:test
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+            - public
+
+  build-prod:
+    docker: 
+      - image: circleci/node:8
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout:
+          path: ~/repo/
+
+      - attach_workspace:
+          at: ~/repo/
+      
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package-lock.json checksum
+            # when this file is changed, this key will fail
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            # Find the most recently generated cache used from any branch
+            - v1-npm-deps-
+      
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+      - save_cache: 
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+            
+          paths:
+            - ./node_modules
+            - ~/.npm
+            - ~/.cache
+      
+      - run:
+          name: Cleaning up Gatsby
+          command: npx gatsby clean
+
+      - run:
+          name: Gatsby Build
+          command: npm run build:prod
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+            - public
+
   deploy-test:
     working_directory: ~/repo
 
@@ -175,13 +271,21 @@ workflows:
           start: 'npm run develop' # start server before running tests
           wait-on: 'http://localhost:8000'
 
-      - build
+      - build-test:
+          filters:
+            branches:
+              only: develop
+
+      - build-prod:
+          filters:
+            branches:
+              only: master
 
       - deploy-test:
           requires:
             - unit-test
             - cypress/run
-            - build
+            - build-test
           filters:
             branches:
               only: develop
@@ -190,7 +294,7 @@ workflows:
           requires:
             - unit-test
             - cypress/run
-            - build
+            - build-prod
           filters:
             branches:
               only: master

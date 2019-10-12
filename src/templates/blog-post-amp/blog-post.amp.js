@@ -47,7 +47,7 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
     } else if (selectedLanguage === "en") {
       navigate(slug.replace("/it", ""))
     }
-  }, [selectedLanguage])
+  }, [selectedLanguage, slug])
 
   return (
     <Layout
@@ -66,7 +66,7 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
         coverImage={post.frontmatter.cover_image}
       />
       <Paper className={classes.root}>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ marginTop: 0 }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -101,6 +101,10 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
         <ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
         <EmailSignup />
+
+        <amp-auto-ads type="adsense"
+                      data-ad-client="ca-pub-3926299101061647">
+        </amp-auto-ads>
       </Paper>
 
       <Bio isIT={defaultCountry === `IT`} />

@@ -11,12 +11,12 @@ lang: "it"
 
 Se hai un progetto Angular v7 e non hai l'occasione di fare l'upgrade a quella che sarà l'ottava versione o vuoi semplicemente testare una delle piccole funzionalità che saranno molto utili quando la nuova versione verrà rilasciata, qui troverai una semplice guida su come fare.
 
-![Danza delle anime](../../conditional-polyfills/performance.jpg)
+![Danza delle anime](https://images.unsplash.com/photo-1511715282680-fbf93a50e721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Foto di [Ahmad Odeh](https://unsplash.com/photos/JhqhGfX_Wd8) su [Unsplash](https://unsplash.com)
 
 ## Il trucco
 
-Nello sviluppo di Angular, usiamo **Typescript** con un sacco di feature **Javascript** moderne. Di queste, però, non tutte sono compatibili con i broser degli utenti indi per cui quando generiamo la distribuzione di un'app Angular usando il comando `ng build` viene caricato anche un file chiamato `polyfills.js`
+Nello sviluppo di Angular, usiamo **Typescript** con un sacco di feature **Javascript** moderne. Di queste, però, non tutte sono compatibili con i browser degli utenti indi per cui quando generiamo la distribuzione di un'app Angular usando il comando `ng build` viene caricato anche un file chiamato `polyfills.js`
 
 Negli ultimi anni, i browser hanno iniziato a implementare molte di queste nuove funzionalità. La probabilità che ad un utente che sta navigando con l'ultima versione di Chrome, ad esempio, non serviranno a nulla i polyfill ES2015 contenuti nel file detto prima. Il loro browser li supporta già nativamente. Questo rende la maggior parte dei contenuti del file `polyfills.js` obsoleti e non più necessari.
 
@@ -36,9 +36,9 @@ Alla fine della `build` il tuo file `index.html` dovrebbe assomigliare a questo:
 
 Nello snippet riportato sopra, puoi vedere che la CLI di Angular ha aggiunto l'attributo `nomodule` al tag del polyfill ES2015. Questo attributo permette di far capire ai browser di scaricare ed eseguire lo script solo se il browser non riconosce l'[API del module script web](https://html.spec.whatwg.org/multipage/webappapis.html#module-script), questo significa che il browser è vecchio. 👌
 
-## E se i miei utenti non usano browser datati?
+## E se i miei utenti non usano browser datati? 🤯
 
-Potresti chiederti: e se i miei utenti non usano browser datati? è una domanda legittima, perché dovresti aspettare che la CLI faccia la build anche dei polyfill datati che non verranno mai usati? Se stai pensando davvero a questo, sai uno sviluppatore felice! 😁
+Potresti chiederti: e se i miei utenti non usano browser datati? è una domanda legittima, perché dovresti aspettare che la CLI faccia la build anche dei polyfill datati che non verranno mai usati? Se stai pensando davvero a questo, sei uno sviluppatore felice! 😁
 Se vuoi ignorare i vecchi polyfill completamente, puoi farlo usando il comando:
 
 `ng build --es5BrowserSupport=false`

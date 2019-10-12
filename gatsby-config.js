@@ -1,5 +1,8 @@
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${activeEnv}`,
 })
 
 module.exports = {
@@ -74,12 +77,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.ANALYTICS_ID,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Dauðr Blog`,
@@ -109,7 +106,7 @@ module.exports = {
             vars: {
               gtag_id: process.env.ANALYTICS_ID,
               config: {
-                "UA-45433517-6": {
+                [process.env.ANALYTICS_ID]: {
                   page_location: "{{pathname}}",
                 },
               },
@@ -117,8 +114,8 @@ module.exports = {
           },
         },
         canonicalBaseUrl: process.env.BASE_URL,
-        components: ["amp-form", "amp-ad", "amp-auto-ads"],
-        excludedPaths: ["/404*", "/"],
+        components: ["amp-ad",],
+        excludedPaths: ["/404*", "/", "/tag*"],
         pathIdentifier: "amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         relCanonicalPattern: `{{canonicalBaseUrl}}{{pathname}}`,

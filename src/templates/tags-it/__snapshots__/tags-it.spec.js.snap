@@ -818,7 +818,7 @@ exports[`ItalianTags renders correctly 1`] = `
         }
       }
     >
-      This website uses cookies to enhance the user experience.
+      Questo sito utilizza cookie per migliorare l'esperienza utente
     </div>
     <button
       className=""
@@ -838,7 +838,7 @@ exports[`ItalianTags renders correctly 1`] = `
         }
       }
     >
-      I understand
+      Ho capito
     </button>
   </div>
 </div>

@@ -10,7 +10,7 @@ id: "conditional-polyfills"
 
 If you have a project that's based on Angular v7 and don't have the chance to upgrade to the upcoming v8 or you want to test one of the most useful small features of the future version here you will find how to do it.
 
-![Dance of souls](performance.jpg)
+![Dance of souls](https://images.unsplash.com/photo-1511715282680-fbf93a50e721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Photo by [Ahmad Odeh](https://unsplash.com/photos/JhqhGfX_Wd8) on [Unsplash](https://unsplash.com)
 
 ## The trick

@@ -43,11 +43,16 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
-    const englishPosts = posts.filter(post => post.node.frontmatter.lang === null);
-    const italianPosts = posts.filter(post => post.node.frontmatter.lang === 'it');
+    const englishPosts = posts.filter(
+      post => post.node.frontmatter.lang === null
+    )
+    const italianPosts = posts.filter(
+      post => post.node.frontmatter.lang === "it"
+    )
 
     englishPosts.forEach((post, index) => {
-      const previous = index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
+      const previous =
+        index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
       const next = index === 0 ? null : englishPosts[index - 1].node
 
       createPage({
@@ -94,7 +99,8 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     italianPosts.forEach((post, index) => {
-      const previous = index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
+      const previous =
+        index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
       const next = index === 0 ? null : italianPosts[index - 1].node
 
       createPage({
@@ -138,7 +144,6 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
-
     })
 
     return null
@@ -158,17 +163,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-  // Check if the page is a localized 404
-  if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
-    const oldPage = { ...page }
-    // Get the language code from the path, and match all paths
-    // starting with this code (apart from other valid paths)
-    const langCode = page.path.split(`/`)[1]
-    page.matchPath = `/${langCode}/*`
-    // Recreate the modified page
-    deletePage(oldPage)
-    createPage(page)
-  }
-}
+// exports.onCreatePage = async ({ page, actions }) => {
+//   const { createPage, deletePage } = actions
+//   // Check if the page is a localized 404
+//   if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
+//     const oldPage = { ...page }
+//     // Get the language code from the path, and match all paths
+//     // starting with this code (apart from other valid paths)
+//     const langCode = page.path.split(`/`)[1]
+//     page.matchPath = `/${langCode}/*`
+//     // Recreate the modified page
+//     deletePage(oldPage)
+//     createPage(page)
+//   }
+// }

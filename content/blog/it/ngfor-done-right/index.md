@@ -1,5 +1,5 @@
 ---
-title: "ngFor Done Right"
+title: "ngFor Fatto Bene"
 description: Quando stiamo sviluppando dei template che usano liste, ngFor ci salva un sacco di tempo, ma potrebbe aver effetti disastrosi se usato male. Leggi questo articolo per avere delle dritte su come usarlo al meglio 🤩
 tags: ["angular", "codice", "guida", "frontend", "performance"]
 keywords: ["angular", "codice", "guida", "frontend", "performance", "ngFor", "trackBy"]
@@ -11,7 +11,7 @@ lang: "it"
 
 Quando stiamo sviluppando dei template che usano liste, ngFor ci salva un sacco di tempo, ma potrebbe aver effetti disastrosi se usato male. Leggi questo articolo per avere delle dritte su come usarlo al meglio 🤩
 
-![Arriva primo usando ngFor](../../ngfor-done-right/ngfor.png)
+![Arriva primo usando ngFor](https://images.unsplash.com/photo-1489976908522-aabacf277f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 > Foto di [Kolleen Gladden](https://unsplash.com/photos/ij5_qCBpIVY) su [Unsplash](https://unsplash.com)
 
 Tutte le informazioni contenute in questo articolo si possono trovare anche nella [documentazione ufficiale](https://angular.io/api/common/NgForOf)
@@ -66,7 +66,7 @@ export const getItems = (length): Item[] => {
 
 ## Prima di tutto: trackBy
 
-`trackBy` è una funzione che definisce come verificare i cambiamenti degli oggetti presenti nelle liste che andremo ad iterare. Questo significa che che possiamo usarla per sapere esattamente quali oggetti in una lista sono cambiati, dopo una chiamata di rete o per altri motivi, ad esempio.
+`trackBy` è una funzione che definisce come verificare i cambiamenti degli oggetti presenti nelle liste che andremo ad iterare. Questo significa che possiamo usarla per sapere esattamente quali oggetti in una lista sono cambiati, dopo una chiamata di rete o per altri motivi, ad esempio.
 Implementiamo questa funzione nel nostro file `.ts`:
 
 ```typescript
@@ -83,7 +83,7 @@ Poi nel nostro `.html` aggiungiamo la nuova funzione:
 
 Facendo questo la nostra app sarà molto più performante perché non dovrà ricaricare tutta la lista ogni volta, ma ricaricherà solo gli elementi cambiati
 
-## even e odd vengono poi
+## even e odd vengono dopo
 
 Le variabili `even` e `odd` sono usate principalmente per aggiungere lo stile ai componenti.
 Per esempio, quando abbiamo una tabella e vogliamo renderla più leggibile possiamo usare queste variabili per cambiare i colori di sfondo delle righe.
@@ -123,7 +123,7 @@ E nel vostro file `css`/`scss`:
 ```
 
 Il risultato sarà qualcosa del genere
-![Esempio even e odd](../../ngfor-done-right/even-odd.png)
+![Esempio even e odd](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/even-odd.png?alt=media&token=bd193e7b-6424-4e71-b9ae-e82b736198b6)
 
 ## Parlami di first e last
 
@@ -161,7 +161,7 @@ Usiamo la tabella di prima e settiamo le classi solo per le righe `first` e `las
 ```
 
 Ecco cosa ne uscirà
-![Esempio first e last](../../ngfor-done-right/first-last.png)
+![Esempio first e last](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/first-last.png?alt=media&token=921a3562-4b6a-4124-ac94-37aa0a502b9f)
 
 ## Non dimentichiamo di index
 
@@ -174,10 +174,10 @@ Forse è la variabile che più viene usata quando usiamo le liste, pensa solo se
 </mat-list>
 ```
 
-![Esempio index](../../ngfor-done-right/index.png)
+![Esempio index](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/index.png?alt=media&token=1456c0fc-48b9-4064-8403-ed706c178151)
 
 ## Questo è tutto 😍
 
-In questa piccola semplice guida abbiamo visto com'è possibile ottenere il meglio da **ngFor** con il minimo sforzo.
+In questa piccola e semplice guida abbiamo visto com'è possibile ottenere il meglio da **ngFor** con il minimo sforzo.
 
 Tutto il codice utilizzato nella guida è disponibile su [Stackblitz](https://stackblitz.com/edit/ngfor-done-right) e su [GitHub](https://github.com/Daudr/ngfor-done-right), vai pure a giocarci ✌

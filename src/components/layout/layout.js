@@ -5,7 +5,13 @@ import { rhythm } from "../../utils/typography"
 
 import { Header } from "../header/header"
 
-export const Layout = ({ location, title, children }) => {
+export const Layout = ({
+  location,
+  title,
+  children,
+  setSelectedLanguage,
+  defaultLang,
+}) => {
   return (
     <div
       style={{
@@ -15,8 +21,15 @@ export const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <Header location={location} title={title} />
-      <main>{children}</main>
+      <Header
+        location={location}
+        title={title}
+        setSelectedLanguage={setSelectedLanguage}
+        defaultLang={defaultLang}
+      />
+      <main>
+        {children}
+      </main>
       <footer>
         <a
           rel="noopener noreferrer"
@@ -33,8 +46,8 @@ export const Layout = ({ location, title, children }) => {
         <br />© {new Date().getFullYear()}, Michele Da Rin Fioretto - Dauðr
       </footer>
 
-      <CookieConsent>
-        This website uses cookies to enhance the user experience.
+      <CookieConsent buttonText={ defaultLang === `IT` ? `Ho capito` : `I undestand` }>
+        { defaultLang === `IT` ? `Questo sito utilizza cookie per migliorare l'esperienza utente` : `This website uses cookies to enhance the user experience.`}
       </CookieConsent>
     </div>
   )

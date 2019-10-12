@@ -5,12 +5,34 @@ import Img from "gatsby-image"
 import { rhythm } from "../../utils/typography"
 import Paper from "@material-ui/core/Paper"
 
-export const Bio = () => {
+export const Bio = ({ isIT = false }) => {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
         const { author, social } = data.site.siteMetadata
+
+        const bio = (
+          <div>
+            Written by <strong>{author}</strong> a freelance web developer that works
+            in Italy and in the world. <br />
+            His main area of expertise are <strong>Angular</strong>,{" "}
+            <strong>React</strong>, <strong>Firebase</strong> &{" "}
+            <strong>Serverless Architectures</strong>
+            <div style={{ marginTop: rhythm(1 / 2) }}></div>
+            You can also find him on
+          </div>
+        )
+        const itBio = (
+          <div>
+            Scritto da <strong>{author}</strong> uno sviluppatore <strong>Web</strong> che lavora in <strong>Italia</strong> e nel <strong>Mondo</strong> <br />
+            I suoi punti di forza sono <strong>Angular</strong>,{" "}
+            <strong>React</strong>, <strong>Firebase</strong> &{" "}
+            <strong>Serverless Architectures</strong> e non solo.
+            <div style={{ marginTop: rhythm(1 / 2) }}></div>
+            Puoi trovarlo anche su
+          </div>
+        )
 
         return (
           <Paper
@@ -35,11 +57,7 @@ export const Bio = () => {
               }}
             />
             <div>
-              Written by <strong>{author}</strong> a freelance web developer
-              that works in Italy and in the world.
-              <div style={{ marginTop: rhythm(1 / 2) }}></div>
-              You can also find him on
-              <br />
+              { isIT ? itBio : bio }
               {social.map((social, i) => {
                 let fixed
 
@@ -88,7 +106,7 @@ export const Bio = () => {
                         marginBottom: 0,
                         minWidth: 30,
                         maxWidth: `50px`,
-                        maxHeigth: `50px`
+                        maxHeigth: `50px`,
                       }}
                     />
                   </a>

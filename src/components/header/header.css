@@ -40,3 +40,12 @@ h3.header-title {
 * {
   font-family: 'Roboto', sans-serif
 }
+
+.country-flag img {
+  margin-bottom: 0;
+}
+
+.flag-select .flag-options {
+  margin-top: 0;
+  padding: 0;
+}

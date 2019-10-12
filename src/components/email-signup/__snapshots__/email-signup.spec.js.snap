@@ -62,9 +62,23 @@ exports[`EmailSignup renders correctly 1`] = `
           className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
           onClick={[Function]}
         >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiOutlinedInput-input"
+            disabled={false}
+            id="email"
+            name="email"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
           <fieldset
             aria-hidden={true}
-            className="PrivateNotchedOutline-root-58 MuiOutlinedInput-notchedOutline"
+            className="PrivateNotchedOutline-root-60 MuiOutlinedInput-notchedOutline"
             style={
               Object {
                 "paddingLeft": 8,
@@ -72,7 +86,7 @@ exports[`EmailSignup renders correctly 1`] = `
             }
           >
             <legend
-              className="PrivateNotchedOutline-legend-59"
+              className="PrivateNotchedOutline-legend-61"
               style={
                 Object {
                   "width": 0.01,
@@ -88,19 +102,6 @@ exports[`EmailSignup renders correctly 1`] = `
               />
             </legend>
           </fieldset>
-          <input
-            aria-invalid={false}
-            className="MuiInputBase-input MuiOutlinedInput-input"
-            disabled={false}
-            id="email"
-            name="email"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            required={false}
-            type="text"
-            value=""
-          />
         </div>
         
       </div>

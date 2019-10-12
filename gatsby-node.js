@@ -10,6 +10,8 @@ exports.createPages = ({ graphql, actions }) => {
     `./src/templates/blog-post-amp/blog-post.amp.js`
   )
   const tagTemplate = path.resolve(`./src/templates/tags/tags.js`)
+  const italianTagTemplate = path.resolve(`./src/templates/tags-it/tags-it.js`)
+
   return graphql(
     `
       {
@@ -26,6 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 tags
                 id
+                lang
               }
             }
           }
@@ -40,9 +43,17 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    const englishPosts = posts.filter(
+      post => post.node.frontmatter.lang === null
+    )
+    const italianPosts = posts.filter(
+      post => post.node.frontmatter.lang === "it"
+    )
+
+    englishPosts.forEach((post, index) => {
+      const previous =
+        index === englishPosts.length - 1 ? null : englishPosts[index + 1].node
+      const next = index === 0 ? null : englishPosts[index - 1].node
 
       createPage({
         path: post.node.fields.slug,
@@ -67,7 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Tag pages:
       let tags = []
       // Iterate through each post, putting all found tags into `tags`
-      each(posts, edge => {
+      each(englishPosts, edge => {
         if (get(edge, "node.frontmatter.tags")) {
           tags = tags.concat(edge.node.frontmatter.tags)
         }
@@ -80,6 +91,54 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: `/tags/${kebabCase(tag)}/`,
           component: tagTemplate,
+          context: {
+            tag,
+          },
+        })
+      })
+    })
+
+    italianPosts.forEach((post, index) => {
+      const previous =
+        index === italianPosts.length - 1 ? null : italianPosts[index + 1].node
+      const next = index === 0 ? null : italianPosts[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: blogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+
+      createPage({
+        path: `${post.node.fields.slug}amp/`,
+        component: ampBlogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+
+      // Tag pages:
+      let tags = []
+      // Iterate through each post, putting all found tags into `tags`
+      each(italianPosts, edge => {
+        if (get(edge, "node.frontmatter.tags")) {
+          tags = tags.concat(edge.node.frontmatter.tags)
+        }
+      })
+      // Eliminate duplicate tags
+      tags = uniq(tags)
+
+      // Make italian tag pages
+      tags.forEach(tag => {
+        createPage({
+          path: `/it/tags/${kebabCase(tag)}/`,
+          component: italianTagTemplate,
           context: {
             tag,
           },
@@ -104,16 +163,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        "@components": path.resolve(__dirname, "src/components"),
-        "@pages": path.resolve(__dirname, "src/pages"),
-        "@templates": path.resolve(__dirname, "src/templates"),
-        "@utils": path.resolve(__dirname, "src/utils"),
-        "@mocks": path.resolve(__dirname, "__mocks__"),
-      },
-    },
-  })
-}
+// exports.onCreatePage = async ({ page, actions }) => {
+//   const { createPage, deletePage } = actions
+//   // Check if the page is a localized 404
+//   if (page.path.match(/^\/[a-z]{2}\/404\/$/)) {
+//     const oldPage = { ...page }
+//     // Get the language code from the path, and match all paths
+//     // starting with this code (apart from other valid paths)
+//     const langCode = page.path.split(`/`)[1]
+//     page.matchPath = `/${langCode}/*`
+//     // Recreate the modified page
+//     deletePage(oldPage)
+//     createPage(page)
+//   }
+// }

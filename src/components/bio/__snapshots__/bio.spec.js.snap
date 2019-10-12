@@ -89,20 +89,40 @@ exports[`Bio renders correctly 1`] = `
     />
   </div>
   <div>
-    Written by 
-    <strong>
-      Michele Da Rin Fioretto
-    </strong>
-     a freelance web developer that works in Italy and in the world.
-    <div
-      style={
-        Object {
-          "marginTop": "0.875rem",
+    <div>
+      Written by 
+      <strong>
+        Michele Da Rin Fioretto
+      </strong>
+       a freelance web developer that works in Italy and in the world. 
+      <br />
+      His main area of expertise are 
+      <strong>
+        Angular
+      </strong>
+      ,
+       
+      <strong>
+        React
+      </strong>
+      , 
+      <strong>
+        Firebase
+      </strong>
+       &
+       
+      <strong>
+        Serverless Architectures
+      </strong>
+      <div
+        style={
+          Object {
+            "marginTop": "0.875rem",
+          }
         }
-      }
-    />
-    You can also find him on
-    <br />
+      />
+      You can also find him on
+    </div>
     <a
       href="https://www.facebook.com/micheleedarin"
       rel="noopener noreferrer"

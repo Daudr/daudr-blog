@@ -2,31 +2,34 @@ import React from "react"
 import PropTypes from "prop-types"
 
 export default function HTML(props) {
+  const isAMP =
+    typeof window !== `undefined`
+      ? window.location.href.match(/\/amp\//)
+      : false
+
   return (
     <html lang="en" {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
         />
-        {props.headComponents}
+
+        <meta
+          name="monetization"
+          content="$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw"
+        />
 
         <script
           async
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          custom-element="amp-auto-ads"
+          src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
         ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: 'ca-pub-3926299101061647',
-                enable_page_level_ads: true
-              });
-            `,
-          }}
-        />
+
+        {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import kebabCase from "lodash/kebabCase"
 import { Link } from "gatsby"
 
-export const Tag = ({ tag, count }) => {
+export const Tag = ({ tag, count, isIT = false }) => {
   const [hover, setHover] = useState(false)
 
   const hoverOn = () => {
@@ -20,9 +20,9 @@ export const Tag = ({ tag, count }) => {
         color: `inherit`,
         fontFamily: `'Anton', sans-serif`,
         textTransform: `uppercase`,
-        fontWeight: `bold`
+        fontWeight: `bold`,
       }}
-      to={`/tags/${kebabCase(tag)}`}
+      to={`${isIT ? "/it" : ""}/tags/${kebabCase(tag)}`}
     >
       <div
         style={{
@@ -30,7 +30,7 @@ export const Tag = ({ tag, count }) => {
           padding: `5px 10px`,
           border: hover ? `1px solid black` : `1px dashed black`,
           margin: `5px`,
-          backgroundColor: `#FFFFFF`
+          backgroundColor: `#FFFFFF`,
         }}
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}

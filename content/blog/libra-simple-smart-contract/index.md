@@ -3,14 +3,14 @@ title: "Write your first transaction on the Libra Network"
 description: After the release of the Libra Network's testnet, we'll understand how to write simple transactions on it
 tags: ['facebook', 'libra', 'blockchain', 'cryptocurrency', 'code', 'guide']
 keywords: ['facebook', 'libra', 'blockchain', 'cryptocurrency', 'code', 'guide']
-cover_image: 'https://www.countypress.co.uk/resources/images/10005590/'
+cover_image: https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/libra_logo.jpg?alt=media&token=5939a2fc-ccbd-4adb-a06f-54e6af6419d0
 date: "2019-06-24T09:27:10.759Z"
 id: "libra-simple-smart-contract"
 ---
 
 The other day I [published an article](https://blog.daudr.me/facebook-libra) about the Libra Network, today we'll see how to build a transaction on it.
 
-![Libra logo](libra-logo.png)
+![Libra logo](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/libra_logo.jpg?alt=media&token=5939a2fc-ccbd-4adb-a06f-54e6af6419d0)
 > Libra logo
 
 ## Installing the testnet locally
@@ -67,8 +67,8 @@ This command builds and runs the client utilizing `cargo` (`Rust`'s package mana
 Once the client connects to a node on the `testnet`, you will see the following output. To quit the client at any time, use the `quit` command.
 
 ```bash
-usage: <command> <args> 
-Use the following commands: 
+usage: <command> <args>
+Use the following commands:
 account | a   Account operations
 query | q   Query operations
 transfer | transferb | t | tb
@@ -83,7 +83,7 @@ Please, input commands:
 libra%
 ```
 
-## Troubleshoot
+## Troubleshoot Build
 
 If you are experiencing build failures, try to remove the `cargo lock` file from the libra directory:
 
@@ -253,6 +253,6 @@ libra% query balance 1
 Balance is: 60
 ```
 
-## Congratulations!
+## Congratulations! 🎉🎉🎉
 
 You have successfully executed your transaction on the Libra `testnet` and transferred 10 **Libra Coins**!

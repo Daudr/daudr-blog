@@ -200,6 +200,13 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-material-ui'
+    'gatsby-plugin-material-ui',
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: true,
+      }
+    }
   ],
 }

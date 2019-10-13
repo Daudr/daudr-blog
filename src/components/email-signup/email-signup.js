@@ -71,7 +71,7 @@ export const EmailSignup = ({ isAMP = false, isIT = false }) => {
         </span>
       </p>
       {isAMP ? (
-        <amp-form style={formStyle} method="POST">
+        <amp-form style={formStyle} method="GET" target="_top">
           <FormControl error={invalidEmail}>
             <TextField
               id="email"
@@ -101,7 +101,7 @@ export const EmailSignup = ({ isAMP = false, isIT = false }) => {
           </Button>
         </amp-form>
       ) : (
-        <form style={formStyle} method="POST">
+        <form style={formStyle} method="GET" target="_top">
           <FormControl error={invalidEmail}>
             <TextField
               id="email"

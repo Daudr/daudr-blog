@@ -10,6 +10,10 @@ id: "create-gatsby-plugin"
 
 In the [last article](https://blog.daudr.me/future-of-web-moentizetion) I introduced the new (proposed) web standard per **Web Monetizatio**. In this new article we'll se how we can create a simple **GatsbyJS Plugin** to inject the **Web Monetization Meta Tag** using the **SSR APIs**.
 
+![Add a piece to the puzzle](https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)
+
+> Photo by [Hans-Peter Gauster](https://unsplash.com/@sloppyperfectionist) on [Unsplash](https://unsplash.com)
+
 ## Create the plugin files
 
 We can read from the official plugins docs that a plugin project has to comprehend some files:
@@ -32,4 +36,53 @@ We can read from the official plugins docs that a plugin project has to comprehe
 
 For the sake of these plugin we'll use only the SSR APIs therefore the only file we need to have is the `gatsby-ssr.js`' one.
 
+## Using SSR APIs
 
+As already said we'll create a plugin that'll need only the SSR APIs, GatsbyJS expose these APIs:
+
+- `onPreRenderHTML`
+- `onRenderBody`
+- `replaceRenderer`
+- `wrapPageElement`
+- `wrapRootElement`
+
+In our plugin we'll use only the `onPreRenderHTML` in order to add the **Web Monetization Meta Tag** in the `<head>` section of our pages.
+This API gives us two methods we can use to do what we need:
+
+- `getHeadComponents` - return the `headComponents` array, formed by `ReactNode` objects
+- `replaceHeadComponents` - Takes an array of components as its first argument which replace the headComponents array which is passed to the `html.js` component.
+
+You can read more on these in the official docs.
+
+## Create our SSR file
+
+At the end our `gatsby-ssr.js` should look like this:
+
+```javascript
+const React = require("react")
+
+exports.onPreRenderHTML = (
+  { getHeadComponents, replaceHeadComponents },
+  pluginOptions
+) => {
+  const headComponents = getHeadComponents()
+
+  const excludedPaths = pluginOptions.excludedPaths
+
+  const webMonetizationTag = (
+    <meta name="monetization" content={pluginOptions.paymentPointer} />
+  )
+
+  headComponents.push(webMonetizationTag)
+
+  replaceHeadComponents(headComponents)
+}
+```
+
+## Publish your new plugin on NPM
+
+In order to publish your new plugin on NPM and be discovered by its users
+
+## That's all 😎😎😎
+
+Congratulations! You've created your first GatsbyJS plugin.

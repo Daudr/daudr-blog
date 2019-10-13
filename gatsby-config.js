@@ -206,6 +206,7 @@ module.exports = {
       options: {
         printRejected: false,
         develop: true,
+        ignore: ['prismjs-theme-light.css']
       }
     }
   ],

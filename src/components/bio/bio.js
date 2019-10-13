@@ -106,7 +106,7 @@ export const Bio = ({ isIT = false }) => {
                         marginBottom: 0,
                         minWidth: 30,
                         maxWidth: `50px`,
-                        maxHeigth: `50px`,
+                        maxHeight: `50px`,
                       }}
                     />
                   </a>

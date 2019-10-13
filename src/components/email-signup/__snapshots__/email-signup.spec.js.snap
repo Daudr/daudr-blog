@@ -35,7 +35,7 @@ exports[`EmailSignup renders correctly 1`] = `
     </span>
   </p>
   <form
-    method="POST"
+    method="GET"
     style={
       Object {
         "alignItems": "baseline",
@@ -44,6 +44,7 @@ exports[`EmailSignup renders correctly 1`] = `
         "justifyContent": "center",
       }
     }
+    target="_top"
   >
     <div
       className="MuiFormControl-root"

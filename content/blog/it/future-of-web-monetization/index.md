@@ -53,7 +53,7 @@ Al momento della scrittura di questo articolo, i **Wallet** che accettano **paga
 
 Sempre al momento di scrittura, l'unico **Provider** conosciuto è **Coil**.
 
-**Coil**, come [**Medium**](https://medium.com), è una piattaforma dove chiunque può condividere articoli )e link che usano la Web Monetization) e offre la possibilità (facoltativa) di sottoscrivere un abbonamento mensile (dal costo di 4,99$) per vedere gli articoli disponibili solo alle persone che decidono di sottoscrivere questo abbonamento e per pagare i siti monetizzati che si decide di visualizzare. Una sorta di "abbonamento pro", insomma.
+**Coil**, come [**Medium**](https://medium.com), è una piattaforma dove chiunque può condividere articoli (e link che usano la Web Monetization) e offre la possibilità (facoltativa) di sottoscrivere un abbonamento mensile (dal costo di 4,99$) per vedere gli articoli disponibili solo alle persone che decidono di sottoscrivere questo abbonamento e per pagare i siti monetizzati che si decide di visualizzare. Una sorta di "abbonamento pro", insomma.
 
 ## Come posso monetizzare i miei contenuti? 💰
 

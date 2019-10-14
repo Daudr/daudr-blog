@@ -23,11 +23,11 @@ La **Web Monetization** è una
 
 > La possibilità di trasferire denato è stata una mancanza di lunga durata nelle piattaforme web. Come risultato, il web soffre di ondate di pubblicità e business model corrotti. **Web Monetization offre un modo aperto, nativo, efficiente e automatico per compensare i creatori di contenuti, pagare le chiamate alle API e per supportare infrastrutture web**.
 
-## How Web Monetization can improve users satisfaction
+## Come la Web Monetization può incrementare la soddisfazione degli utenti
 
-Web Monetizatoin can improve the user overall satisfaction with your web content because he won't be perseguitated by your ads, and you still will make money from him.
+La Web Monetization può incrementare la soddisfazione degli utenti che visitano i tuoi contenuti perché, semplicemente, non verranno più perseguitati da tutte le pubblicità ma tu continuerai a guadagnare dalle visualizzazioni.
 
-In fact, Web Monetization, offers the user to chose where its web monetization funds should go when navigating the web.
+Infatti, la Web Monetization offre agli utenti dove i soldi della loro web monetization devono andare quando navigano nel web.
 
 ## Web Monetization Wallet
 
@@ -98,4 +98,4 @@ Per aggiungere la Web Monetization alle tue pagine web, copia il codice nella se
 </html>
 ```
 
-**Congratulazioni! Il yuo sito ora è monetizzato con la Web Monetization.** 😎😎😎
+**Congratulazioni! Il tuo sito ora è monetizzato con la Web Monetization.** 😎😎😎

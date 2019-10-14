@@ -36,8 +36,6 @@ At the moment these are the **Web Monetization Wallets** (wallets that accepts *
 
 > XRP Tipbot
 
-<!-- **XRP Tipbot** is a bot that lets users use the principles of web monetization platforms like Twitter, Discord and also your website. It's used also by **Coil** as we'll soon see. -->
-
 [![GateHub](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/future-of-web-monetization%2Fgatehub_logo.png?alt=media&token=39082cb3-4d96-4971-b0c2-ed094931823f)](https://gatehub.net/)
 
 > GateHub
@@ -52,7 +50,7 @@ At the moment these are the **Web Monetization Wallets** (wallets that accepts *
 
 At the moment of writing this article, the only known **Web Monetization Provider** is **Coil**.
 
-**Coil**, like [**Medium**](https://medium.com), is a platform when a person can share articles (or **web monetized links**) and offers a monthly fee for viewing a sort of pro members' articles only and for paying those web monetized links that you visit.
+**Coil**, like [**Medium**](https://medium.com), is a platform where a person can share articles (or **web monetized links**) and offers a monthly fee for viewing a sort of pro members' articles only and for paying those web monetized links that you visit.
 
 ## How do I web monetize my own content? 💰
 

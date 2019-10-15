@@ -1,6 +1,6 @@
 ---
 title: "How to Create your first GatsbyJS Plugin"
-description: There's a new (proposed) web standard about advertising on the web. It's called Web Monetization, let's see what's all about.
+description: In the latest article I introduced the new (proposed) web standard per Web Monetization. In this new article we'll se how we can create a simple GatsbyJS Plugin to inject the Web Monetization Meta Tag using the SSR APIs.
 tags: ["gatsbyjs", "plugin", "web monetization", "guide", "code"]
 keywords: ["gatsbyjs", "plugin", "web monetization", "guide", "code"]
 cover_image: https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80
@@ -8,7 +8,7 @@ date: "2019-10-14T10:00:00.000Z"
 id: "create-gatsby-plugin"
 ---
 
-In the [last article](https://blog.daudr.me/future-of-web-moentizetion) I introduced the new (proposed) web standard per **Web Monetizatio**. In this new article we'll se how we can create a simple **GatsbyJS Plugin** to inject the **Web Monetization Meta Tag** using the **SSR APIs**.
+In the [latest article](https://blog.daudr.me/future-of-web-moentizetion) I introduced the new (proposed) web standard per **Web Monetization**. In this new article we'll se how we can create a simple **GatsbyJS Plugin** to inject the **Web Monetization Meta Tag** using the **SSR APIs**.
 
 ![Add a piece to the puzzle](https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)
 

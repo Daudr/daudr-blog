@@ -1,6 +1,6 @@
 ---
 title: "Come sviluppare il tuo primo Plugin per GatsbyJS"
-description: There's a new (proposed) web standard about advertising on the web. It's called Web Monetization, let's see what's all about.
+description: Nell'ultimo articolo, ho introddotto il nuovo standard per la Web Monetization. In questo articolo andreamo a vedere com'è facile creare un Plugin per GatsbyJS che aggiunge il Web Monetization Meta Tag all'interno delle pagine della nostra applicazione, utilizzando le API SSR fornite da Gatsby.
 tags: ["gatsbyjs", "plugin", "web monetization", "guida", "code"]
 keywords: ["gatsbyjs", "plugin", "web monetization", "guida", "code"]
 cover_image: https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80

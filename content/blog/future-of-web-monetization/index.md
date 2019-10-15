@@ -24,9 +24,9 @@ There's a new (proposed) web standard about **advertising on the web**. It's cal
 
 ## How Web Monetization can improve users satisfaction
 
-Web Monetizatoin can improve the user overall satisfaction with your web content because he won't be perseguitated by your ads, and you still will make money from him.
+Web Monetization can improve the user overall satisfaction with your web content because he won't be persecuted by your ads, and you still will make money from him.
 
-In fact, Web Monetization, offers the user to chose where its web monetization funds should go when navigating the web.
+In fact, Web Monetization offers the user to choose where its web monetization funds should go when navigating the web.
 
 ## Web Monetization Wallets
 
@@ -35,8 +35,6 @@ At the moment these are the **Web Monetization Wallets** (wallets that accepts *
 [![XRP Tipbot](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/future-of-web-monetization%2Ftipbot_logo.png?alt=media&token=8aab0f55-43fd-40c5-86bc-737b269dae4a)](https://www.xrptipbot.com/)
 
 > XRP Tipbot
-
-<!-- **XRP Tipbot** is a bot that lets users use the principles of web monetization platforms like Twitter, Discord and also your website. It's used also by **Coil** as we'll soon see. -->
 
 [![GateHub](https://firebasestorage.googleapis.com/v0/b/daudr-blog.appspot.com/o/future-of-web-monetization%2Fgatehub_logo.png?alt=media&token=39082cb3-4d96-4971-b0c2-ed094931823f)](https://gatehub.net/)
 
@@ -52,7 +50,7 @@ At the moment these are the **Web Monetization Wallets** (wallets that accepts *
 
 At the moment of writing this article, the only known **Web Monetization Provider** is **Coil**.
 
-**Coil**, like [**Medium**](https://medium.com), is a platform when a person can share articles (or **web monetized links**) and offers a monthly fee for viewing a sort of pro members' articles only and for paying those web monetized links that you visit.
+**Coil**, like [**Medium**](https://medium.com), is a platform where a person can share articles (or **web monetized links**) and offers a monthly fee for viewing a sort of pro members' articles only and for paying those web monetized links that you visit.
 
 ## How do I web monetize my own content? 💰
 
@@ -82,7 +80,7 @@ The Meta tag is the tag we're going to add to our web monetized web pages. This 
 
 ### Add your new Meta Tag to your pages
 
-Copy your Meta Tag and add it to your websites `<head>` section. It should look like the example below:
+Copy your Meta Tag and add it to your websites' `<head>` section. It should look like the example below:
 
 ```html
 <!doctype html>
@@ -97,4 +95,4 @@ Copy your Meta Tag and add it to your websites `<head>` section. It should look 
 </html>
 ```
 
-**Congragulations! Your website is now Web Monetized.** 😎😎😎
+**Congratulations! Your website is now Web Monetized.** 😎😎😎

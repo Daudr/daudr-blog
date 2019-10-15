@@ -18,11 +18,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
         />
 
-        <meta
-          name="monetization"
-          content="$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw"
-        />
-
         <script
           async
           custom-element="amp-auto-ads"

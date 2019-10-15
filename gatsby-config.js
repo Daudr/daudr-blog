@@ -201,13 +201,19 @@ module.exports = {
       }
     },
     'gatsby-plugin-material-ui',
-    { 
-      resolve: `gatsby-plugin-purgecss`,
+    {
+      resolve: `gatsby-plugin-web-monetization`,
       options: {
-        printRejected: false,
-        develop: true,
-        ignore: ['prismjs-theme-light.css']
+        paymentPointer: `$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`
       }
     }
+    // { 
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: false,
+    //     develop: true,
+    //     ignore: ['prismjs-theme-light.css']
+    //   }
+    // }
   ],
 }

@@ -302,7 +302,8 @@ exports[`ItalianTags renders correctly 1`] = `
           <strong>
             Michele Da Rin Fioretto
           </strong>
-           uno sviluppatore 
+           uno sviluppatore
+           
           <strong>
             Web
           </strong>
@@ -310,22 +311,24 @@ exports[`ItalianTags renders correctly 1`] = `
           <strong>
             Italia
           </strong>
-           e nel 
+           e nel
+           
           <strong>
             Mondo
           </strong>
            
           <br />
-          I suoi punti di forza sono 
+          I suoi punti di forza sono
+           
           <strong>
             Angular
           </strong>
-          ,
-           
+          , 
           <strong>
             React
           </strong>
-          , 
+          ,
+           
           <strong>
             Firebase
           </strong>
@@ -363,7 +366,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -450,7 +453,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -537,7 +540,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -624,7 +627,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -711,7 +714,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",

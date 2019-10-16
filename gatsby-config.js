@@ -143,6 +143,11 @@ module.exports = {
             }
           }
         `,
+        setup: () => ({
+          custom_namespaces: {
+            media: 'http://search.yahoo.com/mrss/',
+          },
+        }),
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {

@@ -4,33 +4,29 @@ orbs:
 jobs:
   unit-test:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:10
 
     working_directory: ~/repo
 
     steps:
       - checkout:
           path: ~/repo
-      
+
       - attach_workspace:
           at: ~/repo
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
             - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
             - v1-npm-deps-
-      
+
       - run:
           name: Install Dependencies
           command: npm install
 
-      - save_cache: 
+      - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
-            
+
           paths:
             - ./node_modules
             - ~/.npm
@@ -42,14 +38,14 @@ jobs:
 
   e2e-test:
     docker:
-      - image: circleci/node:8
-    
+      - image: circleci/node:10
+
     working_directory: ~/repo
 
     steps:
       - checkout:
           path: ~/repo
-      
+
       - attach_workspace:
           at: ~/repo
 
@@ -57,14 +53,14 @@ jobs:
           keys:
             - v1-npm-deps-{{ checksum "package-lock.json" }}
             - v1-npm-deps-
-      
+
       - run:
           name: Install Dependencies
           command: npm install
 
-      - save_cache: 
+      - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
-            
+
           paths:
             - ./node_modules
             - ~/.npm
@@ -75,8 +71,8 @@ jobs:
           command: npm run test:e2e:ci
 
   build:
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
 
     working_directory: ~/repo
 
@@ -86,28 +82,24 @@ jobs:
 
       - attach_workspace:
           at: ~/repo/
-      
-      # Download and cache dependencies
+
       - restore_cache:
           keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
             - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
             - v1-npm-deps-
-      
+
       - run:
           name: Install Dependencies
           command: npm install
 
-      - save_cache: 
+      - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
-            
+
           paths:
             - ./node_modules
             - ~/.npm
             - ~/.cache
-      
+
       - run:
           name: Cleaning up Gatsby
           command: npx gatsby clean
@@ -123,8 +115,8 @@ jobs:
             - public
 
   build-test:
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
 
     working_directory: ~/repo
 
@@ -134,28 +126,24 @@ jobs:
 
       - attach_workspace:
           at: ~/repo/
-      
-      # Download and cache dependencies
+
       - restore_cache:
           keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
             - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
             - v1-npm-deps-
-      
+
       - run:
           name: Install Dependencies
           command: npm install
 
-      - save_cache: 
+      - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
-            
+
           paths:
             - ./node_modules
             - ~/.npm
             - ~/.cache
-      
+
       - run:
           name: Cleaning up Gatsby
           command: npx gatsby clean
@@ -171,8 +159,8 @@ jobs:
             - public
 
   build-prod:
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
 
     working_directory: ~/repo
 
@@ -182,28 +170,24 @@ jobs:
 
       - attach_workspace:
           at: ~/repo/
-      
-      # Download and cache dependencies
+
       - restore_cache:
           keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
             - v1-npm-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
             - v1-npm-deps-
-      
+
       - run:
           name: Install Dependencies
           command: npm install
 
-      - save_cache: 
+      - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
-            
+
           paths:
             - ./node_modules
             - ~/.npm
             - ~/.cache
-      
+
       - run:
           name: Cleaning up Gatsby
           command: npx gatsby clean
@@ -221,8 +205,8 @@ jobs:
   deploy-test:
     working_directory: ~/repo
 
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
 
     steps:
       - checkout:
@@ -230,16 +214,16 @@ jobs:
 
       - attach_workspace:
           at: ~/repo
- 
+
       - run:
           name: Firebase Deploy Test
           command: npx firebase deploy --only hosting:test --token=$FIREBASE_TOKEN
-  
+
   deploy-prod:
     working_directory: ~/repo
 
-    docker: 
-      - image: circleci/node:8
+    docker:
+      - image: circleci/node:10
 
     steps:
       - checkout:
@@ -247,11 +231,11 @@ jobs:
 
       - attach_workspace:
           at: ~/repo
-  
+
       - run:
           name: Firebase Deploy Prod
           command: npx firebase deploy --only hosting:prod --token=$FIREBASE_TOKEN
-      
+
       - run:
           name: Semantic release
           command: npm run semantic-release || true

@@ -1,36 +1,36 @@
-import React from "react"
-import renderer from "react-test-renderer"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import renderer from 'react-test-renderer'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import SEO from "./seo"
+import SEO from './seo'
 
-import { post } from "../../../__mocks__/seo.mock"
-import { testHook } from "../../utils/test-utils"
+import { post } from '../../../__mocks__/seo.mock'
+import { testHook } from '../../utils/test-utils'
 
 let site
 
 beforeEach(() => {
-  testHook(() => {
-    site = useStaticQuery(
-      graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              siteUrl
-              description
-              author
-              twitterUserName
-            }
-          }
-        }
-      `
-    )
-  })
+	testHook(() => {
+		site = useStaticQuery(
+			graphql`
+				query {
+					site {
+						siteMetadata {
+							title
+							siteUrl
+							description
+							author
+							twitterUserName
+						}
+					}
+				}
+			`
+		)
+	})
 })
 
-describe("SEO", () => {
-  /* it("renders correctly", () => {
+describe('SEO', () => {
+	/* it("renders correctly", () => {
     const tree = renderer.create(<SEO />).toJSON()
     expect(tree).toMatchSnapshot()
   })
@@ -42,7 +42,7 @@ describe("SEO", () => {
     expect(tree).toMatchSnapshot()
   }) */
 
-  it("site should be defined", () => {
-    expect(true).toBeTruthy()
-  })
+	it('site should be defined', () => {
+		expect(true).toBeTruthy()
+	})
 })

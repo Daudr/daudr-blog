@@ -75,6 +75,13 @@ exports.onPreRenderHTML = ({
         }}
       ></script>
     )
+  } else {
+    // FIXME: remove `!important` styles from AMP pages
+    headComponents.forEach(component => {
+      if (typeof component === <style></style>) {
+        
+      }
+    })
   }
 
   replaceHeadComponents(headComponents)

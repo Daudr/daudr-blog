@@ -152,7 +152,10 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    { "media:content": edge.node.cover_image },
+                  ],
                 })
               })
             },
@@ -165,6 +168,7 @@ module.exports = {
                     node {
                       excerpt
                       html
+                      cover_image
                       fields { slug }
                       frontmatter {
                         title
@@ -188,26 +192,26 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
-          }
-        }
-      }
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
     },
-    'gatsby-plugin-material-ui',
+    "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-plugin-web-monetization`,
       options: {
-        paymentPointer: `$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`
-      }
-    }
-    // { 
+        paymentPointer: `$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`,
+      },
+    },
+    // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {
     //     printRejected: false,

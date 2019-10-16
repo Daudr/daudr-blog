@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, navigate } from 'gatsby'
 
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/seo'
-import ArticleCard from '../components/article-card/article-card'
-import { Pagination } from '../components/pagination/pagination'
+import Layout from '../../components/layout/layout'
+import SEO from '../../components/seo/seo'
+import ArticleCard from '../../components/article-card/article-card'
+import { Pagination } from '../../components/pagination/pagination'
 
 export const BlogIndex = ({ data, location, pageContext }) => {
 	const [selectedLanguage, setSelectedLanguage] = useState('en')

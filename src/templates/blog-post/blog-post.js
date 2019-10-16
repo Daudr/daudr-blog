@@ -94,7 +94,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 					}}
 				>
 					{post.frontmatter.tags.map(tag => {
-						return <Tag tag={tag} key={tag} />
+						return <Tag isIT={defaultCountry === `IT`} tag={tag} key={tag} />
 					})}
 				</div>
 

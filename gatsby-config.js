@@ -154,7 +154,7 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
                     { "content:encoded": edge.node.html },
-                    { "media:content": edge.node.cover_image },
+                    { "media:content": edge.node.frontmatter.cover_image },
                   ],
                 })
               })
@@ -168,11 +168,11 @@ module.exports = {
                     node {
                       excerpt
                       html
-                      cover_image
                       fields { slug }
                       frontmatter {
                         title
                         date
+                        cover_image
                       }
                     }
                   }

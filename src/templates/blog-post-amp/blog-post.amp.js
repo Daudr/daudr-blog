@@ -115,6 +115,8 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
 					justifyContent: `space-between`,
 					listStyle: `none`,
 					padding: 0,
+					marginLeft: 0,
+					width: `100%`,
 				}}
 			>
 				<li>

@@ -16,3 +16,22 @@
 		height: 150px;
 	}
 }
+
+.tags__header {
+	font-family: 'Anton', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #ffffff;
+
+	width: 100%;
+}
+
+.tags__footer {
+	width: 100%;
+}
+
+.bio__wrapper {
+	width: 50%;
+	margin: auto;
+}

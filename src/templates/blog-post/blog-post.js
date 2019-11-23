@@ -107,8 +107,6 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>*/}
 			</Paper>
 
-			<Bio isIT={defaultCountry === `IT`} />
-
 			<ul
 				style={{
 					display: `flex`,

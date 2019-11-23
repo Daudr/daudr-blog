@@ -29,28 +29,17 @@ export const Tags = ({ pageContext, data }) => {
 			location={`/tags/${tag}`}
 			defaultLang='US'
 			setSelectedLanguage={setSelectedLanguage}
+			isIndex={true}
 		>
-			<h2
-				style={{
-					fontFamily: `'Anton', sans-serif`,
-					fontWeight: `bold`,
-					textTransform: `uppercase`,
-					letterSpacing: '3px',
-					color: `#ffffff`,
-				}}
-			>
-				{tagHeader}
-			</h2>
+			<h2 className='tags__header'>{tagHeader}</h2>
 
 			{edges.map(({ node }) => {
 				return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
 			})}
 
-			<div style={{ marginBottom: rhythm(2.5) }}>
+			<div className='tags__footer' style={{ marginBottom: rhythm(2.5) }}>
 				<Link to='/tags'>All tags</Link>
 			</div>
-
-			<Bio />
 		</Layout>
 	)
 }

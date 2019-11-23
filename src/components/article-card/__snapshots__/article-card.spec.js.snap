@@ -2,13 +2,8 @@
 
 exports[`ArticleCard renders correctly 1`] = `
 <a
+  className="article-card__link"
   href="/ngfor-done-right/"
-  style={
-    Object {
-      "boxShadow": "none",
-      "width": "100%",
-    }
-  }
 >
   <div
     className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"

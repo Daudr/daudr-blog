@@ -4,6 +4,7 @@ import CookieConsent from 'react-cookie-consent'
 import { rhythm } from '../../utils/typography'
 
 import { Header } from '../header/header'
+import Bio from '../bio/bio'
 
 export const Layout = ({
 	location,
@@ -38,6 +39,11 @@ export const Layout = ({
 			>
 				{children}
 			</main>
+
+			<div className='bio__wrapper'>
+				<Bio isIT={defaultLang === `IT`} />
+			</div>
+
 			<footer>
 				<a
 					rel='noopener noreferrer'

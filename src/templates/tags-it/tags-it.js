@@ -29,18 +29,9 @@ export const ItalianTags = ({ pageContext, data }) => {
 			location={`/it/tags/${tag}`}
 			defaultLang='IT'
 			setSelectedLanguage={setSelectedLanguage}
+			isIndex={true}
 		>
-			<h2
-				style={{
-					fontFamily: `'Anton', sans-serif`,
-					fontWeight: `bold`,
-					textTransform: `uppercase`,
-					letterSpacing: '3px',
-					color: `#ffffff`,
-				}}
-			>
-				{tagHeader}
-			</h2>
+			<h2 className='tags__header'>{tagHeader}</h2>
 
 			{edges.map(({ node }) => {
 				return (
@@ -52,11 +43,11 @@ export const ItalianTags = ({ pageContext, data }) => {
 				)
 			})}
 
-			<div style={{ marginBottom: rhythm(2.5) }}>
-				<Link to='/it/tags'>Tutti i Tag</Link>
+			<div className='tags__footer' style={{ marginBottom: rhythm(2.5) }}>
+				<Link to='/it/tags' style={{ width: `100%` }}>
+					Tutti i Tag
+				</Link>
 			</div>
-
-			<Bio isIT={true} />
 		</Layout>
 	)
 }

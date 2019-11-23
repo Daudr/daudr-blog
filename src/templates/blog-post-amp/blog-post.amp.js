@@ -108,8 +108,6 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
 				></amp-auto-ads>
 			</Paper>
 
-			<Bio isIT={defaultCountry === `IT`} />
-
 			<ul
 				style={{
 					display: `flex`,

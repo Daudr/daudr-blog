@@ -9,7 +9,7 @@ exports[`Header renders correctly 1`] = `
   }
 >
   <div
-    className="background-sky hero"
+    className="background-sky hero "
   />
   <div
     className="flag-select"

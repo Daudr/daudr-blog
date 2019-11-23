@@ -38,7 +38,7 @@ h3.header-title {
 }
 
 * {
-  font-family: 'Roboto', sans-serif
+  font-family: 'Roboto', sans-serif;
 }
 
 .country-flag img {
@@ -48,4 +48,13 @@ h3.header-title {
 .flag-select .flag-options {
   margin-top: 0;
   padding: 0;
+}
+
+.angular-hero {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 0, 36, 1) 0%,
+    rgba(9, 62, 121, 1) 35%,
+    rgba(25, 118, 210, 1) 100%
+  );
 }

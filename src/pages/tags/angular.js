@@ -1,20 +1,25 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
 
-import { rhythm } from "../../utils/typography"
+import { rhythm } from '../../utils/typography'
 
-import Bio from "../../components/bio/bio"
-import Layout from "../../components/layout/layout"
+import Layout from '../../components/layout/layout'
+import ArticleCard from '../../components/article-card/article-card'
 
 export const AngularPage = ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout title={siteTitle} location={`/tags/angular`}>
-      <div
-        className="background-hero"
+    <Layout
+      title={siteTitle}
+      location={`/tags/angular`}
+      isIndex={true}
+      customHeaderSkyClass='angular-hero'
+    >
+      {/* <div
+        className='background-hero'
         style={{
           backgroundColor: `#1976d2`,
           background: `linear-gradient(145deg,#0d47a1,#42a5f5)`,
@@ -23,43 +28,22 @@ export const AngularPage = ({ pageContext, data }) => {
           transformOrigin: `100%`,
         }}
       >
-        <div className="page-header">
+        <div className='page-header'>
           <img
-            alt="Angular logo"
-            src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png"
+            alt='Angular logo'
+            src='https://angular.io/assets/images/logos/angular/logo-nav@2x.png'
           />
           <h2 style={{ marginTop: `2.2rem` }}>Angular</h2>
         </div>
-      </div>
+      </div> */}
 
       {edges.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div key={node.fields.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                {title}
-              </Link>
-            </h3>
-            <small>{node.frontmatter.date}</small>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
-              }}
-            />
-          </div>
-        )
+        return <ArticleCard node={node} key={node.fields.slug}></ArticleCard>
       })}
 
       <div style={{ marginBottom: rhythm(2.5) }}>
-        <Link to="/tags">All tags</Link>
+        <Link to='/tags'>All tags</Link>
       </div>
-
-      <Bio />
     </Layout>
   )
 }
@@ -104,7 +88,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: ["angular"] } } }
+      filter: { frontmatter: { tags: { in: ["angular"] }, lang: { eq: null } } }
     ) {
       totalCount
       edges {
@@ -117,6 +101,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            cover_image
           }
         }
       }

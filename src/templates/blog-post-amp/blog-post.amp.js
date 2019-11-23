@@ -5,7 +5,6 @@ import Disqus from 'gatsby-plugin-disqus'
 
 import { rhythm, scale } from '../../utils/typography'
 
-import Bio from '../../components/bio/bio'
 import Layout from '../../components/layout/layout'
 import SEO from '../../components/seo/seo'
 import Tag from '../../components/tag/tag'

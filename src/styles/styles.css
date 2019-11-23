@@ -7,16 +7,6 @@
 	height: 280px;
 }
 
-@media screen and (max-width: 992px) {
-	.article-card__link {
-		width: 100%;
-	}
-
-	.article-card__media {
-		height: 150px;
-	}
-}
-
 .tags__header {
 	font-family: 'Anton', sans-serif;
 	font-weight: bold;
@@ -34,4 +24,18 @@
 .bio__wrapper {
 	width: 50%;
 	margin: auto;
+}
+
+@media screen and (max-width: 992px) {
+	.article-card__link {
+		width: 100%;
+	}
+
+	.article-card__media {
+		height: 150px;
+	}
+
+	.bio__wrapper {
+		width: 100%;
+	}
 }

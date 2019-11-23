@@ -1,14 +1,14 @@
 ---
-title: "How to Create your first GatsbyJS Plugin"
+title: 'How to Create your first GatsbyJS Plugin'
 description: In the latest article I introduced the new (proposed) web standard per Web Monetization. In this new article we'll se how we can create a simple GatsbyJS Plugin to inject the Web Monetization Meta Tag using the SSR APIs.
-tags: ["gatsbyjs", "plugin", "web monetization", "guide", "code"]
-keywords: ["gatsbyjs", "plugin", "web monetization", "guide", "code"]
+tags: ['gatsbyjs', 'plugin', 'web monetization', 'guide', 'code']
+keywords: ['gatsbyjs', 'plugin', 'web monetization', 'guide', 'code']
 cover_image: https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80
-date: "2019-10-14T10:00:00.000Z"
-id: "create-gatsby-plugin"
+date: '2019-10-14T10:00:00.000Z'
+id: 'create-gatsby-plugin'
 ---
 
-In the [latest article](https://blog.daudr.me/future-of-web-moentizetion), I introduced the new (proposed) web standard per **Web Monetization**. In this new article we'll see how we can create a simple **GatsbyJS Plugin** to inject the **Web Monetization Meta Tag** using the **SSR APIs**.
+In the [latest article](https://blog.daudr.me/future-of-web-monetization), I introduced the new (proposed) web standard per **Web Monetization**. In this new article we'll see how we can create a simple **GatsbyJS Plugin** to inject the **Web Monetization Meta Tag** using the **SSR APIs**.
 
 ![Add a piece to the puzzle](https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)
 
@@ -60,43 +60,44 @@ You can read more on these in [the official docs](https://www.gatsbyjs.org/docs/
 At the end our `gatsby-ssr.js` should look like this:
 
 ```javascript
-const React = require("react");
+const React = require('react')
 
 export const onPreRenderHTML = (
   { reporter, getHeadComponents, replaceHeadComponents, pathname },
   pluginOptions
 ) => {
   if (process.env.NODE_ENV !== `production`) {
-    reporter.warn("non production environment");
-    return null;
+    reporter.warn('non production environment')
+    return null
   }
 
   if (!pluginOptions.paymentPointer) {
     reporter.warn(
       `Payment Pointer is not defined, add it to your gatsby-config.js file.`
-    );
-    return null;
+    )
+    return null
   }
 
   if (pluginOptions.excludedPaths && pluginOptions.excludedPaths.length > 0) {
-    const excludedPaths = pluginOptions.excludedPaths;
-    let isExcluded = excludedPaths.filter(path => pathname.match(path)).length > 0;
-  
+    const excludedPaths = pluginOptions.excludedPaths
+    let isExcluded =
+      excludedPaths.filter(path => pathname.match(path)).length > 0
+
     if (isExcluded) {
-      return null;
+      return null
     }
   }
 
-  const headComponents = getHeadComponents();
+  const headComponents = getHeadComponents()
 
   const webMonetizationTag = (
-    <meta name="monetization" content={pluginOptions.paymentPointer} />
-  );
+    <meta name='monetization' content={pluginOptions.paymentPointer} />
+  )
 
-  headComponents.push(webMonetizationTag);
+  headComponents.push(webMonetizationTag)
 
-  replaceHeadComponents(headComponents);
-};
+  replaceHeadComponents(headComponents)
+}
 ```
 
 This plugin adds the **Web Monetization Meta Tag** only when it's run on `peoduction` environment (when we use `gatsby build`, for example) and accepts an array of strings (`excludedPaths`), in its configuration, which tells which paths should not have the meta tag.
@@ -121,11 +122,11 @@ module.exports = {
       resolve: `gatsby-plugin-web-monetization`,
       options: {
         paymentPointer: `YOUR_ILP_PAYMENT_POINTER`,
-        excludedPaths: ['exclude', 'path'] // Optional
-      }
-    }
-  ]
-};
+        excludedPaths: ['exclude', 'path'], // Optional
+      },
+    },
+  ],
+}
 ```
 
 ## Publish your new plugin on NPM

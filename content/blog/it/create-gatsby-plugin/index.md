@@ -1,15 +1,15 @@
 ---
-title: "Come sviluppare il tuo primo Plugin per GatsbyJS"
+title: 'Come sviluppare il tuo primo Plugin per GatsbyJS'
 description: Nell'ultimo articolo, ho introddotto il nuovo standard per la Web Monetization. In questo articolo andreamo a vedere com'è facile creare un Plugin per GatsbyJS che aggiunge il Web Monetization Meta Tag all'interno delle pagine della nostra applicazione, utilizzando le API SSR fornite da Gatsby.
-tags: ["gatsbyjs", "plugin", "web monetization", "guida", "code"]
-keywords: ["gatsbyjs", "plugin", "web monetization", "guida", "code"]
+tags: ['gatsbyjs', 'plugin', 'web monetization', 'guida', 'code']
+keywords: ['gatsbyjs', 'plugin', 'web monetization', 'guida', 'code']
 cover_image: https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80
-date: "2019-10-14T10:00:00.000Z"
-id: "it/create-gatsby-plugin"
-lang: "it"
+date: '2019-10-14T10:00:00.000Z'
+id: 'it/create-gatsby-plugin'
+lang: 'it'
 ---
 
-Nell'[ultimo articolo](https://blog.daudr.me/future-of-web-moentizetion), ho introddotto il nuovo standard per la **Web Monetization**. In questo articolo andreamo a vedere com'è facile creare un **Plugin per GatsbyJS** che aggiunge il **Web Monetization Meta Tag** all'interno delle pagine della nostra applicazione, utilizzando le **API SSR** fornite da Gatsby.
+Nell'[ultimo articolo](https://blog.daudr.me/future-of-web-monetization), ho introddotto il nuovo standard per la **Web Monetization**. In questo articolo andreamo a vedere com'è facile creare un **Plugin per GatsbyJS** che aggiunge il **Web Monetization Meta Tag** all'interno delle pagine della nostra applicazione, utilizzando le **API SSR** fornite da Gatsby.
 
 ![Aggiungi un pezzo al puzzle](https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80)
 
@@ -61,43 +61,44 @@ Puoi leggere di queste e di tutte le altre funzioni nella [documentazione uffici
 Il risultato finale del nostro file `gatsby-ssr.js` dovrebbe essre simile a questo:
 
 ```javascript
-const React = require("react");
+const React = require('react')
 
 export const onPreRenderHTML = (
   { reporter, getHeadComponents, replaceHeadComponents, pathname },
   pluginOptions
 ) => {
   if (process.env.NODE_ENV !== `production`) {
-    reporter.warn("non production environment");
-    return null;
+    reporter.warn('non production environment')
+    return null
   }
 
   if (!pluginOptions.paymentPointer) {
     reporter.warn(
       `Payment Pointer is not defined, add it to your gatsby-config.js file.`
-    );
-    return null;
+    )
+    return null
   }
 
   if (pluginOptions.excludedPaths && pluginOptions.excludedPaths.length > 0) {
-    const excludedPaths = pluginOptions.excludedPaths;
-    let isExcluded = excludedPaths.filter(path => pathname.match(path)).length > 0;
-  
+    const excludedPaths = pluginOptions.excludedPaths
+    let isExcluded =
+      excludedPaths.filter(path => pathname.match(path)).length > 0
+
     if (isExcluded) {
-      return null;
+      return null
     }
   }
 
-  const headComponents = getHeadComponents();
+  const headComponents = getHeadComponents()
 
   const webMonetizationTag = (
-    <meta name="monetization" content={pluginOptions.paymentPointer} />
-  );
+    <meta name='monetization' content={pluginOptions.paymentPointer} />
+  )
 
-  headComponents.push(webMonetizationTag);
+  headComponents.push(webMonetizationTag)
 
-  replaceHeadComponents(headComponents);
-};
+  replaceHeadComponents(headComponents)
+}
 ```
 
 Nella pratica, questo plugin aggiunge il **Web Monetization Meta Tag** solo quando ci troviamo in un ambiente di produzione (eseguendo `gatsby build`, per esempio) e accetta un array di stringhe, nella configurazione, che rappresentano le pagine a cui non vogliamo aggiungere il nostro tag.
@@ -123,11 +124,11 @@ module.exports = {
       resolve: `gatsby-plugin-web-monetization`,
       options: {
         paymentPointer: `IL_TUO_PAYMENT_POINTER`,
-        excludedPaths: ['exclude', 'path'] // Optional
-      }
-    }
-  ]
-};
+        excludedPaths: ['exclude', 'path'], // Optional
+      },
+    },
+  ],
+}
 ```
 
 ## Pubblica il tuo nuovo plugin su NPM

@@ -5,7 +5,6 @@ import Disqus from 'gatsby-plugin-disqus'
 
 import { rhythm, scale } from '../../utils/typography'
 
-import Bio from '../../components/bio/bio'
 import Layout from '../../components/layout/layout'
 import SEO from '../../components/seo/seo'
 import Tag from '../../components/tag/tag'
@@ -20,6 +19,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 const useStyles = makeStyles(theme => ({
 	root: {
 		padding: theme.spacing(3, 2),
+		width: `100%`,
 	},
 }))
 
@@ -94,16 +94,18 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 					}}
 				>
 					{post.frontmatter.tags.map(tag => {
-						return <Tag tag={tag} key={tag} />
+						return <Tag isIT={defaultCountry === `IT`} tag={tag} key={tag} />
 					})}
 				</div>
 
 				<ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
 				<EmailSignup isIT={defaultCountry === `IT`} />
-			</Paper>
 
-			<Bio isIT={defaultCountry === `IT`} />
+				{/* <div className="tipbot__button">
+          <a amount="0.5" size="275" to="0b769d03-507d-439a-8cbb-86778b805f87" network="coil" href="https://www.xrptipbot.com" target="_blank" rel="noopener noreferrer"></a>
+        </div>*/}
+			</Paper>
 
 			<ul
 				style={{
@@ -112,6 +114,8 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 					justifyContent: `space-between`,
 					listStyle: `none`,
 					padding: 0,
+					marginLeft: `0`,
+					width: `100%`,
 				}}
 			>
 				<li>

@@ -5,7 +5,6 @@ import Disqus from 'gatsby-plugin-disqus'
 
 import { rhythm, scale } from '../../utils/typography'
 
-import Bio from '../../components/bio/bio'
 import Layout from '../../components/layout/layout'
 import SEO from '../../components/seo/seo'
 import Tag from '../../components/tag/tag'
@@ -108,8 +107,6 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
 				></amp-auto-ads>
 			</Paper>
 
-			<Bio isIT={defaultCountry === `IT`} />
-
 			<ul
 				style={{
 					display: `flex`,
@@ -117,6 +114,8 @@ export const AMPBlogPostTemplate = ({ data, location, pageContext }) => {
 					justifyContent: `space-between`,
 					listStyle: `none`,
 					padding: 0,
+					marginLeft: 0,
+					width: `100%`,
 				}}
 			>
 				<li>

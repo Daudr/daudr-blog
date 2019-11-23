@@ -21,6 +21,7 @@ export const Tag = ({ tag, count, isIT = false }) => {
 				fontFamily: `'Anton', sans-serif`,
 				textTransform: `uppercase`,
 				fontWeight: `bold`,
+				width: `100%`,
 			}}
 			to={`${isIT ? '/it' : ''}/tags/${kebabCase(tag)}`}
 		>
@@ -31,6 +32,9 @@ export const Tag = ({ tag, count, isIT = false }) => {
 					border: hover ? `1px solid black` : `1px dashed black`,
 					margin: `5px`,
 					backgroundColor: `#FFFFFF`,
+					maxWidth: `20%`,
+					marginLeft: 0,
+					marginBottom: `30px`,
 				}}
 				onMouseEnter={hoverOn}
 				onMouseLeave={hoverOff}

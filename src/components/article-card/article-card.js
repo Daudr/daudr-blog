@@ -29,13 +29,13 @@ const useStyles = makeStyles({
 	},
 })
 
-export const ArticleCard = ({ node }) => {
+export const ArticleCard = ({ node, isIndex = false, isIT = false }) => {
 	const title = node.frontmatter.title || node.fields.slug
 	const tags = node.frontmatter.tags || []
 	const classes = useStyles()
 
 	return (
-		<Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+		<Link to={node.fields.slug} className='article-card__link'>
 			<Card className={classes.card}>
 				<CardMedia
 					className={classes.media}
@@ -52,7 +52,7 @@ export const ArticleCard = ({ node }) => {
 							return (
 								<Link
 									key={tag}
-									to={`/tags/${kebabCase(tag)}`}
+									to={`/tags/${isIT ? `it/` : ``}${kebabCase(tag)}`}
 									style={{ boxShadow: `none` }}
 								>
 									<Chip

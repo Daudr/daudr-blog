@@ -4,6 +4,7 @@ import CookieConsent from 'react-cookie-consent'
 import { rhythm } from '../../utils/typography'
 
 import { Header } from '../header/header'
+import Bio from '../bio/bio'
 
 export const Layout = ({
 	location,
@@ -11,13 +12,14 @@ export const Layout = ({
 	children,
 	setSelectedLanguage,
 	defaultLang,
+	isIndex = false,
 }) => {
 	return (
 		<div
 			style={{
 				marginLeft: `auto`,
 				marginRight: `auto`,
-				maxWidth: rhythm(24),
+				maxWidth: isIndex ? rhythm(48) : rhythm(28),
 				padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
 			}}
 		>
@@ -27,7 +29,21 @@ export const Layout = ({
 				setSelectedLanguage={setSelectedLanguage}
 				defaultLang={defaultLang}
 			/>
-			<main>{children}</main>
+			<main
+				style={{
+					display: `flex`,
+					flexDirection: `row`,
+					flexWrap: `wrap`,
+					justifyContent: isIndex ? `space-between` : `center`,
+				}}
+			>
+				{children}
+			</main>
+
+			<div className='bio__wrapper'>
+				<Bio isIT={defaultLang === `IT`} />
+			</div>
+
 			<footer>
 				<a
 					rel='noopener noreferrer'

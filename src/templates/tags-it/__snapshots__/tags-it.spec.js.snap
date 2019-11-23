@@ -6,7 +6,7 @@ exports[`ItalianTags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "42rem",
+      "maxWidth": "84rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -91,27 +91,24 @@ exports[`ItalianTags renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main>
-    <h2
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": "'Anton', sans-serif",
-          "fontWeight": "bold",
-          "letterSpacing": "3px",
-          "textTransform": "uppercase",
-        }
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
       }
+    }
+  >
+    <h2
+      className="tags__header"
     >
-      Artiicoli su #angular
+      Articoli su #angular
     </h2>
     <a
+      className="article-card__link"
       href="/ngfor-done-right/"
-      style={
-        Object {
-          "boxShadow": "none",
-        }
-      }
     >
       <div
         className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
@@ -146,12 +143,8 @@ exports[`ItalianTags renders correctly 1`] = `
       </div>
     </a>
     <a
+      className="article-card__link"
       href="/conditional-polyfills/"
-      style={
-        Object {
-          "boxShadow": "none",
-        }
-      }
     >
       <div
         className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
@@ -186,6 +179,7 @@ exports[`ItalianTags renders correctly 1`] = `
       </div>
     </a>
     <div
+      className="tags__footer"
       style={
         Object {
           "marginBottom": "4.375rem",
@@ -194,10 +188,19 @@ exports[`ItalianTags renders correctly 1`] = `
     >
       <a
         href="/it/tags"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
       >
         Tutti i Tag
       </a>
     </div>
+  </main>
+  <div
+    className="bio__wrapper"
+  >
     <div
       className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
       style={
@@ -291,7 +294,8 @@ exports[`ItalianTags renders correctly 1`] = `
           <strong>
             Michele Da Rin Fioretto
           </strong>
-           uno sviluppatore 
+           uno sviluppatore
+           
           <strong>
             Web
           </strong>
@@ -299,22 +303,24 @@ exports[`ItalianTags renders correctly 1`] = `
           <strong>
             Italia
           </strong>
-           e nel 
+           e nel
+           
           <strong>
             Mondo
           </strong>
            
           <br />
-          I suoi punti di forza sono 
+          I suoi punti di forza sono
+           
           <strong>
             Angular
           </strong>
-          ,
-           
+          , 
           <strong>
             React
           </strong>
-          , 
+          ,
+           
           <strong>
             Firebase
           </strong>
@@ -352,7 +358,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -439,7 +445,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -526,7 +532,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -613,7 +619,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -700,7 +706,7 @@ exports[`ItalianTags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -770,7 +776,7 @@ exports[`ItalianTags renders correctly 1`] = `
         </a>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     <a
       href="https://www.iubenda.com/privacy-policy/49067529"

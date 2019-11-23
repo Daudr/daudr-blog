@@ -6,7 +6,7 @@ exports[`Tags renders correctly 1`] = `
     Object {
       "marginLeft": "auto",
       "marginRight": "auto",
-      "maxWidth": "42rem",
+      "maxWidth": "84rem",
       "padding": "2.625rem 1.3125rem",
     }
   }
@@ -91,27 +91,24 @@ exports[`Tags renders correctly 1`] = `
       </a>
     </h1>
   </header>
-  <main>
-    <h2
-      style={
-        Object {
-          "color": "#ffffff",
-          "fontFamily": "'Anton', sans-serif",
-          "fontWeight": "bold",
-          "letterSpacing": "3px",
-          "textTransform": "uppercase",
-        }
+  <main
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "justifyContent": "space-between",
       }
+    }
+  >
+    <h2
+      className="tags__header"
     >
       #angular posts
     </h2>
     <a
+      className="article-card__link"
       href="/ngfor-done-right/"
-      style={
-        Object {
-          "boxShadow": "none",
-        }
-      }
     >
       <div
         className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
@@ -146,12 +143,8 @@ exports[`Tags renders correctly 1`] = `
       </div>
     </a>
     <a
+      className="article-card__link"
       href="/conditional-polyfills/"
-      style={
-        Object {
-          "boxShadow": "none",
-        }
-      }
     >
       <div
         className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
@@ -186,6 +179,7 @@ exports[`Tags renders correctly 1`] = `
       </div>
     </a>
     <div
+      className="tags__footer"
       style={
         Object {
           "marginBottom": "4.375rem",
@@ -198,6 +192,10 @@ exports[`Tags renders correctly 1`] = `
         All tags
       </a>
     </div>
+  </main>
+  <div
+    className="bio__wrapper"
+  >
     <div
       className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
       style={
@@ -339,7 +337,7 @@ exports[`Tags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -426,7 +424,7 @@ exports[`Tags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -513,7 +511,7 @@ exports[`Tags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -600,7 +598,7 @@ exports[`Tags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -687,7 +685,7 @@ exports[`Tags renders correctly 1`] = `
                 "height": undefined,
                 "marginBottom": 0,
                 "marginRight": "0.875rem",
-                "maxHeigth": "50px",
+                "maxHeight": "50px",
                 "maxWidth": "50px",
                 "minWidth": 30,
                 "overflow": "hidden",
@@ -757,7 +755,7 @@ exports[`Tags renders correctly 1`] = `
         </a>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     <a
       href="https://www.iubenda.com/privacy-policy/49067529"

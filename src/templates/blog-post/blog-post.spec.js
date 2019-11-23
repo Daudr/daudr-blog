@@ -1,12 +1,12 @@
-import React from "react"
-import renderer from "react-test-renderer"
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import { BlogPostTemplate } from "./blog-post"
+import { BlogPostTemplate } from './blog-post'
 
-import { data, pageContext, location } from "../../../__mocks__/blog-post.mock"
+import { data, pageContext, location } from '../../../__mocks__/blog-post.mock'
 
-describe("BlogPostTemplate", () => {
-  /* it("renders correctly", () => {
+describe('BlogPostTemplate', () => {
+	/* it("renders correctly", () => {
     const tree = renderer
       .create(
         <BlogPostTemplate
@@ -18,7 +18,7 @@ describe("BlogPostTemplate", () => {
       .toJSON()
     expect(tree).toMatchSnapshot()
   }) */
-  it("true should be truthy", () => {
-    expect(true).toBeTruthy()
-  })
+	it('true should be truthy', () => {
+		expect(true).toBeTruthy()
+	})
 })

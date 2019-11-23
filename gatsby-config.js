@@ -114,7 +114,7 @@ module.exports = {
           },
         },
         canonicalBaseUrl: process.env.BASE_URL,
-        components: ["amp-ad",],
+        components: ["amp-ad", "amp-form"],
         excludedPaths: ["/404*", "/", "/tag*"],
         pathIdentifier: "amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
@@ -143,6 +143,11 @@ module.exports = {
             }
           }
         `,
+        setup: () => ({
+          custom_namespaces: {
+            media: 'http://search.yahoo.com/mrss/',
+          },
+        }),
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
@@ -152,7 +157,10 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    { "media:content": edge.node.frontmatter.cover_image },
+                  ],
                 })
               })
             },
@@ -169,6 +177,7 @@ module.exports = {
                       frontmatter {
                         title
                         date
+                        cover_image
                       }
                     }
                   }
@@ -188,18 +197,32 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
-          }
-        }
-      }
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
     },
-    'gatsby-plugin-material-ui'
+    "gatsby-plugin-material-ui",
+    {
+      resolve: `gatsby-plugin-web-monetization`,
+      options: {
+        paymentPointer: `$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: false,
+    //     develop: true,
+    //     ignore: ['prismjs-theme-light.css']
+    //   }
+    // }
   ],
 }

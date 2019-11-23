@@ -32,18 +32,10 @@ const useStyles = makeStyles({
 export const ArticleCard = ({ node, isIndex = false, isIT = false }) => {
 	const title = node.frontmatter.title || node.fields.slug
 	const tags = node.frontmatter.tags || []
-	const isMobile =
-		typeof window !== `undefined` ? window.innerWidth < 768 : false
 	const classes = useStyles()
 
 	return (
-		<Link
-			style={{
-				boxShadow: `none`,
-				width: isIndex && !isMobile ? `49%` : `100%`,
-			}}
-			to={node.fields.slug}
-		>
+		<Link to={node.fields.slug} className='article-card__link'>
 			<Card className={classes.card}>
 				<CardMedia
 					className={classes.media}

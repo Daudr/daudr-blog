@@ -1,0 +1,18 @@
+.article-card__link {
+	box-shadow: none;
+	width: 49%;
+}
+
+.article-card__media {
+	height: 280px;
+}
+
+@media screen and (max-width: 992px) {
+	.article-card__link {
+		width: 100%;
+	}
+
+	.article-card__media {
+		height: 150px;
+	}
+}

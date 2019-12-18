@@ -1,7 +1,7 @@
 let activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 console.log(`Using environment config: '${activeEnv}'`)
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${activeEnv}`,
 })
 
@@ -32,6 +32,10 @@ module.exports = {
       {
         social: `Twitter`,
         link: process.env.TWITTER_LINK,
+      },
+      {
+        social: `twitch`,
+        link: process.ENV.TWITCH_LINK,
       },
     ],
   },
@@ -100,24 +104,24 @@ module.exports = {
       resolve: `gatsby-plugin-amp`,
       options: {
         analytics: {
-          type: "gtag",
-          dataCredentials: "include",
+          type: 'gtag',
+          dataCredentials: 'include',
           config: {
             vars: {
               gtag_id: process.env.ANALYTICS_ID,
               config: {
                 [process.env.ANALYTICS_ID]: {
-                  page_location: "{{pathname}}",
+                  page_location: '{{pathname}}',
                 },
               },
             },
           },
         },
         canonicalBaseUrl: process.env.BASE_URL,
-        components: ["amp-ad", "amp-form"],
-        excludedPaths: ["/404*", "/", "/tag*"],
-        pathIdentifier: "amp/",
-        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
+        components: ['amp-ad', 'amp-form'],
+        excludedPaths: ['/404*', '/', '/tag*'],
+        pathIdentifier: 'amp/',
+        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
         relCanonicalPattern: `{{canonicalBaseUrl}}{{pathname}}`,
         useAmpClientIdApi: true,
       },
@@ -158,8 +162,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
-                    { "content:encoded": edge.node.html },
-                    { "media:content": edge.node.frontmatter.cover_image },
+                    { 'content:encoded': edge.node.html },
+                    { 'media:content': edge.node.frontmatter.cover_image },
                   ],
                 })
               })
@@ -184,7 +188,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
             title: "Daudr Blog's RSS",
           },
         ],
@@ -197,19 +201,19 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         env: {
           development: {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
           },
           production: {
-            policy: [{ userAgent: "*", allow: "/" }],
+            policy: [{ userAgent: '*', allow: '/' }],
           },
         },
       },
     },
-    "gatsby-plugin-material-ui",
+    'gatsby-plugin-material-ui',
     {
       resolve: `gatsby-plugin-web-monetization`,
       options: {

@@ -172,7 +172,7 @@ const bioQuery = graphql`
     }
     twitch: file(absolutePath: { regex: "/twitch.png/" }) {
       childImageSharp {
-        fixed(width: 30, height: 30) {
+        fixed(width: 24, height: 28) {
           ...GatsbyImageSharpFixed
         }
       }

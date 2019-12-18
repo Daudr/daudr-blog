@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         social: `twitch`,
-        link: process.ENV.TWITCH_LINK,
+        link: process.env.TWITCH_LINK,
       },
     ],
   },

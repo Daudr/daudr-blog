@@ -57,6 +57,7 @@ exports[`EmailSignup renders correctly 1`] = `
           className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
           data-shrink={false}
           htmlFor="email"
+          id="email-label"
         >
           Email
         </label>
@@ -66,6 +67,7 @@ exports[`EmailSignup renders correctly 1`] = `
         >
           <input
             aria-invalid={false}
+            autoFocus={false}
             className="MuiInputBase-input MuiOutlinedInput-input"
             disabled={false}
             id="email"
@@ -80,7 +82,7 @@ exports[`EmailSignup renders correctly 1`] = `
           />
           <fieldset
             aria-hidden={true}
-            className="PrivateNotchedOutline-root-60 MuiOutlinedInput-notchedOutline"
+            className="PrivateNotchedOutline-root-61 MuiOutlinedInput-notchedOutline"
             style={
               Object {
                 "paddingLeft": 8,
@@ -88,7 +90,7 @@ exports[`EmailSignup renders correctly 1`] = `
             }
           >
             <legend
-              className="PrivateNotchedOutline-legend-61"
+              className="PrivateNotchedOutline-legend-62"
               style={
                 Object {
                   "width": 0.01,

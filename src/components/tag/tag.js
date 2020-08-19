@@ -32,6 +32,8 @@ export const Tag = ({ tag, count, isIT = false }) => {
           margin: `5px`,
           backgroundColor: `#FFFFFF`,
         }}
+        role="button"
+        tabIndex={0}
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}
       >

@@ -76,7 +76,7 @@ jobs:
 
   build:
     docker: 
-      - image: circleci/node:8
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -124,7 +124,7 @@ jobs:
 
   build-test:
     docker: 
-      - image: circleci/node:8
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -172,7 +172,7 @@ jobs:
 
   build-prod:
     docker: 
-      - image: circleci/node:8
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -222,7 +222,7 @@ jobs:
     working_directory: ~/repo
 
     docker: 
-      - image: circleci/node:8
+      - image: circleci/node:lts
 
     steps:
       - checkout:
@@ -239,7 +239,7 @@ jobs:
     working_directory: ~/repo
 
     docker: 
-      - image: circleci/node:8
+      - image: circleci/node:lts
 
     steps:
       - checkout:

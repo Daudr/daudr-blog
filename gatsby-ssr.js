@@ -16,7 +16,7 @@ exports.onPreRenderHTML = ({
     headComponents.push(
       <script
         async
-        src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
       ></script>
     )
 
@@ -35,7 +35,7 @@ exports.onPreRenderHTML = ({
 
     headComponents.push(
       <script
-        type="text/javascript"
+        type='text/javascript'
         dangerouslySetInnerHTML={{
           __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="0e198b33-5bc6-4389-a18d-8cb4f013b52d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
         }}
@@ -43,15 +43,15 @@ exports.onPreRenderHTML = ({
     )
 
     postBodyComponents.push(
-      <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+      <script src='https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js'></script>
     )
 
     postBodyComponents.push(
-      <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-performance.js"></script>
+      <script src='https://www.gstatic.com/firebasejs/7.0.0/firebase-performance.js'></script>
     )
 
     postBodyComponents.push(
-      <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+      <script src='https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js'></script>
     )
 
     postBodyComponents.push(
@@ -79,7 +79,6 @@ exports.onPreRenderHTML = ({
     // FIXME: remove `!important` styles from AMP pages
     headComponents.forEach(component => {
       if (typeof component === <style></style>) {
-        
       }
     })
   }

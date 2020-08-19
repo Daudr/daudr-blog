@@ -33,8 +33,13 @@ exports[`Layout renders correctly 1`] = `
       <div
         className="flag-select "
       >
-        <div
-          className="selected--flag--option "
+        <button
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="select_flag_button"
+          className="flag-select__btn"
+          disabled={false}
+          id="select_flag_button"
           onClick={[Function]}
           onKeyUp={[Function]}
           style={
@@ -42,19 +47,14 @@ exports[`Layout renders correctly 1`] = `
               "fontSize": "16px",
             }
           }
-          tabIndex="0"
+          type="button"
         >
           <span
-            className="country-label"
+            className="flag-select__option flag-select__option--placeholder"
           >
             
           </span>
-          <span
-            className="arrow-down "
-          >
-            ▾
-          </span>
-        </div>
+        </button>
       </div>
     </div>
     <h1
@@ -100,7 +100,7 @@ exports[`Layout renders correctly 1`] = `
     </a>
     <br />
     © 
-    2019
+    2020
     , Michele Da Rin Fioretto - Dauðr
   </footer>
   <div

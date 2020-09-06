@@ -223,11 +223,13 @@ workflows:
     jobs:
       - install_dependencies
 
-      - unit-test
+      - unit-test:
           requires:
             - install_dependencies
 
-      - cypress/install
+      - cypress/install:
+          requires:
+            - install_dependencies
 
       - cypress/run:
           requires:

@@ -799,7 +799,7 @@ exports[`ItalianTags renders correctly 1`] = `
     , Michele Da Rin Fioretto - Dauðr
   </footer>
   <div
-    className="cookieConsent "
+    className="CookieConsent"
     style={
       Object {
         "alignItems": "baseline",
@@ -827,26 +827,30 @@ exports[`ItalianTags renders correctly 1`] = `
     >
       Questo sito utilizza cookie per migliorare l'esperienza utente
     </div>
-    <button
+    <div
       className=""
-      id=""
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "#ffd42d",
-          "border": "0",
-          "borderRadius": "0px",
-          "boxShadow": "none",
-          "color": "black",
-          "cursor": "pointer",
-          "flex": "0 0 auto",
-          "margin": "15px",
-          "padding": "5px 10px",
-        }
-      }
     >
-      Ho capito
-    </button>
+      <button
+        className=""
+        id="rcc-confirm-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#ffd42d",
+            "border": "0",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "color": "black",
+            "cursor": "pointer",
+            "flex": "0 0 auto",
+            "margin": "15px",
+            "padding": "5px 10px",
+          }
+        }
+      >
+        Ho capito
+      </button>
+    </div>
   </div>
 </div>
 `;

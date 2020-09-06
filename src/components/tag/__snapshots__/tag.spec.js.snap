@@ -11,7 +11,6 @@ exports[`Tag renders correctly 1`] = `
       "fontWeight": "bold",
       "textDecoration": "none",
       "textTransform": "uppercase",
-      "width": "100%",
     }
   }
 >
@@ -26,7 +25,6 @@ exports[`Tag renders correctly 1`] = `
         "margin": "5px",
         "marginBottom": "30px",
         "marginLeft": 0,
-        "maxWidth": "20%",
         "padding": "5px 10px",
       }
     }

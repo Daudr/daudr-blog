@@ -64,7 +64,7 @@ In order to receive payments you need to set up a **Web Monetization Wallet**, y
 
 When you finish to set up your new account you'll receive a **Payment Pointer**. A Payment Pointer looks like this:
 
-```$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw```
+`$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`
 
 ### Generate your Meta Tag
 

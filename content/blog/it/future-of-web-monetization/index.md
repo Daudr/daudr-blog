@@ -67,7 +67,7 @@ Per ricevere pagamenti bisogna prima aprire un Wallet come uno di quelli elencat
 
 Quando hai finito con la registrazione del nuoov account, riceverai un **Payment Pointer**. Un Payment Pointer assomiglia a questo:
 
-```$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw```
+`$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`
 
 ### Crea il tuo Meta Tag
 

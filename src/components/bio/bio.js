@@ -84,10 +84,6 @@ export const Bio = ({ isIT = false }) => {
                     fixed = data.twitter.childImageSharp.fixed
                     break
                   }
-                  case 5: {
-                    fixed = data.twitch.childImageSharp.fixed
-                    break
-                  }
                   default: {
                     break
                   }
@@ -166,13 +162,6 @@ const bioQuery = graphql`
     linkedin: file(absolutePath: { regex: "/linkedin.png/" }) {
       childImageSharp {
         fixed(width: 30, height: 30) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    twitch: file(absolutePath: { regex: "/twitch.png/" }) {
-      childImageSharp {
-        fixed(width: 24, height: 28) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -116,7 +116,7 @@ The best part arrived, the part where I'll walk you through server configuration
 
 If you're using Apache as the webserver you need to create or modify your `.htaccess` file:
 
-```htaccess
+```xml
 <IfModule mod_rewrite.c>
  RewriteEngine On
  # If an existing asset or directory is requested go to it as it is
@@ -127,8 +127,8 @@ If you're using Apache as the webserver you need to create or modify your `.hta
  RewriteRule ^ /dist/browser/index.html
 </IfModule>
 <VirtualHost *:80>
- ServerName example.com # <-- modify here
- ServerAlias www.example.com # <-- modiy here
+ ServerName example.com # <!-- modify here -->
+ ServerAlias www.example.com # <!-- modify here -->
  <Proxy *>
   Order allow,deny
   Allow from all

@@ -224,7 +224,8 @@ workflows:
       - install_dependencies
 
       - unit-test
-          requires: install_dependencies
+          requires:
+            - install_dependencies
 
       - cypress/install
 
@@ -237,14 +238,17 @@ workflows:
           wait-on: 'http://localhost:8000'
 
       - build-test:
-          requires: install_dependencies
+          requires:
+            - install_dependencies
 
           filters:
             branches:
               only: develop
 
       - build-prod:
-          requires: install_dependencies
+          requires:
+            - install_dependencies
+
           filters:
             branches:
               only: master
@@ -261,9 +265,8 @@ workflows:
               only: develop
 
       - deploy-prod:
-          requires: install_dependencies
-
           requires:
+            - install_dependencies
             - unit-test
             - cypress/run
             - build-prod

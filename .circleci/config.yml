@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 jobs:
-  unit-test:
+  install_dependencies:
     docker:
       - image: circleci/node:10
 
@@ -31,6 +31,28 @@ jobs:
             - ./node_modules
             - ~/.npm
             - ~/.cache
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+  unit-test:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout:
+          path: ~/repo
+
+      - attach_workspace:
+          at: ~/repo
+
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - run:
           name: Unit tests component
@@ -55,18 +77,6 @@ jobs:
             - v1-npm-deps-
 
       - run:
-          name: Install Dependencies
-          command: npm install
-
-      - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-
-          paths:
-            - ./node_modules
-            - ~/.npm
-            - ~/.cache
-
-      - run:
           name: Run E2E Tests
           command: npm run test:e2e:ci
 
@@ -82,15 +92,6 @@ jobs:
 
       - attach_workspace:
           at: ~/repo/
-
-      - restore_cache:
-          keys:
-            - v1-npm-deps-{{ checksum "package-lock.json" }}
-            - v1-npm-deps-
-
-      - run:
-          name: Install Dependencies
-          command: npm install
 
       - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
@@ -133,18 +134,6 @@ jobs:
             - v1-npm-deps-
 
       - run:
-          name: Install Dependencies
-          command: npm install
-
-      - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-
-          paths:
-            - ./node_modules
-            - ~/.npm
-            - ~/.cache
-
-      - run:
           name: Cleaning up Gatsby
           command: npx gatsby clean
 
@@ -175,18 +164,6 @@ jobs:
           keys:
             - v1-npm-deps-{{ checksum "package-lock.json" }}
             - v1-npm-deps-
-
-      - run:
-          name: Install Dependencies
-          command: npm install
-
-      - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-
-          paths:
-            - ./node_modules
-            - ~/.npm
-            - ~/.cache
 
       - run:
           name: Cleaning up Gatsby
@@ -244,41 +221,53 @@ workflows:
   version: 2.1
   build_and_deploy:
     jobs:
+      - install_dependencies
+
       - unit-test
+          requires: install_dependencies
 
       - cypress/install
 
       - cypress/run:
           requires:
             - cypress/install
+
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'npm run develop' # start server before running tests
           wait-on: 'http://localhost:8000'
 
       - build-test:
+          requires: install_dependencies
+
           filters:
             branches:
               only: develop
 
       - build-prod:
+          requires: install_dependencies
           filters:
             branches:
               only: master
 
       - deploy-test:
           requires:
+            - install_dependencies
             - unit-test
             - cypress/run
             - build-test
+
           filters:
             branches:
               only: develop
 
       - deploy-prod:
+          requires: install_dependencies
+
           requires:
             - unit-test
             - cypress/run
             - build-prod
+
           filters:
             branches:
               only: master

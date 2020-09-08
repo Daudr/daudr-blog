@@ -126,6 +126,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 							to={previous.fields.slug}
 							rel='prev'
 							style={{ display: `flex`, boxShadow: `none` }}
+							key={previous.fields.slug}
 						>
 							<ArrowBackIcon></ArrowBackIcon> {previous.frontmatter.title}
 						</Link>
@@ -137,6 +138,7 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
 							to={next.fields.slug}
 							rel='next'
 							style={{ display: `flex`, boxShadow: `none` }}
+							key={next.fields.slug}
 						>
 							{next.frontmatter.title} <ArrowForwardIcon></ArrowForwardIcon>
 						</Link>

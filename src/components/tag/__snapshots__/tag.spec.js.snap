@@ -24,8 +24,6 @@ exports[`Tag renders correctly 1`] = `
         "border": "1px dashed black",
         "cursor": "pointer",
         "margin": "5px",
-        "marginBottom": "30px",
-        "marginLeft": 0,
         "padding": "5px 10px",
       }
     }

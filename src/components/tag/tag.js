@@ -12,35 +12,35 @@ export const Tag = ({ tag, count, isIT = false }) => {
 		setHover(false)
 	}
 
-	return (
-		<Link
-			style={{
-				boxShadow: `none`,
-				textDecoration: `none`,
-				color: `inherit`,
-				fontFamily: `'Anton', sans-serif`,
-				textTransform: `uppercase`,
-				fontWeight: `bold`,
-			}}
-			to={`${isIT ? '/it' : ''}/tags/${kebabCase(tag)}`}
-		>
-			<div
-				style={{
-					cursor: `pointer`,
-					padding: `5px 10px`,
-					border: hover ? `1px solid black` : `1px dashed black`,
-					margin: `5px`,
-					backgroundColor: `#FFFFFF`,
-					marginLeft: 0,
-					marginBottom: `30px`,
-				}}
-				onMouseEnter={hoverOn}
-				onMouseLeave={hoverOff}
-			>
-				#{tag} {count ? `(${count})` : ``}
-			</div>
-		</Link>
-	)
+  return (
+    <Link
+      style={{
+        boxShadow: `none`,
+        textDecoration: `none`,
+        color: `inherit`,
+        fontFamily: `'Anton', sans-serif`,
+        textTransform: `uppercase`,
+        fontWeight: `bold`,
+      }}
+      to={`${isIT ? "/it" : ""}/tags/${kebabCase(tag)}`}
+    >
+      <div
+        style={{
+          cursor: `pointer`,
+          padding: `5px 10px`,
+          border: hover ? `1px solid black` : `1px dashed black`,
+          margin: `5px`,
+          backgroundColor: `#FFFFFF`,
+        }}
+        role="button"
+        tabIndex={0}
+        onMouseEnter={hoverOn}
+        onMouseLeave={hoverOff}
+      >
+        #{tag} {count ? `(${count})` : ``}
+      </div>
+    </Link>
+  )
 }
 
 export default Tag

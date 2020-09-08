@@ -77,8 +77,8 @@ jobs:
           command: npm run test:e2e:ci
 
   build:
-    docker:
-      - image: circleci/node:10
+    docker: 
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -112,8 +112,8 @@ jobs:
             - public
 
   build-test:
-    docker:
-      - image: circleci/node:10
+    docker: 
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -144,8 +144,8 @@ jobs:
             - public
 
   build-prod:
-    docker:
-      - image: circleci/node:10
+    docker: 
+      - image: circleci/node:lts
 
     working_directory: ~/repo
 
@@ -178,8 +178,8 @@ jobs:
   deploy-test:
     working_directory: ~/repo
 
-    docker:
-      - image: circleci/node:10
+    docker: 
+      - image: circleci/node:lts
 
     steps:
       - checkout:
@@ -195,8 +195,8 @@ jobs:
   deploy-prod:
     working_directory: ~/repo
 
-    docker:
-      - image: circleci/node:10
+    docker: 
+      - image: circleci/node:lts
 
     steps:
       - checkout:

@@ -21,8 +21,6 @@ export const Pagination = ({ isIT = false, currentPage = 0, numPages = 0 }) => {
 
 				let linkTo = `/`
 
-				console.log(`${isIT} && ${page}`)
-
 				if (isIT && i === 0) {
 					linkTo = `/it/`
 				} else if (isIT) {

@@ -286,9 +286,9 @@ workflows:
               only: master
 
       - semantic-release:
-        requires:
-          - build-prod
+          requires:
+            - build-prod
 
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master

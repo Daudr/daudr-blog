@@ -77,7 +77,7 @@ jobs:
           command: npm run test:e2e:ci
 
   build:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -112,7 +112,7 @@ jobs:
             - public
 
   build-test:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -144,7 +144,7 @@ jobs:
             - public
 
   build-prod:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -178,7 +178,7 @@ jobs:
   deploy-test:
     working_directory: ~/repo
 
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     steps:
@@ -195,7 +195,7 @@ jobs:
   deploy-prod:
     working_directory: ~/repo
 
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     steps:
@@ -208,6 +208,19 @@ jobs:
       - run:
           name: Firebase Deploy Prod
           command: npx firebase deploy --only hosting:prod --token=$FIREBASE_TOKEN
+
+  semantic-release:
+    working_directory: ~/repo
+
+    docker:
+      - image: circleci/node:lts
+
+    steps:
+      - checkout:
+          path: ~/repo/
+
+      - attach_workspace:
+          at: ~/repo
 
       - run:
           name: Semantic release
@@ -224,11 +237,10 @@ workflows:
             - install_dependencies
 
       - cypress/install:
-          requires:
-            - install_dependencies
 
       - cypress/run:
           requires:
+            - install_dependencies
             - cypress/install
 
           group: 'all tests' # name this group "all tests" on the dashboard
@@ -272,3 +284,11 @@ workflows:
           filters:
             branches:
               only: master
+
+      - semantic-release:
+        requires:
+          - build-prod
+
+        filters:
+          branches:
+            only: master

@@ -97,6 +97,7 @@ jobs:
           root: ~/repo
           paths:
             - public
+            - node_modules
 
   build-test:
     docker:
@@ -125,6 +126,7 @@ jobs:
           root: ~/repo
           paths:
             - public
+            - node_modules
 
   build-prod:
     docker:
@@ -153,6 +155,7 @@ jobs:
           root: ~/repo
           paths:
             - public
+            - node_modules
 
   deploy-test:
     working_directory: ~/repo

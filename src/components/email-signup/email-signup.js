@@ -70,7 +70,7 @@ export const EmailSignup = ({ isAMP = false, isIT = false }) => {
           😎
         </span>
       </p>
-      <form style={formStyle} method='GET' target='_top'>
+      <form style={formStyle} method='GET' target='_top' action="#">
         <FormControl error={invalidEmail}>
           <TextField
             id='email'

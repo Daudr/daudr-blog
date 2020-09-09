@@ -276,7 +276,6 @@ workflows:
 
       - deploy-prod:
           requires:
-            - install_dependencies
             - unit-test
             - cypress/run
             - build-prod

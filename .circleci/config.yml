@@ -232,11 +232,11 @@ workflows:
     jobs:
       - install_dependencies
 
+      - cypress/install
+
       - unit-test:
           requires:
             - install_dependencies
-
-      - cypress/install:
 
       - cypress/run:
           requires:

@@ -50,6 +50,10 @@ h3.header-title {
   padding: 0;
 }
 
+.flag-select__option__icon {
+  margin: 0;
+}
+
 .header__subtitle {
   position: relative;
   display: flex;

@@ -286,7 +286,7 @@ workflows:
 
       - semantic-release:
           requires:
-            - build-prod
+            - deploy-prod
 
           filters:
             branches:

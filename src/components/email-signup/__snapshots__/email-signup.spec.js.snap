@@ -35,6 +35,7 @@ exports[`EmailSignup renders correctly 1`] = `
     </span>
   </p>
   <form
+    action="#"
     method="GET"
     style={
       Object {

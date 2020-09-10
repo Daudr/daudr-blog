@@ -24,9 +24,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"
@@ -57,9 +57,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"
@@ -90,9 +90,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"
@@ -123,9 +123,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"
@@ -156,9 +156,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"
@@ -189,9 +189,9 @@ exports[`ShareButtons renders correctly 1`] = `
     }
   >
     <svg
-      height={30}
+      height={45}
       viewBox="0 0 64 64"
-      width={30}
+      width={45}
     >
       <circle
         cx="32"

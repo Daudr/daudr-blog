@@ -102,18 +102,6 @@ export const BlogPostTemplate = ({ data, pageContext, location }) => {
         <ShareButtons postNode={post} url={`${siteUrl}${slug}`} />
 
         <EmailSignup isIT={defaultCountry === `IT`} />
-
-        <div className='tipbot__button'>
-          <a
-            amount='0.5'
-            size='275'
-            to='0b769d03-507d-439a-8cbb-86778b805f87'
-            network='coil'
-            href='https://www.xrptipbot.com'
-            target='_blank'
-            rel='noopener noreferrer'
-          ></a>
-        </div>
       </Paper>
 
       <ul

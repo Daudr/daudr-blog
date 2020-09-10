@@ -34,6 +34,7 @@ export const TagsPage = ({
     >
       <SEO
         title={title}
+        location='/tags'
         keywords={['blog', 'tags', 'page', 'technology'].concat(
           group.map((g) => g.fieldValue)
         )}

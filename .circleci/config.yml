@@ -12,9 +12,6 @@ jobs:
       - checkout:
           path: ~/repo
 
-      - attach_workspace:
-          at: ~/repo
-
       - restore_cache:
           keys:
             - v1-npm-deps-{{ checksum "package-lock.json" }}
@@ -42,9 +39,6 @@ jobs:
       - checkout:
           path: ~/repo
 
-      - attach_workspace:
-          at: ~/repo
-
       - restore_cache:
           keys:
             - v1-npm-deps-{{ checksum "package-lock.json" }}
@@ -64,9 +58,6 @@ jobs:
       - checkout:
           path: ~/repo
 
-      - attach_workspace:
-          at: ~/repo
-
       - restore_cache:
           keys:
             - v1-npm-deps-{{ checksum "package-lock.json" }}
@@ -77,7 +68,7 @@ jobs:
           command: npm run test:e2e:ci
 
   build:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -85,9 +76,6 @@ jobs:
     steps:
       - checkout:
           path: ~/repo/
-
-      - attach_workspace:
-          at: ~/repo/
 
       - save_cache:
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
@@ -108,11 +96,11 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - node_modules
             - public
+            - node_modules
 
   build-test:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -120,9 +108,6 @@ jobs:
     steps:
       - checkout:
           path: ~/repo/
-
-      - attach_workspace:
-          at: ~/repo/
 
       - restore_cache:
           keys:
@@ -140,11 +125,11 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - node_modules
             - public
+            - node_modules
 
   build-prod:
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     working_directory: ~/repo
@@ -152,9 +137,6 @@ jobs:
     steps:
       - checkout:
           path: ~/repo/
-
-      - attach_workspace:
-          at: ~/repo/
 
       - restore_cache:
           keys:
@@ -172,13 +154,13 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - node_modules
             - public
+            - node_modules
 
   deploy-test:
     working_directory: ~/repo
 
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     steps:
@@ -195,7 +177,7 @@ jobs:
   deploy-prod:
     working_directory: ~/repo
 
-    docker: 
+    docker:
       - image: circleci/node:lts
 
     steps:
@@ -209,6 +191,16 @@ jobs:
           name: Firebase Deploy Prod
           command: npx firebase deploy --only hosting:prod --token=$FIREBASE_TOKEN
 
+  semantic-release:
+    working_directory: ~/repo
+
+    docker:
+      - image: circleci/node:lts
+
+    steps:
+      - checkout:
+          path: ~/repo/
+
       - run:
           name: Semantic release
           command: npm run semantic-release || true
@@ -219,16 +211,15 @@ workflows:
     jobs:
       - install_dependencies
 
-      - unit-test:
-          requires:
-            - install_dependencies
+      - cypress/install
 
-      - cypress/install:
+      - unit-test:
           requires:
             - install_dependencies
 
       - cypress/run:
           requires:
+            - install_dependencies
             - cypress/install
 
           group: 'all tests' # name this group "all tests" on the dashboard
@@ -264,10 +255,17 @@ workflows:
 
       - deploy-prod:
           requires:
-            - install_dependencies
             - unit-test
             - cypress/run
             - build-prod
+
+          filters:
+            branches:
+              only: master
+
+      - semantic-release:
+          requires:
+            - deploy-prod
 
           filters:
             branches:

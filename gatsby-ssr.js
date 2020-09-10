@@ -77,10 +77,13 @@ exports.onPreRenderHTML = ({
     )
   } else {
     // FIXME: remove `!important` styles from AMP pages
-    headComponents.forEach(component => {
-      if (typeof component === <style></style>) {
-      }
-    })
+    headComponents.push(
+      <script
+        async
+        custom-element='amp-auto-ads'
+        src='https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js'
+      ></script>
+    )
   }
 
   replaceHeadComponents(headComponents)

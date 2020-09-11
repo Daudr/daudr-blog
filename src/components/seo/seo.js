@@ -31,19 +31,6 @@ export const SEO = ({
     `
   )
 
-  console.log({
-    description,
-    lang,
-    meta,
-    keywords,
-    title,
-    postSEO,
-    post,
-    slug,
-    coverImage,
-    location,
-  })
-
   const metaDescription = description || site.siteMetadata.description
   let image = coverImage || `https://blog.daudr.me/daudr-icon.png`
 

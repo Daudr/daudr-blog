@@ -2,7 +2,7 @@
   "name": "daudr-blog",
   "private": false,
   "description": "Front end code for Daudr's blog",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "author": "Michele Da Rin Fioretto <michele@daudr.me>",
   "bugs": {
     "url": "https://github.com/Daudr/daudr-blog/issues"
@@ -45,6 +45,7 @@
     "react-share": "^4.2.1",
     "react-typography": "^0.16.19",
     "typeface-anton": "0.0.72",
+    "typeface-fira-code": "^1.1.4",
     "typeface-merriweather": "0.0.72",
     "typeface-roboto": "0.0.75",
     "typography": "^0.16.19",

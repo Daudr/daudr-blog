@@ -78,9 +78,9 @@ jobs:
           path: ~/repo/
 
       - restore_cache:
-        keys:
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          - v1-npm-deps-
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - run:
           name: Cleaning up Gatsby

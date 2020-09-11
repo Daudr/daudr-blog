@@ -77,13 +77,10 @@ jobs:
       - checkout:
           path: ~/repo/
 
-      - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-
-          paths:
-            - ./node_modules
-            - ~/.npm
-            - ~/.cache
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - run:
           name: Cleaning up Gatsby
@@ -97,7 +94,6 @@ jobs:
           root: ~/repo
           paths:
             - public
-            - node_modules
 
   build-test:
     docker:
@@ -126,7 +122,6 @@ jobs:
           root: ~/repo
           paths:
             - public
-            - node_modules
 
   build-prod:
     docker:
@@ -155,7 +150,6 @@ jobs:
           root: ~/repo
           paths:
             - public
-            - node_modules
 
   deploy-test:
     working_directory: ~/repo
@@ -166,6 +160,11 @@ jobs:
     steps:
       - checkout:
           path: ~/repo/
+
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - attach_workspace:
           at: ~/repo
@@ -184,6 +183,11 @@ jobs:
       - checkout:
           path: ~/repo/
 
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
+
       - attach_workspace:
           at: ~/repo
 
@@ -200,6 +204,11 @@ jobs:
     steps:
       - checkout:
           path: ~/repo/
+
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - run:
           name: Semantic release

@@ -4,7 +4,7 @@ description: Negli ultimi mesi ho iniziato a sviluppare delle app in Flutter e d
 tags: ['flutter', 'app', 'android', 'ios', 'scaffold']
 keywords: ['flutter', 'app', 'android', 'ios', 'scaffold']
 cover_image: https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?auto=format&fit=crop&w=1950&q=80
-date: '2020-09-10T10:00:00.000Z'
+date: '2020-09-12T10:00:00.000Z'
 id: 'flutter-shared-background'
 lang: 'it'
 ---

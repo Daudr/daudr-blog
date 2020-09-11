@@ -162,9 +162,9 @@ jobs:
           path: ~/repo/
 
       - restore_cache:
-        keys:
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          - v1-npm-deps-
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - attach_workspace:
           at: ~/repo
@@ -184,9 +184,9 @@ jobs:
           path: ~/repo/
 
       - restore_cache:
-        keys:
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          - v1-npm-deps-
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - attach_workspace:
           at: ~/repo
@@ -206,9 +206,9 @@ jobs:
           path: ~/repo/
 
       - restore_cache:
-        keys:
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          - v1-npm-deps-
+          keys:
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-
 
       - run:
           name: Semantic release

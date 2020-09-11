@@ -225,6 +225,7 @@ module.exports = {
         display: 'swap',
       },
     },
+    'gatsby-plugin-loadable-components-ssr'
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

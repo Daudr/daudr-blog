@@ -161,7 +161,14 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
                     { 'content:encoded': edge.node.html },
-                    { 'media:content': edge.node.frontmatter.cover_image },
+                    {
+                      'media:content': {
+                        _attr: {
+                          url: edge.node.frontmatter.cover_image,
+                          medium: 'image',
+                        },
+                      },
+                    },
                   ],
                 })
               })
@@ -225,7 +232,7 @@ module.exports = {
         display: 'swap',
       },
     },
-    'gatsby-plugin-loadable-components-ssr'
+    'gatsby-plugin-loadable-components-ssr',
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

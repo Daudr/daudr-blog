@@ -164,7 +164,11 @@ module.exports = {
                     {
                       'media:content': {
                         _attr: {
-                          url: edge.node.frontmatter.cover_image,
+                          // replace width with height for newsletter
+                          url: edge.node.frontmatter.cover_image.replace(
+                            /w=[^&]*/,
+                            'h=250'
+                          ),
                           medium: 'image',
                         },
                       },

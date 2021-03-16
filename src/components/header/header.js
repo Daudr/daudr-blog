@@ -4,14 +4,18 @@ import ReactFlagsSelect from 'react-flags-select'
 
 import { scale, rhythm } from '../../utils/typography'
 
-import 'react-flags-select/css/react-flags-select.css'
 import './header.css'
 
-export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
+export const Header = ({
+  title,
+  setSelectedLanguage,
+  defaultLang,
+  selectedLanguage,
+}) => {
   const flagsRef = useRef(null)
 
   useEffect(() => {
-    flagsRef.current.updateSelected(defaultLang)
+    flagsRef.current?.updateSelected(defaultLang)
   }, [defaultLang])
 
   const header = (
@@ -60,6 +64,7 @@ export const Header = ({ title, setSelectedLanguage, defaultLang }) => {
           onSelect={selectLanguage}
           placeholder=''
           ref={flagsRef}
+          selected={selectedLanguage}
         />
       </div>
       {header}

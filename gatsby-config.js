@@ -226,7 +226,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-web-monetization`,
       options: {
-        paymentPointer: `$coil.xrptipbot.com/C3adA1B9Q5qMu4Z3i4Bfhw`,
+        paymentPointer: `$ilp.uphold.com/7xprUjR3FKDx`,
       },
     },
     {
